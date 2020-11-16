@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "H635/iWzp9a3zgquUqIbiocZB6x6Or4K6+VHQuNSVRi69F6RmCp51+0osf6vhDHGay8PrHB8MQvPJqcZ73Y2Xw==",
+  "dgSpecHash": "xcVSTqXVEMPumb/924sBfemfWZsHcWnb/hy0pJgYdY1sZpyvBaplHaPbmkJSu1C3rloZDjATuPy7Qd/Fyr548A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
+  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\XuanHoang\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\XuanHoang\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

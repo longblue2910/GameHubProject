@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "gbN5VrjmjYZVDS/ie19e1WlCH4h9oxsYtbBSbFCTP2nZrch8vu+NeWeH++oYcoVKfJ2JD33Lf9eTzUYQNnmc0w==",
+  "dgSpecHash": "VChu8AJcVC8g/R1VVBRUJnHBrfw18MRn8PBuLD448UMxQHd52GvxGAUjrwcEpcC12xXK4UBrmb+i0U5rwzmrRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj",
+  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\XuanHoang\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\XuanHoang\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
