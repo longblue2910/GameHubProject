@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "unMT1DNXXycvZSY8TMCQjNSsbgC30N0PeWm5pVqC0XHZwxAXg2zLxM6ogTJOplPvLkBIFmNvxcIG3m8VLs8/ag==",
+  "dgSpecHash": "1K69TX/W+/1UYtcA1Vwe33dqu16tzzDSiAHFHACibxcok1qWLv7XWAUWM3f5x0gS0Klqs2Gcpf3kLtOeT5w6rQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHubProject\\GameHub.API.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
   "logs": []
 }
