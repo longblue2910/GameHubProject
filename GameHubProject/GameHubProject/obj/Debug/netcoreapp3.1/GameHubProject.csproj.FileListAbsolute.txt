@@ -1,0 +1,9 @@
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHubProject\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHubProject\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHubProject\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHubProject.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHubProject.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHubProject.AssemblyInfo.cs
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHubProject.RazorTargetAssemblyInfo.cache
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\staticwebassets\GameHubProject.StaticWebAssets.Manifest.cache
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\staticwebassets\GameHubProject.StaticWebAssets.xml

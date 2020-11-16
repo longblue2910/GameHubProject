@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHub.API", "GameHubProject\GameHub.API.csproj", "{688FB5E8-242E-4480-B418-0A719129F37C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.Domain", "GameHub.Domain\GameHub.Domain.csproj", "{57FFCFB8-6BFE-4B68-97AD-BAEE81F792DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.DAL.Interface", "GameHub.DAL.Interface\GameHub.DAL.Interface.csproj", "{53B82C94-4603-4419-AF37-154E45B606D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.DAL.Implement", "GameHub.DAL.Implement\GameHub.DAL.Implement.csproj", "{8C9C1F39-375C-4F23-9ED7-A20D8C4F6337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.BAL.Interface", "GameHub.BAL.Interface\GameHub.BAL.Interface.csproj", "{DE883C4B-91BD-448E-88E5-1EBB8DA8474F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.BAL.Implement", "GameHub.BAL.Implement\GameHub.BAL.Implement.csproj", "{34029CD2-718F-4DFE-A7FC-9D79D7B06499}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{688FB5E8-242E-4480-B418-0A719129F37C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{688FB5E8-242E-4480-B418-0A719129F37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{688FB5E8-242E-4480-B418-0A719129F37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{688FB5E8-242E-4480-B418-0A719129F37C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57FFCFB8-6BFE-4B68-97AD-BAEE81F792DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57FFCFB8-6BFE-4B68-97AD-BAEE81F792DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57FFCFB8-6BFE-4B68-97AD-BAEE81F792DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57FFCFB8-6BFE-4B68-97AD-BAEE81F792DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B82C94-4603-4419-AF37-154E45B606D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B82C94-4603-4419-AF37-154E45B606D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B82C94-4603-4419-AF37-154E45B606D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B82C94-4603-4419-AF37-154E45B606D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C9C1F39-375C-4F23-9ED7-A20D8C4F6337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9C1F39-375C-4F23-9ED7-A20D8C4F6337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9C1F39-375C-4F23-9ED7-A20D8C4F6337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9C1F39-375C-4F23-9ED7-A20D8C4F6337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE883C4B-91BD-448E-88E5-1EBB8DA8474F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE883C4B-91BD-448E-88E5-1EBB8DA8474F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE883C4B-91BD-448E-88E5-1EBB8DA8474F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE883C4B-91BD-448E-88E5-1EBB8DA8474F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34029CD2-718F-4DFE-A7FC-9D79D7B06499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34029CD2-718F-4DFE-A7FC-9D79D7B06499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34029CD2-718F-4DFE-A7FC-9D79D7B06499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34029CD2-718F-4DFE-A7FC-9D79D7B06499}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {181598CC-8067-4DF1-B473-1AF5951EF353}
+	EndGlobalSection
+EndGlobal
