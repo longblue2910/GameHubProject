@@ -10,16 +10,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1903 AS build
 WORKDIR /src
-COPY ["GameHubProject/GameHubProject.csproj", "GameHubProject/"]
-RUN dotnet restore "GameHubProject/GameHubProject.csproj"
+COPY ["GameHub.WEB/GameHub.WEB.csproj", "GameHub.WEB/"]
+RUN dotnet restore "GameHub.WEB/GameHub.WEB.csproj"
 COPY . .
-WORKDIR "/src/GameHubProject"
-RUN dotnet build "GameHubProject.csproj" -c Release -o /app/build
+WORKDIR "/src/GameHub.WEB"
+RUN dotnet build "GameHub.WEB.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "GameHubProject.csproj" -c Release -o /app/publish
+RUN dotnet publish "GameHub.WEB.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "GameHubProject.dll"]
+ENTRYPOINT ["dotnet", "GameHub.WEB.dll"]

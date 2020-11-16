@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "pOD4Nupi6bobfAAd91O7ZFQAwObqHqqjgApgfUScRQbmGbcnfLo9Hc/4dncI5ycZh8T7xtqIbP/C/H/S96M7QQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}
