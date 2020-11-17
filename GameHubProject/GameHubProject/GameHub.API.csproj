@@ -14,5 +14,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GameHub.BAL.Implement\GameHub.BAL.Implement.csproj" />
+    <ProjectReference Include="..\GameHub.BAL.Interface\GameHub.BAL.Interface.csproj" />
+    <ProjectReference Include="..\GameHub.DAL.Implement\GameHub.DAL.Implement.csproj" />
+    <ProjectReference Include="..\GameHub.DAL.Interface\GameHub.DAL.Interface.csproj" />
+  </ItemGroup>
+
 
 </Project>
