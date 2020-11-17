@@ -1,0 +1,12 @@
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\bin\Debug\netstandard2.0\GameHub.DAL.Implement.deps.json
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\bin\Debug\netstandard2.0\GameHub.DAL.Implement.dll
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\bin\Debug\netstandard2.0\GameHub.DAL.Implement.pdb
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\bin\Debug\netstandard2.0\GameHub.Domain.dll
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\bin\Debug\netstandard2.0\GameHub.Domain.pdb
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.AssemblyInfo.cs
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.csproj.CopyComplete
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.dll
+C:\Users\Admin\Documents\GameHubProject\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.pdb
