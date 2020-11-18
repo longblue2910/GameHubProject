@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GameHub.BAL.Interface\GameHub.BAL.Interface.csproj" />
+    <ProjectReference Include="..\GameHub.DAL.Interface\GameHub.DAL.Interface.csproj" />
     <ProjectReference Include="..\GameHub.Domain\GameHub.Domain.csproj" />
   </ItemGroup>
 
