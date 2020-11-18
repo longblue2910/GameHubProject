@@ -1,11 +1,13 @@
 ﻿using GameHub.Domain.Request.Game;
 using GameHub.Domain.Response.Game;
+using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace GameHub.DAL.Interface
+namespace GameHub.BAL.Interface
 {
-    public interface IGameRepository
+    public interface IGameService
     {
         Task<GameRes> Save(SaveGameReq request);
         Task<GameView> Get(int id);
