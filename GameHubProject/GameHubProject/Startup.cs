@@ -8,6 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using GameHub.Domain;
+using Microsoft.AspNetCore.Identity;
+using GameHub.API.DbContext;
+using Microsoft.EntityFrameworkCore;
+using GameHub.Domain.User;
 
 namespace GameHubProject
 {
@@ -35,11 +39,9 @@ namespace GameHubProject
             services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
             services.AddScoped<RoleManager<IdentityRole>, RoleManager<IdentityRole>>();
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<GameHubDbContext>()
-                .AddDefaultTokenProviders();
 
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Common.ConnectionString));
+            services.AddDbContext<AppDbContext>(options => 
+            options.UseSqlServer(Configuration.GetConnectionString("GameHubDbConnection")));
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
         }
 
@@ -50,6 +52,13 @@ namespace GameHubProject
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CodeGym API");
+            });
+
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
 

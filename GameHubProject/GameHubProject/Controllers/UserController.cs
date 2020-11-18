@@ -33,7 +33,7 @@ namespace GameHub.API.Controllers
             {
                 return BadRequest("Username or password is incorrect.");
             }
-            return Ok(new { token = resultToken });
+            return Ok("Login Success");
         }
         [HttpPost("register")]
         [AllowAnonymous]
@@ -47,7 +47,7 @@ namespace GameHub.API.Controllers
             {
                 return BadRequest("Register is unsuccessful!");
             }
-            return Ok();
+            return Ok("Register is successful!");
         }
     }
 }

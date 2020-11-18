@@ -12,8 +12,5 @@ namespace GameHub.Domain.Request.Game
         public int BrandId { get; set; }
         public string Description { get; set; }
         public string UserId { get; set; }
-        public int Visit { get; set; }
-        public int Download { get; set; }
-        public bool IsDelete { get; set; }
     }
 }

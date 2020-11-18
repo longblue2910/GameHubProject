@@ -1,0 +1,9 @@
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHubSolution.Data\bin\Debug\netcoreapp3.1\GameHubSolution.Data.deps.json
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHubSolution.Data\bin\Debug\netcoreapp3.1\GameHubSolution.Data.dll
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHubSolution.Data\bin\Debug\netcoreapp3.1\GameHubSolution.Data.pdb
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHubSolution.Data\obj\Debug\netcoreapp3.1\GameHubSolution.Data.csprojAssemblyReference.cache
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHubSolution.Data\obj\Debug\netcoreapp3.1\GameHubSolution.Data.AssemblyInfoInputs.cache
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHubSolution.Data\obj\Debug\netcoreapp3.1\GameHubSolution.Data.AssemblyInfo.cs
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHubSolution.Data\obj\Debug\netcoreapp3.1\GameHubSolution.Data.csproj.CoreCompileInputs.cache
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHubSolution.Data\obj\Debug\netcoreapp3.1\GameHubSolution.Data.dll
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHubSolution.Data\obj\Debug\netcoreapp3.1\GameHubSolution.Data.pdb

@@ -17,5 +17,6 @@ namespace GameHub.Domain
         public string Facebook { get; set; }
 
         public string ImagePath { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

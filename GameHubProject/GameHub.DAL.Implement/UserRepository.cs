@@ -1,7 +1,7 @@
 ﻿using GameHub.DAL.Interface;
 using GameHub.Domain;
-using GameHub.Domain.Models;
 using GameHub.Domain.Request.User;
+using GameHub.Domain.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -46,15 +46,16 @@ namespace GameHub.DAL.Implement
                 new Claim(ClaimTypes.GivenName, user.FullName),
                 new Claim(ClaimTypes.Role, string.Join(";", roles))
             };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            //var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
+            //var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(_config["Tokens:Issuer"],
-                _config["Tokens:Issuer"],
-                Claims,
-                expires: DateTime.Now.AddHours(3),
-                signingCredentials: creds);
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            //var token = new JwtSecurityToken(_config["Tokens:Issuer"],
+            //    _config["Tokens:Issuer"],
+            //    Claims,
+            //    expires: DateTime.Now.AddHours(3),
+            //    signingCredentials: creds);
+            //return new JwtSecurityTokenHandler().WriteToken(token);
+            return $"Login success";
         }
 
         public async Task<bool> Register(RegisterRequest request)
@@ -69,7 +70,8 @@ namespace GameHub.DAL.Implement
                 Facebook = request.Facebook,
                 FullName = request.FullName,
                 Gender = request.Gender,
-                ImagePath = request.ImagePath
+                ImagePath = request.ImagePath,
+                IsDelete = false
             };
             var result = await userManager.CreateAsync(user, request.Password);
             if (result.Succeeded)
@@ -77,6 +79,11 @@ namespace GameHub.DAL.Implement
                 return true;
             }
             return false;
+        }
+        public async Task<string> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return "Logout Success";
         }
     }
 }
