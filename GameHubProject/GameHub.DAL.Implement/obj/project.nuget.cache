@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IQMZC+o3NULRQthMqURjETnPqQba5OGnpECTlwaGiEUaEst6sgg+8CcLYYTOp6ehJ5QcMRI9TK8wmxfYxGA7Pw==",
+  "dgSpecHash": "O8NcLH8Sb5iK4V/4C4d48nUiZj9VmBfHbbgZtvIp4l3BYS+Q65+fTr1LpAujjhTUT4cY2TdLQpNsBVnh0r9LjQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

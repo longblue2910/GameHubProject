@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj": {}
+    "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj": {
+    "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj",
         "projectName": "GameHub.BAL.Implement",
-        "projectPath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj",
+        "projectPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.BAL.Implement\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.BAL.Implement\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -31,8 +31,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
+              "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
               }
             }
           }
@@ -67,14 +67,14 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
+    "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
         "projectName": "GameHub.Domain",
-        "projectPath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
+        "projectPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

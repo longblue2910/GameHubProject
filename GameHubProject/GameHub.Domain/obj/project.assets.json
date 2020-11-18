@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
       "projectName": "GameHub.Domain",
-      "projectPath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\GameHubProject\\GameHubProject\\GameHub.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
