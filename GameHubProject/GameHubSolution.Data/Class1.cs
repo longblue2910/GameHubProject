@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameHub.Domain
+namespace GameHubSolution.Data
 {
     public class Class1
     {

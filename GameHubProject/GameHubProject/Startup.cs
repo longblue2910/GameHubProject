@@ -1,12 +1,15 @@
+using GameHub.API.Models;
 using GameHub.BAL.Implement;
 using GameHub.BAL.Interface;
 using GameHub.DAL.Implement;
 using GameHub.DAL.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using GameHub.Domain;
 
 namespace GameHubProject
 {
@@ -26,6 +29,17 @@ namespace GameHubProject
             services.AddSwaggerGen();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IBrandService, BrandService>();
+            services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();
+            services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
+            services.AddScoped<RoleManager<IdentityRole>, RoleManager<IdentityRole>>();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<GameHubDbContext>()
+                .AddDefaultTokenProviders();
 
         }
 
