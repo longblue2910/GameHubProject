@@ -7,3 +7,12 @@ C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.Domain\obj\Debug\netst
 C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.Domain\obj\Debug\netstandard2.0\GameHub.Domain.pdb
 C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.Domain\obj\Debug\netstandard2.0\GameHub.Domain.csproj.CoreCompileInputs.cache
 C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.Domain\obj\Debug\netstandard2.0\GameHub.Domain.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.Domain\bin\Debug\netstandard2.0\GameHub.Domain.deps.json
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.Domain\bin\Debug\netstandard2.0\GameHub.Domain.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.Domain\bin\Debug\netstandard2.0\GameHub.Domain.pdb
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.Domain\obj\Debug\netstandard2.0\GameHub.Domain.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.Domain\obj\Debug\netstandard2.0\GameHub.Domain.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.Domain\obj\Debug\netstandard2.0\GameHub.Domain.AssemblyInfo.cs
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.Domain\obj\Debug\netstandard2.0\GameHub.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.Domain\obj\Debug\netstandard2.0\GameHub.Domain.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.Domain\obj\Debug\netstandard2.0\GameHub.Domain.pdb

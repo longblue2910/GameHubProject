@@ -1763,7 +1763,7 @@
           "GameHub.DAL.Interface": "1.0.0",
           "GameHub.Domain": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
-          "Microsoft.Extensions.Identity.Core": "5.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.IdentityModel.Tokens": "6.8.0",
           "System.Data.SqlClient": "4.8.2",
           "System.IdentityModel.Tokens.Jwt": "6.8.0"
