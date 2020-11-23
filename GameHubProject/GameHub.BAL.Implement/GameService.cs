@@ -37,6 +37,11 @@ namespace GameHub.BAL.Implement
             return await gameRepository.GetByCategoryId(categoryId);
         }
 
+        public async Task<IEnumerable<GameView>> GetByCharacter(string searchword)
+        {
+            return await gameRepository.GetByCharacter(searchword);
+        }
+
         public async Task<IEnumerable<GameView>> Gets()
         {
             return await gameRepository.Gets();

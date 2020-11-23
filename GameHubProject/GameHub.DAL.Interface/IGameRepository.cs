@@ -11,6 +11,7 @@ namespace GameHub.DAL.Interface
         Task<GameView> Get(int id);
         Task<GameView> GetByCategoryId(int categoryId);
         Task<GameView> GetByBrandId(int brandId);
+        Task<IEnumerable<GameView>> GetByCharacter(string searchword);
         Task<IEnumerable<GameView>> Gets();
         Task<GameRes> Delete(int id);
     }

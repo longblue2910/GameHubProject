@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Identity;
 using GameHub.API.DbContext;
 using Microsoft.EntityFrameworkCore;
 using GameHub.Domain.User;
+using GameHub.API.Service;
+using GameHub.Domain.Request.Social;
 
 namespace GameHubProject
 {
@@ -37,6 +39,20 @@ namespace GameHubProject
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGameRepository, GameRepository>();
             services.AddScoped<IGameService, GameService>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
+            services.AddScoped<ICommentService, CommentService>();
+            services.AddScoped<IReplyService, ReplyService>();
+            services.AddScoped<IReplyRepository, ReplyRepository>();
+            services.AddScoped<IRateService, RateService>();
+            services.AddScoped<IRateRepository, RateRepository>();
+            services.AddScoped<IIdentityService, IdentityService>();
+            services.AddScoped<ISocialRepository, SocialRepository>();
+
+            Configuration.Bind(nameof(FacebookAuthSettings), new FacebookAuthSettings());
+            services.AddSingleton(new FacebookAuthSettings());
+
+            services.AddHttpClient();
+
             services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();
             services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
             services.AddScoped<RoleManager<IdentityRole>, RoleManager<IdentityRole>>();
@@ -45,6 +61,8 @@ namespace GameHubProject
             services.AddDbContext<AppDbContext>(options => 
             options.UseSqlServer(Configuration.GetConnectionString("GameHubDbConnection")));
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+
+            //services.AddAuthentication().AddGoogle
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

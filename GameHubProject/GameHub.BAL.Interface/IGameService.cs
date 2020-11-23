@@ -15,5 +15,6 @@ namespace GameHub.BAL.Interface
         Task<GameView> GetByBrandId(int brandId);
         Task<IEnumerable<GameView>> Gets();
         Task<GameRes> Delete(int id);
+        Task<IEnumerable<GameView>> GetByCharacter(string searchword);
     }
 }

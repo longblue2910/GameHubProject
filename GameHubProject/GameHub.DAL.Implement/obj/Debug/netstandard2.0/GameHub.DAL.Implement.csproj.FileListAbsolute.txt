@@ -11,7 +11,6 @@ C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.DAL.Implement\bin\Debu
 C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.csproj.CopyComplete
 C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.dll
 C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.pdb
-C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.DAL.Implement\bin\Debug\netstandard2.0\GameHub.DAL.Implement.deps.json
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.DAL.Implement\bin\Debug\netstandard2.0\GameHub.DAL.Implement.dll
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.DAL.Implement\bin\Debug\netstandard2.0\GameHub.DAL.Implement.pdb
@@ -26,3 +25,4 @@ C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.DAL.Implement\obj\Debug\
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.dll
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.pdb
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.csproj.CoreCompileInputs.cache
+C:\Users\XuanHoang\Desktop\Gamehub\GameHubProject\GameHub.DAL.Implement\obj\Debug\netstandard2.0\GameHub.DAL.Implement.csproj.CoreCompileInputs.cache

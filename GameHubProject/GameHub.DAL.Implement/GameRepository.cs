@@ -59,6 +59,15 @@ namespace GameHub.DAL.Implement
             return result;
         }
 
+        public async Task<IEnumerable<GameView>> GetByCharacter(string searchword)
+        {
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@SearchWord", searchword);
+            var result = await SqlMapper.QueryAsync<GameView>(cnn: connection, sql: "sp_GetsGameByCharacter",
+                                                                param: parameters, commandType: CommandType.StoredProcedure);
+            return result;
+        }
+
         public async Task<IEnumerable<GameView>> Gets()
         {
             return await SqlMapper.QueryAsync<GameView>(connection, "sp_GetsGame", CommandType.StoredProcedure);

@@ -10,6 +10,7 @@ namespace GameHub.API.DbContext
         {
         }
 
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

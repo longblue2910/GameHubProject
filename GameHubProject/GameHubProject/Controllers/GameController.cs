@@ -56,5 +56,11 @@ namespace GameHub.API.Controllers
             var result = await gameService.GetByBrandId(id);
             return Ok(result);
         }
+        [HttpGet("getsbychracter/{searchword}")]
+        public async Task<OkObjectResult> getsbychracter(string searchword)
+        {
+            var result = await gameService.GetByCharacter(searchword);
+            return Ok(result);
+        }
     }
 }
