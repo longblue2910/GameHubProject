@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cVhh6sj0UBLqnkuFN+lzpFBh5KxV1chwTuq405JmFjjfIs9Grk/9cDJBgzOHp6VD4VqhvTIpzSSHC1g4neDgbw==",
+  "dgSpecHash": "V1EcBXv4kfEXBn7kX8gcWFtib3KWw3MJ547SM7CQobPX0wIwutyFYPv2mR48S27THaD+ScZC5GyiDwwn4Sfgtg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj",
+  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\XuanHoang\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\XuanHoang\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

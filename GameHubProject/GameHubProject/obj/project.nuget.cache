@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JjNlZyWmL3PNqQDsZjQTJdfxq1RcCeuSjtaerAOP0V9ZSPqnFXmqRrcqkyf9gOZkhBSxuvF0MEl1V5dHyIMp/A==",
+  "dgSpecHash": "qjUaleXuYl6UBx9iCeuzSN9vNt5/4P496hRBBMiyLQBL/PJkQJ4aSJr1O4x9XMcGG1v9NKRnbhcPtLgeSCv8Bg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\GameHubProject\\GameHubProject\\GameHub.API.csproj",
+  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHubProject\\GameHub.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\XuanHoang\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\XuanHoang\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

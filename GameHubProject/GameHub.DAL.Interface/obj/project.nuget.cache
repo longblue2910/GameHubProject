@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bCKQ3NNMjAVIgRUt23I3lQknnGfeXjyc/b/o1f89bq0EK61qjRfZgNc7tkHRPLVN+7Sz2s/6Wmiq1q7EOBXVDw==",
+  "dgSpecHash": "wLJkOJDkThdVKDRf4WO2oFJSGMmXi/A2Z6epKMpy2ao2iXqhEKYhA9JP7d0zN+eus3Q9VIXRc9u/EnmAmmmAww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
+  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\XuanHoang\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",
     "C:\\Users\\XuanHoang\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.0\\microsoft.aspnetcore.cryptography.keyderivation.5.0.0.nupkg.sha512",
