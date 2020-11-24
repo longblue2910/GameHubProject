@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GameHub.Domain.Response.Game
 {
@@ -6,7 +7,8 @@ namespace GameHub.Domain.Response.Game
     {
         public int GameId { get; set; }
         public string GameName { get; set; }
-        public int CategoryId { get; set; }
+        public IEnumerable<Category> Categorys { get; set; }
+        public IEnumerable<Image> Images { get; set; }
         public int BrandId { get; set; }
         public string Desciption { get; set; }
         public string UserId { get; set; }

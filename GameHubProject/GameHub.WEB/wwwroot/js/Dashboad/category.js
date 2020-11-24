@@ -1,5 +1,22 @@
 ﻿var category = {} || category;
-
+category.deleted = function (id, name) {
+    var result = confirm("Do you want to delete " + name + "?");
+    if (result == true) {
+        $.ajax({
+            url: `/category/delete/${id}`,
+            method: 'POST',
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+                alert(name +" "+response.data.message + " !");
+                category.drawTable();
+            },
+            error: function () {
+                alert(response.data.message);
+            }
+        });
+    }
+}
 $(document).ready(function () {
     category.init();
 })
@@ -17,15 +34,25 @@ category.drawTable = function () {
         dataType: "json",
         success: function (data) {
             $.each(data.result, function (i, v) {
+                var action = "";
+                if (v.statusName == "Active") {
+                    action = `<a href="javascripts:;"
+                                       onclick="category.get(${v.categoryId})"><i class="fas fa-edit"></i></a>
+                            <a href="javascripts:;"
+                                        onclick="category.deleted(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-trash"></i></a>`
+                }
+                else {
+                    action = `
+                            <a href="javascripts:;"
+                                        onclick="category.deleted(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-check-circle"></i></a>`
+                }
                 $('#categoryTable').append(
                     `<tr>
                         <td>${v.categoryId}</td>
                         <td>${v.categoryName}</td>
+                        <td>${v.statusName}</td>
                         <td>
-                            <a href="javascripts:;"
-                                       onclick="category.get(${v.categoryId})"><i class="fas fa-edit"></i></a> 
-                            <a href="javascripts:;"
-                                        onclick="category.delete(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-trash"></i></a>
+                            ${action}
                         </td>
                     </tr>`
                 );
@@ -54,7 +81,6 @@ category.save = function () {
             data: JSON.stringify(saveObj),
             success: function (response) {
                 console.log(response);
-                debugger;
                 bootbox.alert(response.data.message);
                 if (response.data.categoryId > 0) {
                     $('#addEditCategoryModal').modal('hide');
@@ -63,4 +89,20 @@ category.save = function () {
             }
         });
     }
+}
+
+category.get = function (id) {
+    $.ajax({
+        url: `/category/get/${id}`,
+        method: "get",
+        dataType: "json",
+        success: function (response) {
+            console.log(response);
+            $('#CategoryName').val(response.data.categoryName);
+
+            document.getElementById('CategoryId').value = response.data.categoryId;
+            $('#addEditCategoryModal').modal('show');
+            document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
+        }
+    });
 }
