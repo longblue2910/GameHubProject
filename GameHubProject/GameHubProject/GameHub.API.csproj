@@ -29,5 +29,9 @@
     <ProjectReference Include="..\GameHub.DAL.Interface\GameHub.DAL.Interface.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 
 </Project>
