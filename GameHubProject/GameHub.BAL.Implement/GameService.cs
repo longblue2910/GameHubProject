@@ -45,6 +45,16 @@ namespace GameHub.BAL.Implement
             return await gameRepository.Gets();
         }
 
+        public async Task<GameRes> increaseDowloadGame(int id)
+        {
+            return await gameRepository.increaseDowloadGame(id);
+        }
+
+        public async Task<GameRes> increaseViewGame(int id)
+        {
+            return await gameRepository.increaseViewGame(id);
+        }
+
         public async Task<GameRes> Save(SaveGameReq request)
         {
             return await gameRepository.Save(request);

@@ -56,5 +56,17 @@ namespace GameHub.API.Controllers
             var result = await gameService.GetByBrandId(id);
             return Ok(result);
         }
+        [HttpPatch("increaseDowloadGame/{id}")]
+        public async Task<OkObjectResult> increaseDowloadGame(int id)
+        {
+            var result = await gameService.increaseDowloadGame(id);
+            return Ok(result);
+        }
+        [HttpPatch("increaseViewGame/{id}")]
+        public async Task<OkObjectResult> increaseViewGame(int id)
+        {
+            var result = await gameService.increaseViewGame(id);
+            return Ok(result);
+        }
     }
 }
