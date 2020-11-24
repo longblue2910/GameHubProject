@@ -38,23 +38,40 @@ namespace GameHub.DAL.Implement
             parameters.Add("@GameId", id);
             var result = await SqlMapper.QueryFirstAsync<GameView>(cnn: connection, sql: "sp_GetGame",
                                                                 param: parameters, commandType: CommandType.StoredProcedure);
+
             return result;
         }
-
-        public async Task<GameView> GetByBrandId(int brandId)
+        public async Task<IEnumerable<Category>> GetsCategory(int id)
         {
             DynamicParameters parameters = new DynamicParameters();
-            parameters.Add("@BrandId", brandId);
-            var result = await SqlMapper.QueryFirstAsync<GameView>(cnn: connection, sql: "sp_GetsGameByBrand",
+            parameters.Add("@GameId", id);
+            var result = await SqlMapper.QueryAsync<Category>(cnn: connection, sql: "sp_Getcategory_game",
+                                                                param: parameters, commandType: CommandType.StoredProcedure);
+            return result;
+        }
+        public async Task<IEnumerable<Image>> GetsImage(int id)
+        {
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@GameId", id);
+            var result = await SqlMapper.QueryAsync<Image>(cnn: connection, sql: "sp_GetImage_game",
                                                                 param: parameters, commandType: CommandType.StoredProcedure);
             return result;
         }
 
-        public async Task<GameView> GetByCategoryId(int categoryId)
+        public async Task<IEnumerable<GameView>> GetByBrandId(int brandId)
+        {
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@BrandId", brandId);
+            var result = await SqlMapper.QueryAsync<GameView>(cnn: connection, sql: "sp_GetsGameByBrand",
+                                                                param: parameters, commandType: CommandType.StoredProcedure);
+            return result;
+        }
+
+        public async Task<IEnumerable<GameView>> GetByCategoryId(int categoryId)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@CategoryId", categoryId);
-            var result = await SqlMapper.QueryFirstAsync<GameView>(cnn: connection, sql: "sp_GetsGameByCategory",
+            var result = await SqlMapper.QueryAsync<GameView>(cnn: connection, sql: "sp_GetsGameByCategory",
                                                                 param: parameters, commandType: CommandType.StoredProcedure);
             return result;
         }
@@ -76,7 +93,8 @@ namespace GameHub.DAL.Implement
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@GameId", request.GameId);
                 parameters.Add("@GameName", request.GameName);
-                parameters.Add("@CategoryId", request.CategoryId);
+                parameters.Add("@Category", request.Categorys);
+                parameters.Add("@Image", request.Images);
                 parameters.Add("@BrandId", request.BrandId);
                 parameters.Add("@Desciption", request.Description);
                 parameters.Add("@UserId", request.UserId);
@@ -87,6 +105,16 @@ namespace GameHub.DAL.Implement
             {
                 return result;
             }
+        }
+
+        public Task<GameRes> increaseViewGame(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<GameRes> increaseDowloadGame(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

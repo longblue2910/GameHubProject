@@ -24,15 +24,18 @@ namespace GameHub.BAL.Implement
 
         public async Task<GameView> Get(int id)
         {
-            return await gameRepository.Get(id);
+            var result = await gameRepository.Get(id);
+            result.Images = await gameRepository.GetsImage(id);
+            result.Categorys = await gameRepository.GetsCategory(id);
+            return result;
         }
 
-        public async Task<GameView> GetByBrandId(int brandId)
+        public async Task<IEnumerable<GameView>> GetByBrandId(int brandId)
         {
             return await gameRepository.GetByBrandId(brandId);
         }
 
-        public async Task<GameView> GetByCategoryId(int categoryId)
+        public async Task<IEnumerable<GameView>> GetByCategoryId(int categoryId)
         {
             return await gameRepository.GetByCategoryId(categoryId);
         }

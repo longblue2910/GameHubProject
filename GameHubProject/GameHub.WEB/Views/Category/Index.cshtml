@@ -10,8 +10,9 @@
     <table id="tbModule" class="table table-borderless table-striped table-earning">
         <thead class="thead-dark">
             <tr>
-                <th>Module Id</th>
-                <th>Module Name</th>
+                <th>Category Id</th>
+                <th>Category Name</th>
+                <th>Category Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -33,7 +34,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <form id="frmAddEditCategory">
-                    <input hidden name="CategoryId" id="CategoryId" value="0" />
+                    <input hidden name="CategoryId" id="CategoryId" />
                     <div class="row form-group">
                         <label for="CategoryName" class="col-3">Tên thể loại:</label>
                         <div class="col-9">
@@ -49,7 +50,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <a href="javascript:;" class="btn btn-success" onclick="cate.save()">Save</a>
+                <a href="javascript:;" class="btn btn-success" onclick="category.save()">Save</a>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
 

@@ -16,16 +16,28 @@ category.drawTable = function () {
         method: "GET",
         dataType: "json",
         success: function (data) {
+            console.log(data);
             $.each(data.result, function (i, v) {
+                var action = "";
+                if (v.statusName == "active") {
+                    action = `<a href="javascripts:;"
+                                       onclick="category.get(${v.categoryId})"><i class="fas fa-edit"></i></a> 
+                            <a href="javascripts:;"
+                                        onclick="category.deleted(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-trash"></i></a>`
+                }
+                else {
+                    action = `<a href="javascripts:;"
+                                       onclick="category.get(${v.categoryId})"><i class="fas fa-edit"></i></a> 
+                            <a href="javascripts:;"
+                                        onclick="category.deleted(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-check-circle"></i></a>`
+                }
                 $('#categoryTable').append(
                     `<tr>
                         <td>${v.categoryId}</td>
                         <td>${v.categoryName}</td>
+                        <td>${v.statusName}</td>
                         <td>
-                            <a href="javascripts:;"
-                                       onclick="category.get(${v.categoryId})"><i class="fas fa-edit"></i></a> 
-                            <a href="javascripts:;"
-                                        onclick="category.delete(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-trash"></i></a>
+                            ${action}
                         </td>
                     </tr>`
                 );
@@ -40,6 +52,20 @@ category.openModal = function () {
     $('#CategoryName').val('');
     $('#addEditCategoryModal').modal('show');
     document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
+}
+category.get = function (id) {
+    $.ajax({
+        url: `/category/get/${id}`,
+        method: "get",
+        dataType: "json",
+        success: function (response) {
+            $('#CategoryName').val(response.result.categoryName);
+            document.getElementById('CategoryId').value = response.result.categoryId;
+            $('#addEditCategoryModal').modal('show');
+            document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
+        }
+    });
+    
 }
 category.save = function () {
     if ($('#frmAddEditCategory').valid()) {
@@ -60,6 +86,25 @@ category.save = function () {
                     $('#addEditCategoryModal').modal('hide');
                     category.drawTable();
                 }
+            }
+        });
+    }
+}
+
+category.deleted = function (id, name) {
+    var result = confirm("Do you want to delete " + name + "?");
+    if (result == true) {
+        $.ajax({
+            url: `/category/delete/${id}`,
+            method: 'Post',
+            dataType: 'json',
+            success: function (response) {
+                console.log(response);
+                alert(name +" "+response.data.message + " !");
+                category.drawTable();
+            },
+            error: function () {
+                alert(response.data.message);
             }
         });
     }
