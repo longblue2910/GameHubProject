@@ -23,7 +23,7 @@ namespace GameHub.DAL.Implement
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@GameId", id);
-                result = await SqlMapper.QueryFirstOrDefaultAsync<GameRes>(cnn: connection, sql: "sp_DeleteBrand", param: parameters, commandType: CommandType.StoredProcedure);
+                result = await SqlMapper.QueryFirstOrDefaultAsync<GameRes>(cnn: connection, sql: "sp_DeleteGame", param: parameters, commandType: CommandType.StoredProcedure);
                 return result;
             }
             catch (Exception ex)

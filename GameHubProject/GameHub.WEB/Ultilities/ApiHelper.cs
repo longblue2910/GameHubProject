@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 using System.Net;
-using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
+
 
 namespace GameHub.WEB.Ultilities
 {

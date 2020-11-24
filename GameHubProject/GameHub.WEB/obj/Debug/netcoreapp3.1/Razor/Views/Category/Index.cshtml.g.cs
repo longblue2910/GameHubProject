@@ -35,13 +35,20 @@ using GameHub.WEB.Models.Category;
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\Views\_ViewImports.cshtml"
+using GameHub.WEB.Models.Game;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\Views\_ViewImports.cshtml"
 using GameHub.WEB.Models.Brand;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1021b2690e79e08d063a9ffc3d7afd1ba8352385", @"/Views/Category/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"52123eeb50efc605cf912aaf73de8fdedabad4e0", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8910b1bd4dfab2cd2cad0b91f6eb2a0cc6352f17", @"/Views/_ViewImports.cshtml")]
     public class Views_Category_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<CategoryView>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/images/loading.gif"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -83,7 +90,7 @@ using GameHub.WEB.Models.Brand;
 #line hidden
 #nullable disable
             WriteLiteral("<div class=\" row\">\r\n    <a href=\"javascript:void(0);\" class=\"btn btn-info\" onclick=\"category.openModal()\">Tạo thể loại</a>\r\n    <div class=\"ajax-loader\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1021b2690e79e08d063a9ffc3d7afd1ba83523855641", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1021b2690e79e08d063a9ffc3d7afd1ba83523855839", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -126,7 +133,7 @@ using GameHub.WEB.Models.Brand;
             <!-- Modal body -->
             <div class=""modal-body"">
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1021b2690e79e08d063a9ffc3d7afd1ba83523857685", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1021b2690e79e08d063a9ffc3d7afd1ba83523857883", async() => {
                 WriteLiteral(@"
                     <input hidden name=""CategoryId"" id=""CategoryId"" value=""0"" />
                     <div class=""row form-group"">
@@ -169,7 +176,7 @@ using GameHub.WEB.Models.Brand;
 ");
             DefineSection("Scripts", async() => {
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1021b2690e79e08d063a9ffc3d7afd1ba835238510151", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1021b2690e79e08d063a9ffc3d7afd1ba835238510349", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

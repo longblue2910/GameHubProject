@@ -61,7 +61,7 @@
                                 <i class="fa-tags"></i>Thể loại
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </nav>
@@ -85,6 +85,11 @@
                         <li>
                             <a asp-controller="Brand" asp-action="Index">
                                 <i class="fas fa-tag"></i>Hãng
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Game" asp-action="Index">
+                                <i class="fas fa-tag"></i>Game
                             </a>
                         </li>
                     </ul>
@@ -305,6 +310,8 @@
     <!-- Main JS-->
     <script src="~/lib/cooladmin/js/main.js"></script>
     @RenderSection("scripts", false)
+    @RenderSection("tinyMCE", false)
+
 </body>
 </html>
 <!-- end document-->

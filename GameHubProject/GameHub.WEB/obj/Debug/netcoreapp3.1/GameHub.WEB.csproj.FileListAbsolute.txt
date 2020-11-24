@@ -400,3 +400,5 @@ C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Brand\_ViewStart.cshtml.g.cs
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Brand\Index.cshtml.g.cs
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Game\Index.cshtml.g.cs
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Game\_ViewStart.cshtml.g.cs
