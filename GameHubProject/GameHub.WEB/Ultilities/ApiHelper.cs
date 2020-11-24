@@ -56,7 +56,7 @@ namespace GameHub.WEB.Ultilities
             string result;
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(@$"{Common.apiUrl}/{apiName}");
             httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "PUT";
+            httpWebRequest.Method = "Patch";
             using (var streamWrite = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
                 var json = JsonConvert.SerializeObject(model);

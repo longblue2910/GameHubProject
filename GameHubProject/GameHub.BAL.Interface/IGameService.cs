@@ -11,8 +11,8 @@ namespace GameHub.BAL.Interface
     {
         Task<GameRes> Save(SaveGameReq request);
         Task<GameView> Get(int id);
-        Task<GameView> GetByCategoryId(int categoryId);
-        Task<GameView> GetByBrandId(int brandId);
+        Task<IEnumerable<GameView>> GetByCategoryId(int categoryId);
+        Task<IEnumerable<GameView>> GetByBrandId(int brandId);
         Task<IEnumerable<GameView>> Gets();
         Task<GameRes> Delete(int id);
     }

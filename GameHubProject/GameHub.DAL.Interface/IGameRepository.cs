@@ -8,9 +8,13 @@ namespace GameHub.DAL.Interface
     public interface IGameRepository
     {
         Task<GameRes> Save(SaveGameReq request);
+        Task<GameRes> increaseViewGame(int id);
+        Task<GameRes> increaseDowloadGame(int id);
         Task<GameView> Get(int id);
-        Task<GameView> GetByCategoryId(int categoryId);
-        Task<GameView> GetByBrandId(int brandId);
+        Task<IEnumerable<Category>> GetsCategory(int id);
+        Task<IEnumerable<Image>> GetsImage(int id);
+        Task<IEnumerable<GameView>> GetByCategoryId(int categoryId);
+        Task<IEnumerable<GameView>> GetByBrandId(int brandId);
         Task<IEnumerable<GameView>> Gets();
         Task<GameRes> Delete(int id);
     }
