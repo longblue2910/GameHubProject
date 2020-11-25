@@ -73,7 +73,7 @@ namespace GameHub.WEB.Controllers
                         imgs += fileName;
                     else
                         imgs += "%" + fileName;
-                    if (id != 0 || id != null)
+                    if (id != 0)
                     {
                         string[] files = Directory.GetFiles(uploadFolder);
                         for (int k = 0; k < files.Length; k++)
