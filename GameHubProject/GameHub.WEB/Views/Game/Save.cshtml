@@ -1,0 +1,83 @@
+﻿@model SaveGame
+@{
+    ViewData["Title"] = "Game Create";
+}
+
+<form asp-controller="Game" asp-action="Save" method="post" enctype="multipart/form-data">
+    <div class="row form-group">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-9 gallery">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-3">
+            <label asp-for="Images">Ảnh sản phẩm: </label>
+        </div>
+        <div class="col-md-9">
+            <div class="custom-file">
+                <input type="file" placeholder="Chọn hình ảnh"
+                       asp-for="Images" multiple="multiple" onchange="preview(this);">
+                <label class="custom-file-label selectImage" asp-for="Images">Chọn tập tin</label>
+            </div>
+            <span asp-validation-for="Images" class="text-danger"></span>
+            <div>
+                <div class="col-2"></div>
+                <div id="previewImg" class="row"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-3">
+            <label asp-for="GameName">Tên sản phẩm: </label>
+        </div>
+        <div class="col-md-9">
+            <input asp-for="GameName" class="form-control" placeholder="Tên sản phẩm">
+            <span asp-validation-for="GameName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-3">
+            <label asp-for="Categorys">Danh mục: </label>
+        </div>
+        <div class="col-md-9">
+            <select class="js-example-basic-multiple" id="CategoryId" asp-for="Categorys" multiple="multiple">
+            </select>
+            <span asp-validation-for="Categorys" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-3">
+            <label asp-for="BrandId">Thương hiệu: </label>
+        </div>
+        <div class="col-md-9">
+            <select asp-for="BrandId" class="custom-select">
+            </select>
+            <span asp-validation-for="BrandId" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-3">
+            <label for="Description">Bài viết mô tả: </label>
+        </div>
+        <div class="col-md-9">
+            <textarea asp-for="Description" class="form-control" placeholder="Viết bài mô tả sản phẩm" rows="15"></textarea>
+        </div>
+    </div>
+    <input asp-for="UserId" value="116b7110-897e-4a9d-abe8-5744b95a915b" hidden/>
+    <div class="row form-group">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-9">
+            <button class="btn btn-dark">Lưu</button>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-dark mx-3">Huỷ</a>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts{
+    <script src="~/js/Dashboad/game.js"></script>
+}
+
+

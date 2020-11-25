@@ -42,7 +42,43 @@ namespace GameHub.BAL.Implement
 
         public async Task<IEnumerable<GameView>> Gets()
         {
-            return await gameRepository.Gets();
+            var result = await gameRepository.Gets();
+            var tam =new List<GameView>();
+            foreach(var item in result)
+            {
+                var dem = 0;
+                if(tam.Count >= 1)
+                {
+                    foreach (var item1 in tam)
+                    {
+                        if (item.GameId == item1.GameId)
+                        {
+                            dem++;
+                            break;
+                        }
+                    }
+                    if(dem == 0)
+                    {
+                        item.Categorys = await gameRepository.GetsCategory(item.GameId);
+                        foreach(var item2 in item.Categorys)
+                        {
+                            item.Categoryss += item2.CategoryName + ", ";
+                        }
+                        tam.Add(item);
+                    }
+                }
+                else
+                {
+                    item.Categorys = await gameRepository.GetsCategory(item.GameId);
+                    foreach (var item2 in item.Categorys)
+                    {
+                        item.Categoryss += item2.CategoryName + ", ";
+                    }
+                    tam.Add(item);
+                }
+                
+            }
+            return tam;
         }
 
         public async Task<GameRes> increaseDowloadGame(int id)

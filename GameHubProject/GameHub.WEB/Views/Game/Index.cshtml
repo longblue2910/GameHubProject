@@ -3,7 +3,7 @@
     ViewData["Title"] = "Game Index";
 }
 <div class=" row">
-    <a href="javascript:void(0);" class="btn btn-info" onclick="game.openModal()">Tạo game mới</a>
+    <a asp-controller="Game" asp-action="Save" class="btn btn-info">Tạo game mới</a>
     <div class="ajax-loader">
         <img src="~/images/loading.gif" class="img-responsive" />
     </div>
@@ -16,7 +16,9 @@
                 <th>Thể Loại</th>
                 <th>Hãng</th>
                 <th>Ngày Tạo</th>
+                <th>Status</th>
                 <th>Hành Động</th>
+
             </tr>
         </thead>
         <tbody id="gameTable">
@@ -42,9 +44,13 @@
                         <label for="PathImage" class="col-3">Hình ảnh :</label>
                         <div class="col-9">
                             <input type="file" class="btn btn-dark" placeholder="Chọn hình ảnh"
-                                   id="PathImage" name="PathImage"
-                                   data-rule-required="true"
+                                   id="PathImage" name="PathImage" multiple="multiple"
+                                   data-rule-required="true" onchange="preview(this);"
                                    data-msg-required="Path game is required">
+                        </div>
+                        <div class="row col-9">
+                            <div class="col-2"></div>
+                            <div id="previewImg" class="row"></div>
                         </div>
                     </div>
                     <div class="row form-group">
@@ -63,31 +69,22 @@
                                     id="BrandId" name="BrandId"
                                     data-rule-required="true"
                                     data-msg-required="Brand name is required">
-                                <option value="">Chọn hãng</option>
-                                <option value="AL">Alabama</option>
-                                <option value="WY">FC</option>
-                                <option value="WY">Wyoming</option>
                             </select>
                         </div>
                     </div>
                     <div class="row form-group">
                         <label for="Categorys" class="col-3">Tên loại:</label>
                         <div class="col-9">
-                            <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
-                                <option value="AL">Alabama</option>
-                                <option value="WY">FC</option>
-                                <option value="WY">Wyoming</option>
+                            <select class="js-example-basic-multiple" id="CategoryId" name="CategoryId" multiple="multiple">
                             </select>
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="Description" class="col-3">Mô tả:</label>
-                        <div class="col-9">
-                            <textarea style="height:200px" class="form-control"
-                                      id="Description" name="Description"
-                                      data-rule-required="true"
-                                      data-msg-required="Description is required">
-                            </textarea>
+                        <div class="col-md-3">
+                            <label for="Description">Bài viết mô tả: </label>
+                        </div>
+                        <div class="col-md-9">
+                            <textarea id="Description" for="Description" class="form-control" placeholder="Viết bài mô tả sản phẩm" rows="15"></textarea>
                         </div>
                     </div>
                 </form>
@@ -106,52 +103,5 @@
 @section Scripts{
     <script src="~/js/Dashboad/game.js"></script>
 }
-@section tinyMCE{
-    <environment include="Development">
-        <script src="~/lib/tinymce/tinymce.min.js"></script>
-        <script>
-            tinymce.init({
-                selector: 'textarea',
-                theme: 'modern',
-                plugins: [
-                    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-                    'searchreplace wordcount visualblocks visualchars code fullscreen',
-                    'insertdatetime media nonbreaking save table contextmenu directionality',
-                    'emoticons paste textcolor colorpicker textpattern imagetools'
-                ],
-                toolbar1:
-                    'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-                toolbar2: 'print preview media | forecolor backcolor emoticons',
-                image_advtab: true,
-                content_css: [
-                    '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
-                    '//www.tinymce.com/css/codepen.min.css'
-                ]
-            });
-        </script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.11/tinymce.min.js"></script>
-        <script>
-            tinymce.init({
-                selector: 'textarea',
-                theme: 'modern',
-                plugins: [
-                    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-                    'searchreplace wordcount visualblocks visualchars code fullscreen',
-                    'insertdatetime media nonbreaking save table contextmenu directionality',
-                    'emoticons paste textcolor colorpicker textpattern imagetools'
-                ],
-                toolbar1:
-                    'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-                toolbar2: 'print preview media | forecolor backcolor emoticons',
-                image_advtab: true,
-                content_css: [
-                    '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
-                    '//www.tinymce.com/css/codepen.min.css'
-                ]
-            });
-        </script>
-    </environment>
-}
+
 

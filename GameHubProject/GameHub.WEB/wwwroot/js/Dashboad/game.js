@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     $('.js-example-basic-multiple').select2();
+    $('#Description').summernote();
 });
 
 var game = {} || game;
@@ -47,7 +48,8 @@ game.drawTable = function () {
                                         onclick="game.deleted(${v.gameId}, '${v.gameName}')"><i class="fas fa-trash"></i></a>`
                 }
                 else {
-                    action = `
+                    action = `<a href="javascripts:;"
+                                       onclick="game.get(${v.gameId})"><i class="fas fa-edit"></i></a>
                             <a href="javascripts:;"
                                         onclick="game.deleted(${v.gameId}, '${v.gameName}')"><i class="fas fa-trash"></i></a>`
                 }
@@ -55,10 +57,11 @@ game.drawTable = function () {
                     `<tr>
                         <td>${v.gameId}</td>
                         <td>${v.gameName}</td>
-                        <td>${v.images}</td>
-                        <td>${v.categorys}</td>
+                        <td><img src="~/images/${v.pathImage}" alt="Error" /></td>
+                        <td>${v.categoryss}</td>
                         <td>${v.brandId}</td>
                         <td>${v.createDate}</td>
+                        <td>${v.statusName}</td>
                         <td>
                             ${action}
                         </td>
@@ -82,37 +85,97 @@ game.get = function (id) {
         method: "get",
         dataType: "json",
         success: function (response) {
-            $('#gameName').val(response.result.gameName);
-            document.getElementById('gameId').value = response.result.gameId;
+            console.log(response.data);
+            $('#GameName').val(response.data.gameName);
+            $('#GameId').val(response.data.gameId);
+            $('#Categorys').val(response.data.categorys.toString());
+
+            $('#BrandId').val(response.data.brandId);
+            $('#Description').val(response.data.desciption);
             $('#addEditgameModal').modal('show');
             document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
         }
     });
-
 }
 game.save = function () {
-    if ($('#frmAddEditgame').valid()) {
-        var saveObj = {};
-        saveObj.gameId = parseInt($('#gameId').val());
-        saveObj.gameName = $('#gameName').val();
-        saveObj.images = $('#images').val();
-        saveObj.categorys = $('#categorys').val();
-        saveObj.brandId = $('#brandId').val();
-        saveObj.description = $('#description').val();
-        $.ajax({
-            url: '/game/save',
-            method: 'POST',
-            dataType: 'JSON',
-            contentType: 'application/json',
-            data: JSON.stringify(saveObj),
-            success: function (response) {
-                console.log(response);
-                bootbox.alert(response.data.message);
-                if (response.data.gameId > 0) {
-                    $('#addEditgameModal').modal('hide');
-                    game.drawTable();
+    var saveObj = {};
+    saveObj.images = "";
+    var tam = $('#Images').val();
+    debugger;
+    $.ajax({
+        url: '/game/saveImg',
+        method: 'POST',
+        data: tam,
+        success: function (string) {
+                saveObj.images = string;
+                alert('success');
+        }
+    });
+    if ($('#GameId').val() != undefined) {
+        saveObj.gameId = parseInt($('#GameId').val());
+    }
+    else {
+        saveObj.gameId = 0;
+    }
+    saveObj.gameName = $('#GameName').val();
+    saveObj.categorys = $('#CategoryId').val().toString();
+    saveObj.brandId = $('#BrandId').val();
+    saveObj.description = $('#Description').val();
+    saveObj.userId = "116b7110-897e-4a9d-abe8-5744b95a915b";
+    debugger;
+    $.ajax({
+        url: '/game/save',
+        method: 'POST',
+        data: saveObj,
+        success: function (response) {
+            console.log(response);
+            bootbox.alert(response.data.message);
+            if (response.data.gameId > 0) {
+                alert('success');
+            }
+        }
+    });
+};
+$(document).ready(function () {
+    $.ajax({
+        url: `/brand/gets`,
+        method: "get",
+        data: "json",
+        success: function (response) {
+            $.each(response.result, function (i, v) {
+                $('#BrandId').append(`
+                <option value="${v.brandId}">${v.brandName}</option>`);
+            })
+        }
+    });
+    $.ajax({
+        url: `/category/gets`,
+        method: "get",
+        data: "json",
+        success: function (response) {
+            console.log(response);
+            $.each(response.result, function (i, v) {
+                $('#CategoryId').append(`
+                <option value="${v.categoryId}">${v.categoryName}</option>`);
+            })
+        }
+    });
+});
+
+window.preview = function (input) {
+    $('#previewImg').empty();
+    if (input.files && input.files[0]) {
+
+        $(input.files).each(function (i, value) {
+            var reader = new FileReader();
+            reader.readAsDataURL(this);
+            reader.onload = function (e) {
+                if (e != null) {
+                    $("#previewImg").append("<div class='row' id='p" + i + "' style='margin:10px;'><img style='width: 100px' class='thumb'  src='" + e.target.result + "'><div><i class='fas fa-times-circle' onclick='xoa(" + i + ");'></i></div></div>");
                 }
             }
         });
     }
 }
+function xoa(i) { $(`#p${i}`).remove(); }
+

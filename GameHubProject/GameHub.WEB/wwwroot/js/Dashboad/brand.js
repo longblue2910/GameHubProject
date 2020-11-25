@@ -35,7 +35,7 @@ brand.drawTable = function () {
         success: function (data) {
             $.each(data.result, function (i, v) {
                 var action = "";
-                if (v.statusName == "Active") {
+                if (v.statusName == "active") {
                     action = `<a href="javascripts:;"
                                        onclick="brand.get(${v.brandId})"><i class="fas fa-edit"></i></a>
                             <a href="javascripts:;"

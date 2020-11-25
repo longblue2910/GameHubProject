@@ -116,5 +116,10 @@ namespace GameHub.DAL.Implement
         {
             throw new NotImplementedException();
         }
+
+        public Task<IEnumerable<GameView>> GetBySearchWord(string SearchWord)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
