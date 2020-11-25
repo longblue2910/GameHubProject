@@ -152,7 +152,7 @@ background-position:-180px -9px;
 }
 	.top-menu ul li a {
 		display: block;
-		color: #f43c60;
+		color: white;
 		padding: 0.5em 1em;
 		text-decoration: none;
 		font-family: 'Play-Regular';
@@ -537,7 +537,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	font-size:0.9em;
 }
 .bnr2 {
-  background: url(../images/bnr3.jpg) no-repeat 0px 0px;
+  background: url(../images/1.jpg) no-repeat 0px 0px;
   background-size: cover;
   min-height:170px;
 }

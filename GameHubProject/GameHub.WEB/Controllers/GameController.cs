@@ -30,6 +30,12 @@ namespace GameHub.WEB.Controllers
             List<GameView> result = ApiHelper<List<GameView>>.HttpGetAsync($"Game/gets");
             return Json(new { result });
         }
+        [HttpGet("/Game/getbycategory/{id}")]
+        public JsonResult Getbycategory(int id)
+        {
+            List<GameView> result = ApiHelper<List<GameView>>.HttpGetAsync($"Game/getbycategory/{id}");
+            return Json(new { result });
+        }
         [HttpGet]
         public IActionResult Save()
         {
@@ -50,7 +56,7 @@ namespace GameHub.WEB.Controllers
             
             game.Images = saveImg(request.Images, game.GameId);
             var result = ApiHelper<GameResult>.HttpPostAsync($"game/save", "POST", game);
-            return View(request);
+            return RedirectToAction("index","Game");
         }
         [HttpPost("/game/saveImg")]
         public string saveImg(IFormFile[] ImageFiles, int id)
@@ -73,7 +79,7 @@ namespace GameHub.WEB.Controllers
                         imgs += fileName;
                     else
                         imgs += "%" + fileName;
-                    if (id != 0 || id != null)
+                    if (id != 0)
                     {
                         string[] files = Directory.GetFiles(uploadFolder);
                         for (int k = 0; k < files.Length; k++)
