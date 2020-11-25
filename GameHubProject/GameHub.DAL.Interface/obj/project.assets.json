@@ -1028,25 +1028,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\XuanHoang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
+      "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
       "projectName": "GameHub.DAL.Interface",
-      "projectPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.DAL.Interface\\obj\\",
+      "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
+      "packagesPath": "C:\\Users\\XuanHoang\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\XuanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -1058,8 +1053,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
+            "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
+              "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
             }
           }
         }
@@ -1090,7 +1085,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

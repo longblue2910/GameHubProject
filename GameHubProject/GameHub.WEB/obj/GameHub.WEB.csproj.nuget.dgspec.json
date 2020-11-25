@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj": {}
+    "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj": {
+    "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
+        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
         "projectName": "GameHub.WEB",
-        "projectPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\GameHub\\GameHubProject\\GameHub.WEB\\obj\\",
+        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
+        "packagesPath": "C:\\Users\\XuanHoang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.WEB\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\XuanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -73,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -270,7 +270,6 @@ C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Deb
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.AssemblyInfoInputs.cache
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.AssemblyInfo.cs
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.csproj.CoreCompileInputs.cache
-C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.RazorTargetAssemblyInfo.cache
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.csproj.CopyComplete
@@ -279,3 +278,4 @@ C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Deb
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.dll
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.pdb
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.genruntimeconfig.cache
+C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.MvcApplicationPartsAssemblyInfo.cs
