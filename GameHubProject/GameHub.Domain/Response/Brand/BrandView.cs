@@ -8,5 +8,6 @@ namespace GameHub.Domain.Response.Brand
     {
         public int BrandId { get; set; }
         public string BrandName { get; set; }
+        public string StatusName { get; set; }
     }
 }

@@ -28,16 +28,17 @@ namespace GameHub.WEB.Controllers
         }
         [HttpPost]
         [Route("/category/delete/{id}")]
-        public JsonResult Delete(int id)
+        public IActionResult Delete(int id)
         {
-            var result = ApiHelper<CategoryResult>.HttpPutAsync($"category/delete/{id}", null);
+            var result = ApiHelper<CategoryResult>.HttpPatchAsync($"Category/Delete/{id}", null);
             return Json(new { data = result });
         }
-        [HttpGet("category/get/{id}")]
+        [HttpGet]
+        [Route("/category/get/{id}")]
         public JsonResult Get(int id)
         {
-            var result = ApiHelper<CategoryView>.HttpGetAsync($"category/get/{id}");
-            return Json(new { result });
+            var category = ApiHelper<CategoryView>.HttpGetAsync($"category/get/{id}");
+            return Json(new { data = category });
         }
     }
 }

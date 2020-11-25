@@ -12,7 +12,7 @@
             <tr>
                 <th>Category Id</th>
                 <th>Category Name</th>
-                <th>Category Status</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -34,7 +34,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <form id="frmAddEditCategory">
-                    <input hidden name="CategoryId" id="CategoryId" />
+                    <input hidden name="CategoryId" id="CategoryId" value="0" />
                     <div class="row form-group">
                         <label for="CategoryName" class="col-3">Tên thể loại:</label>
                         <div class="col-9">
@@ -57,6 +57,7 @@
         </div>
     </div>
 </div>
+@section Scripts{
+    <script src="~/js/Dashboad/category.js"></script>
+}
 
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/js/Dashboad/category.js"></script>

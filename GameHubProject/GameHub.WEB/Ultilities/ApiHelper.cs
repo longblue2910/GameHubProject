@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 using System.Net;
-using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
+
 
 namespace GameHub.WEB.Ultilities
 {
@@ -57,6 +57,24 @@ namespace GameHub.WEB.Ultilities
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(@$"{Common.apiUrl}/{apiName}");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "Patch";
+            using (var streamWrite = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                var json = JsonConvert.SerializeObject(model);
+                streamWrite.Write(json);
+            }
+            var httpReponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpReponse.GetResponseStream()))
+            {
+                result = streamReader.ReadToEnd();
+            }
+            return JsonConvert.DeserializeObject<T>(result);
+        }
+        public static T HttpPatchAsync(string apiName, object model)
+        {
+            string result;
+            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(@$"{Common.apiUrl}/{apiName}");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "PATCH";
             using (var streamWrite = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
                 var json = JsonConvert.SerializeObject(model);

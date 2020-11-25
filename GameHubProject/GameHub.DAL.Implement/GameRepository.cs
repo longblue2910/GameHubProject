@@ -22,7 +22,7 @@ namespace GameHub.DAL.Implement
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@@GameId", id);
+                parameters.Add("@GameId", id);
                 result = await SqlMapper.QueryFirstOrDefaultAsync<GameRes>(cnn: connection, sql: "sp_DeleteGame", param: parameters, commandType: CommandType.StoredProcedure);
                 return result;
             }
@@ -107,53 +107,14 @@ namespace GameHub.DAL.Implement
             }
         }
 
-        public async Task<GameRes> increaseViewGame(int id)
+        public Task<GameRes> increaseViewGame(int id)
         {
-            var result = new GameRes()
-            {
-                GameId = 0,
-                Message = "Something went wrong, please contact administrator."
-            };
-            try
-            {
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@GameId", id);
-                result = await SqlMapper.QueryFirstOrDefaultAsync<GameRes>(cnn: connection, sql: "sp_increaseViewGame", param: parameters, commandType: CommandType.StoredProcedure);
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return result;
-            }
+            throw new NotImplementedException();
         }
 
-        public async Task<GameRes> increaseDowloadGame(int id)
+        public Task<GameRes> increaseDowloadGame(int id)
         {
-            var result = new GameRes()
-            {
-                GameId = 0,
-                Message = "Something went wrong, please contact administrator."
-            };
-            try
-            {
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@GameId", id);
-                result = await SqlMapper.QueryFirstOrDefaultAsync<GameRes>(cnn: connection, sql: "sp_increaseDowloadGame", param: parameters, commandType: CommandType.StoredProcedure);
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return result;
-            }
-        }
-
-        public async Task<IEnumerable<GameView>> GetBySearchWord(string SearchWord)
-        {
-            DynamicParameters parameters = new DynamicParameters();
-            parameters.Add("@SearchWord", SearchWord);
-            var result = await SqlMapper.QueryAsync<GameView>(cnn: connection, sql: "sp_GetsGameByCharacter",
-                                                                param: parameters, commandType: CommandType.StoredProcedure);
-            return result;
+            throw new NotImplementedException();
         }
     }
 }

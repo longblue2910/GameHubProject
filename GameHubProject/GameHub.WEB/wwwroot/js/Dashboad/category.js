@@ -1,5 +1,22 @@
 ﻿var category = {} || category;
-
+category.deleted = function (id, name) {
+    var result = confirm("Do you want to delete " + name + "?");
+    if (result == true) {
+        $.ajax({
+            url: `/category/delete/${id}`,
+            method: 'POST',
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+                alert(name +" "+response.data.message + " !");
+                category.drawTable();
+            },
+            error: function () {
+                alert(response.data.message);
+            }
+        });
+    }
+}
 $(document).ready(function () {
     category.init();
 })
@@ -19,15 +36,14 @@ category.drawTable = function () {
             console.log(data);
             $.each(data.result, function (i, v) {
                 var action = "";
-                if (v.statusName == "active") {
+                if (v.statusName == "Active") {
                     action = `<a href="javascripts:;"
-                                       onclick="category.get(${v.categoryId})"><i class="fas fa-edit"></i></a> 
+                                       onclick="category.get(${v.categoryId})"><i class="fas fa-edit"></i></a>
                             <a href="javascripts:;"
                                         onclick="category.deleted(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-trash"></i></a>`
                 }
                 else {
-                    action = `<a href="javascripts:;"
-                                       onclick="category.get(${v.categoryId})"><i class="fas fa-edit"></i></a> 
+                    action = `
                             <a href="javascripts:;"
                                         onclick="category.deleted(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-check-circle"></i></a>`
                 }
@@ -80,31 +96,11 @@ category.save = function () {
             data: JSON.stringify(saveObj),
             success: function (response) {
                 console.log(response);
-                debugger;
                 bootbox.alert(response.data.message);
                 if (response.data.categoryId > 0) {
                     $('#addEditCategoryModal').modal('hide');
                     category.drawTable();
                 }
-            }
-        });
-    }
-}
-
-category.deleted = function (id, name) {
-    var result = confirm("Do you want to delete " + name + "?");
-    if (result == true) {
-        $.ajax({
-            url: `/category/delete/${id}`,
-            method: 'Post',
-            dataType: 'json',
-            success: function (response) {
-                console.log(response);
-                alert(name +" "+response.data.message + " !");
-                category.drawTable();
-            },
-            error: function () {
-                alert(response.data.message);
             }
         });
     }
