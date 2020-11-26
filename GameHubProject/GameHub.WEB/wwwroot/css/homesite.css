@@ -1,3 +1,34 @@
 ﻿.error {
     color: red
 }
+.agileits_breadcrumbs_left {
+    width: 70%;
+    float: left;
+}
+
+    .agileits_breadcrumbs_left ul {
+        margin-top: 5px;
+    }
+
+.agileits_breadcrumbs_right {
+    width: 30%;
+    float: left;
+}
+
+.agileits_breadcrumbs_left ul li {
+    display: inline-block;
+    color: #212121;
+}
+
+.agileits_breadcrumbs {
+    padding: 1em 0;
+}
+.street :hover{
+    color:palevioletred;
+}
+.comments-title {
+    font-weight: 700;
+    font-size: 26px;
+    margin: 20px 0;
+    letter-spacing: -.02em;
+}

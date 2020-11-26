@@ -6,33 +6,47 @@
     <div class="bnr2">
     </div>
 </div>
+<div class="agileits_breadcrumbs">
+    <div class="container">
+        <div class="agileits_breadcrumbs_left street">
+            <ul style="font-size: smaller; margin-bottom: 24px;">
+                <li>
+                    <a style="color:black" href="#">Home </a><i class="fa fa-angle-right" style="font-size:14px"></i>
+                </li>
+                <li><a  style="color:darkgrey" href="#">Game Offline</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div class="container">
+    <h1 style="font-size: 4em; line-height: 1.1; color: #29292f;">
+        @Model.GameName
+    </h1>
+    <hr />
+    <div class="blog-img">
+        <img src="~/images/@Model.Images.FirstOrDefault().PathImage" alt="" />
+    </div>
+</div>
 <div class="container">
     <div class="blog">
         <div class="container">
             <div class="col-md-8 blog-left">
-                <div class="blog-info">
-                    <h1 style="font-size: 4em; line-height: 1.1; color: #29292f;">
-                        @Model.GameName
-                    </h1>
-                    <hr />
+                <div class="blog-info">                    
                     <div class="blog-info-text">
-                        <div class="blog-img">
-                            <img src="~/images/@Model.Images.FirstOrDefault().PathImage" alt="" />
-                        </div>
                         <hr />
                             @Html.Raw(Model.Desciption);
                     </div>
                     <div class="comment-icons">
                         <ul>
-                            <li><span></span><a href="#">Lorem ipsum dolor sit</a> </li>
                             <li><span class="clndr"></span>@Model.CreateDate.ToString("MMM, dd,yyyy")</li>
-                            <li><span class="admin"></span> <a href="#">@Model.UserName</a></li>
+                            <li><span class="admin"></span> <a href="#">By @Model.UserName</a></li>
                             <li><span class="cmnts"></span> <a href="#">5 comments</a></li>
                             <li><a href="#" class="like">15</a></li>
                         </ul>
                     </div>
                     <div class="response">
-                        <h4>Responses</h4>
+                        <h3 class="comments-title">Comments</h3>
                         <div class="media response-info">
                             <div class="media-left response-text-left">
                                 <a href="#">
@@ -93,33 +107,24 @@
                     </div>
                 </div>
                 <div class="coment-form">
-                    <h4>Leave your comment</h4>
+                    <h4 class="comments-title">Trả lời</h4>
                     <form>
-                        <input type="text" value="Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                        <input type="text" value="Subject " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
-                        <input type="text" value="Email (will not be published)*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
-                        <textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Comment...';}" required="">Your Comment...</textarea>
-                        <input type="submit" value="SUBMIT">
+                        <input type="text" value="Tên *" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+                        <input type="text" value="Trang web *" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
+                        <input type="text" value="Email *" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
+                        <textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Comment...';}" required="">Bình luận...</textarea>
+                        <input type="submit" value="Phản hồi">
                     </form>
                 </div>
             </div>
             <div class="col-md-4 single-page-right">
                 <div class="category blog-ctgry">
                     <h4>Top Games</h4>
-                    <div class="list-group">
-                        <a href="single.html" class="list-group-item">Cras justo odio</a>
-                        <a href="single.html" class="list-group-item">Dapibus ac facilisis in</a>
-                        <a href="single.html" class="list-group-item">Morbi leo risus</a>
-                        <a href="single.html" class="list-group-item">Porta ac consectetur ac</a>
-                        <a href="single.html" class="list-group-item">Vestibulum at eros</a>
-                        <a href="single.html" class="list-group-item">Cras justo odio</a>
-                        <a href="single.html" class="list-group-item">Cras justo odio</a>
-                        <a href="single.html" class="list-group-item">Cras justo odio</a>
-                    </div>
+                    <hr />
                 </div>
                 <div class="recent-posts">
                     <h4>Game tương tự</h4>
-                    
+                    <hr />
                     <div class="clearfix"> </div>
                 </div>
             </div>
