@@ -11,16 +11,33 @@
         <div class="container">
             <div class="col-md-8 blog-left">
                 <div class="blog-info">
+                    <input id="Gameid" value="@Model.GameId" />
+                    <input id="UserId" value="@Model.UserId" />
+                    @if (@Model.UserName != null)
+                    {
+                        <input id="gameid1" value="@Model.Categorys.FirstOrDefault().CategoryId" hidden/>
+                    }
+                    else
+                    {
+                        <input id="gameid1" value="2" />
+                    }
                     <h1 style="font-size: 4em; line-height: 1.1; color: #29292f;">
                         @Model.GameName
                     </h1>
                     <hr />
                     <div class="blog-info-text">
                         <div class="blog-img">
-                            <img src="~/images/@Model.Images.FirstOrDefault().PathImage" alt="" />
+                            @if (@Model.UserName != null)
+                            {
+                                <img src="~/images/@Model.Images.FirstOrDefault().PathImage" alt="error" />
+                            }
+                            else
+                            {
+                        <img src="~/images/02b1cafb-7e4c-49ce-a372-2af8bbaa01f2_9-600x400.png" alt="error" />
+                            }
                         </div>
                         <hr />
-                            @Html.Raw(Model.Desciption);
+                        @Html.Raw(Model.Desciption);
                     </div>
                     <div class="comment-icons">
                         <ul>
@@ -71,25 +88,10 @@
                             </div>
                             <div class="clearfix"> </div>
                         </div>
-                        <div class="media response-info">
-                            <div class="media-left response-text-left">
-                                <a href="#">
-                                    <img class="media-object" src="images/icon1.png" alt="" />
-                                </a>
-                                <h5><a href="#">Admin</a></h5>
-                            </div>
-                            <div class="media-body response-text-right">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <ul>
-                                    <li>MARCH 21, 2013</li>
-                                    <li><a href="single.html">Reply</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"> </div>
+                        <div id="add">
+                            
                         </div>
+
                     </div>
                 </div>
                 <div class="coment-form">
@@ -98,8 +100,8 @@
                         <input type="text" value="Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
                         <input type="text" value="Subject " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
                         <input type="text" value="Email (will not be published)*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
-                        <textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Comment...';}" required="">Your Comment...</textarea>
-                        <input type="submit" value="SUBMIT">
+                        <textarea id="text" placeholder="Your Comment..."></textarea>
+                        <input type="submit" value="SUBMIT" id="Post">
                     </form>
                 </div>
             </div>
@@ -128,5 +130,94 @@
     </div>
 </div>
 @section scripts{ 
-    <script src="~/js/Layout/Details.js"></script>
+<script>
+    var CategoryId = parseInt(document.getElementById('gameid1').value);
+    
+    var GameId = parseInt(document.getElementById('Gameid').value);
+    debugger;
+    var GetGameByCategory = function (id) {
+        $.ajax({
+            url: `/game/getbycategory/${id}`,
+            method: 'GET',
+            dataType: 'JSON',
+            success: function (response) {
+                var dem = 0;
+                $.each(response.result, function (i, v) {
+                    dem++;
+                    if (dem > response.result.length - 3) {
+                        $('.recent-posts').append(`
+                        <div class="recent-posts-info">
+                            <div class="posts-left sngl-img">
+                                <a href="#"> <img src="images/" class="img-responsive zoom-img" alt="" /> </a>
+                            </div>
+                            <div class="posts-right">
+                                <label>March 5, 2015</label>
+                                <h5><a href="single.html">Finibus Bonorum</a></h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing incididunt.</p>
+                                <a href="single.html" class="btn btn-primary hvr-rectangle-in">Read More</a>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    `);
+                    }
+                })
+            }
+        });
+
+    };
+    $("#Post").click(function () {
+        var saveObj = {};
+        saveObj.text = $('#text').val();
+        saveObj.gameId = parseInt($('#Gameid').val());
+        saveObj.userId = $('#UserId').val();
+        debugger;
+        $.ajax({
+            url: '/Post/save',
+            method: 'POST',
+            data: saveObj,
+            success: function (response) {
+                console.log(response);
+                bootbox.alert(response.data.message);
+            }
+        });
+    });
+    var GetComment = function (id) {
+        $.ajax({
+            url: `/Post/Gets/${id}`,
+            method: "GET",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                $.each(response.result, function (i, v) {
+                    $("#add").append(`
+                        <div class="media response-info">
+                            <div class="media-left response-text-left">
+                                    <a href="#">
+                                        <img class="media-object" src="~/template/images/icon1.png" alt="error" />
+                                    </a>
+                                    <h5><a href="#">Admin</a></h5>
+                                </div>
+                                    <div class="media-body response-text-right">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                        <ul>
+                                            <li>MARCH 21, 2013</li>
+                                            <li><a href="single.html">Reply</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                        </div>
+                        `);
+
+                });
+            }
+        });
+    }
+    $(document).ready(function () {
+        GetGameByCategory(CategoryId);
+        GetComment(GameId);
+    });
+</script>
 }

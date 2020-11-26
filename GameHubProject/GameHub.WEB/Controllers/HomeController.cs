@@ -25,6 +25,7 @@ namespace GameHub.WEB.Controllers
             return View();
         }
         public IActionResult Details(int id)
+        
         {
             var game = ApiHelper<GameView>.HttpGetAsync($"game/get/{id}");
              return View(game);

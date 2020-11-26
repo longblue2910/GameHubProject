@@ -808,3 +808,4 @@ C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.csprojAssemblyReference.cache
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Game\Save.cshtml.g.cs
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
+C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs

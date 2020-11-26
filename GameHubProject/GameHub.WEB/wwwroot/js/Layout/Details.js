@@ -1,9 +1,9 @@
 ﻿$(document).ready(function () {
     debugger;
     $.ajax({
-        url: `/Game/getbycategory/${id}`,
-        method: 'get',
-        dataType: 'json',
+        url: `/game/getbycategory/${id}`,
+        method: 'POST',
+        dataType: 'JSON',
         success: function (response) {
             console.log(response);
             $.each(response, function (i, v) {

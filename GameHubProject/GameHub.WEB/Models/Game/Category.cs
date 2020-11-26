@@ -8,5 +8,6 @@ namespace GameHub.WEB.Models.Game
     public class Category
     {
         public string CategoryName { get; set; }
+        public int CategoryId { get; set; }
     }
 }
