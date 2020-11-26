@@ -2,6 +2,11 @@
 @{
     ViewData["Title"] = "Details";
 }
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
 <div class="banner">
     <div class="bnr2">
     </div>
@@ -15,7 +20,7 @@
                     <input id="UserId" value="@Model.UserId" />
                     @if (@Model.UserName != null)
                     {
-                        <input id="gameid1" value="@Model.Categorys.FirstOrDefault().CategoryId" hidden/>
+                        <input id="gameid1" value="@Model.Categorys.FirstOrDefault().CategoryId" hidden />
                     }
                     else
                     {
@@ -33,7 +38,7 @@
                             }
                             else
                             {
-                        <img src="~/images/02b1cafb-7e4c-49ce-a372-2af8bbaa01f2_9-600x400.png" alt="error" />
+                                <img src="~/images/02b1cafb-7e4c-49ce-a372-2af8bbaa01f2_9-600x400.png" alt="error" />
                             }
                         </div>
                         <hr />
@@ -48,48 +53,13 @@
                             <li><a href="#" class="like">15</a></li>
                         </ul>
                     </div>
+
+                    <div class="col-3" id="addcheck">
+                    </div>
+
                     <div class="response">
-                        <h4>Responses</h4>
-                        <div class="media response-info">
-                            <div class="media-left response-text-left">
-                                <a href="#">
-                                    <img class="media-object" src="~/template/images/icon1.png" alt="" />
-                                </a>
-                                <h5><a href="#">Admin</a></h5>
-                            </div>
-                            <div class="media-body response-text-right">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <ul>
-                                    <li>MARCH 21, 2013</li>
-                                    <li><a href="single.html">Reply</a></li>
-                                </ul>
-                                <div class="media response-info">
-                                    <div class="media-left response-text-left">
-                                        <a href="#">
-                                            <img class="media-object" src="~/template/images/icon1.png" alt="" />
-                                        </a>
-                                        <h5><a href="#">Admin</a></h5>
-                                    </div>
-                                    <div class="media-body response-text-right">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                            sed do eiusmod tempor incididunt ut labore et.
-                                        </p>
-                                        <ul>
-                                            <li>MARCH 21, 2014</li>
-                                            <li><a href="single.html">Reply</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
+                        <h4>Comment</h4>
                         <div id="add">
-                            
                         </div>
 
                     </div>
@@ -134,6 +104,7 @@
     var CategoryId = parseInt(document.getElementById('gameid1').value);
     
     var GameId = parseInt(document.getElementById('Gameid').value);
+    var UserId = document.getElementById('UserId').value;
     debugger;
     var GetGameByCategory = function (id) {
         $.ajax({
@@ -215,9 +186,74 @@
             }
         });
     }
+    var vote = 0;
     $(document).ready(function () {
         GetGameByCategory(CategoryId);
         GetComment(GameId);
+        checkRate(GameId, UserId);
     });
+    function onmove(id) {
+        if (id >= 1) {
+            for (let i = 1; i <= id; i++) {
+                document.getElementById(i).style.color = "orange";
+            }
+            for (let i = id + 1; i <= 5; i++) {
+                document.getElementById(i).style.color = "black";
+            }
+        }
+        vote = id;
+    }
+    function click(id) {
+        var Obj = {};
+        Obj.userId = $('#UserId').val();
+        Obj.gameId = GameId;
+        Obj.vote = parseInt(id);
+        $.ajax({
+            url: '/Rate/saveVote',
+            method: 'POST',
+            data: Obj,
+            success: function () {
+                alert("Success Rate! thanks");
+                $("#addcheck").empty();
+                $("#addcheck").append(`
+                    <button class="btn btn-success" onclick="changeRate()">Checked</button>
+                `);
+            }
+        });
+    }
+    var checkRate = function (GameId, UserId) {
+        $.ajax({
+            url: `/Post/CheckVote/${GameId}/${UserId}`,
+            method: "GET",
+            dataType: "json",
+            success: function (response) {
+                console.log(response.result);
+                $("#addcheck").empty();
+                if (response.result.check = 0) {
+                    $("#addcheck").append(`
+                    <span id="1" onmousemove="onmove(1)" onclick="click(1)" class="fa fa-star checked"></span>
+                    <span id="2" onmousemove="onmove(2)" onclick="click(2)" class="fa fa-star checked"></span>
+                    <span id="3" onmousemove="onmove(3)" onclick="click(3)" class="fa fa-star"></span>
+                    <span id="4" onmousemove="onmove(4)" onclick="click(4)" class="fa fa-star"></span>
+                    <span id="5" onmousemove="onmove(5)" onclick="click(5)" class="fa fa-star"></span>
+                `);
+                }
+                else {
+                    $("#addcheck").append(`
+                    <button class="btn btn-success" onclick="changeRate()">Checked</button>
+                `);
+                }
+            }
+        });
+    }
+    var changeRate = function () {
+        $("#addcheck").append(`
+                    <span id="1" onmousemove="onmove(1)" onclick="click(1)" class="fa fa-star checked"></span>
+                    <span id="2" onmousemove="onmove(2)" onclick="click(2)" class="fa fa-star checked"></span>
+                    <span id="3" onmousemove="onmove(3)" onclick="click(3)" class="fa fa-star"></span>
+                    <span id="4" onmousemove="onmove(4)" onclick="click(4)" class="fa fa-star"></span>
+                    <span id="5" onmousemove="onmove(5)" onclick="click(5)" class="fa fa-star"></span>
+                `);
+    };
 </script>
 }
