@@ -58,7 +58,6 @@ game.drawTable = function () {
                         <td>${v.gameId}</td>
                         <td>${v.gameName}</td>
                         <td><img src="/images/${v.pathImage}" alt="Error" /></td>
-                        <td>${v.categoryss}</td>
                         <td>${v.brandId}</td>
                         <td>${v.createDate}</td>
                         <td>${v.statusName}</td>

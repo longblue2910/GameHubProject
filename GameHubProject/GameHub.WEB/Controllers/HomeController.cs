@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GameHub.WEB.Models;
+using GameHub.WEB.Ultilities;
+using GameHub.WEB.Models.Game;
 
 namespace GameHub.WEB.Controllers
 {
@@ -22,10 +24,10 @@ namespace GameHub.WEB.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult Details(int id)
         {
-            return View();
+            var game = ApiHelper<GameView>.HttpGetAsync($"game/get/{id}");
+             return View(game);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

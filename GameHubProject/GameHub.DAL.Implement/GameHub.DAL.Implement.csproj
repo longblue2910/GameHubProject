@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GameHub.DAL.Interface\GameHub.DAL.Interface.csproj" />
-    <ProjectReference Include="..\GameHub.Domain\GameHub.Domain.csproj" />
+    <ProjectReference Include="..\GameHub.Domain\GameHub.Domain.csproj"/>
   </ItemGroup>
 
 </Project>

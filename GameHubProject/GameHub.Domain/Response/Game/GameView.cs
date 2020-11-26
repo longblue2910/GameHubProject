@@ -14,6 +14,7 @@ namespace GameHub.Domain.Response.Game
         public string PathImage { get; set; }
         public string Desciption { get; set; }
         public string UserId { get; set; }
+        public string UserName { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime ModifieDate { get; set; }
         public string UserModified { get; set; }
