@@ -160,22 +160,27 @@
             success: function (response) {
                 console.log(response);
                 $.each(response.result, function (i, v) {
+                    var today = v.time.split("-");
+                    let monthNames = ["Jan", "Feb", "Mar", "Apr",
+                        "May", "Jun", "Jul", "Aug",
+                        "Sep", "Oct", "Nov", "Dec"];
+                    var dd = today[2].slice(0,2);
+                    var mm = monthNames[parseInt(today[1])-1]; 
+                    var yyyy = today[0];
+                    today = mm + ' ' + dd + ' ' + yyyy;
                     $("#add").append(`
                         <div class="media response-info">
                             <div class="media-left response-text-left">
                                     <a href="#">
                                         <img class="media-object" src="~/template/images/icon1.png" alt="error" />
                                     </a>
-                                    <h5><a href="#">Admin</a></h5>
+                                    <h5><a href="#">${v.userName}</a></h5>
                                 </div>
                                     <div class="media-body response-text-right">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            </p>
+                                        <p>${v.text}</p>
                                         <ul>
-                                            <li>MARCH 21, 2013</li>
-                                            <li><a href="single.html">Reply</a></li>
+                                            <li>${today}</li>
+                                            <li><a href="#" onclick="showreply(${v.commentId})">Reply</a></li>
                                         </ul>
                                     </div>
                                     <div class="clearfix"> </div>
