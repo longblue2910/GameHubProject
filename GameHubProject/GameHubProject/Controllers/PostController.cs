@@ -28,13 +28,13 @@ namespace GameHub.API.Controllers
         [HttpPost("PostComment")]
         public async Task<OkObjectResult> Post(SaveComment model)
         {
-            var result = commentService.SaveComment(model);
+            var result = await commentService.SaveComment(model);
             return Ok(result);
         }
         [HttpPatch("delete/{CommentId}")]
         public async Task<OkObjectResult> Delete(int CommentId)
         {
-            var result = commentService.Delete(CommentId);
+            var result = await commentService.Delete(CommentId);
             return Ok(result);
         }
     }

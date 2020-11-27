@@ -13,29 +13,46 @@
                 <li>
                     <a style="color:black" href="#">Home </a><i class="fa fa-angle-right" style="font-size:14px"></i>
                 </li>
-                <li><a  style="color:darkgrey" href="#">Game Offline</a></li>
+                <li><a style="color:darkgrey" href="#">Game Offline</a></li>
             </ul>
         </div>
         <div class="clearfix"> </div>
     </div>
 </div>
 <div class="container">
+    <input hidden id="Gameid" value="@Model.GameId" />
+    <input hidden id="UserId" value="@Model.UserId" />
+    @if (@Model.Desciption != null)
+    {
+        <input hidden id="gameid1" value="1" />
+    }
+    else
+    {
+        <input hidden id="gameid1" value="1" />
+    }
     <h1 style="font-size: 4em; line-height: 1.1; color: #29292f;">
         @Model.GameName
     </h1>
     <hr />
     <div class="blog-img">
-        <img src="~/images/@Model.Images.FirstOrDefault().PathImage" alt="" />
+        @if (@Model.Desciption != null)
+        {
+            <img src="~/images/@Model.Images.FirstOrDefault().PathImage" alt="" />
+        }
+        else
+        {
+            <img src="~/images/1.jpg" alt="" />
+        }
     </div>
 </div>
 <div class="container">
     <div class="blog">
         <div class="container">
             <div class="col-md-8 blog-left">
-                <div class="blog-info">                    
+                <div class="blog-info">
                     <div class="blog-info-text">
                         <hr />
-                            @Html.Raw(Model.Desciption);
+                        @Html.Raw(Model.Desciption);
                     </div>
                     <div class="comment-icons">
                         <ul>
@@ -45,86 +62,41 @@
                             <li><a href="#" class="like">15</a></li>
                         </ul>
                     </div>
+                    <div class="col-3" id="addcheck">
+                    </div>
                     <div class="response">
-                        <h3 class="comments-title">Comments</h3>
-                        <div class="media response-info">
-                            <div class="media-left response-text-left">
-                                <a href="#">
-                                    <img class="media-object" src="~/template/images/icon1.png" alt="" />
-                                </a>
-                                <h5><a href="#">Admin</a></h5>
-                            </div>
-                            <div class="media-body response-text-right">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <ul>
-                                    <li>MARCH 21, 2013</li>
-                                    <li><a href="single.html">Reply</a></li>
-                                </ul>
-                                <div class="media response-info">
-                                    <div class="media-left response-text-left">
-                                        <a href="#">
-                                            <img class="media-object" src="~/template/images/icon1.png" alt="" />
-                                        </a>
-                                        <h5><a href="#">Admin</a></h5>
-                                    </div>
-                                    <div class="media-body response-text-right">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                            sed do eiusmod tempor incididunt ut labore et.
-                                        </p>
-                                        <ul>
-                                            <li>MARCH 21, 2014</li>
-                                            <li><a href="single.html">Reply</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="media response-info">
-                            <div class="media-left response-text-left">
-                                <a href="#">
-                                    <img class="media-object" src="images/icon1.png" alt="" />
-                                </a>
-                                <h5><a href="#">Admin</a></h5>
-                            </div>
-                            <div class="media-body response-text-right">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <ul>
-                                    <li>MARCH 21, 2013</li>
-                                    <li><a href="single.html">Reply</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"> </div>
+                        <h4>Comment</h4>
+                        <div id="add">
                         </div>
                     </div>
                 </div>
                 <div class="coment-form">
-                    <h4 class="comments-title">Trả lời</h4>
+                    <h4>Leave your comment</h4>
                     <form>
-                        <input type="text" value="Tên *" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                        <input type="text" value="Trang web *" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
-                        <input type="text" value="Email *" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
-                        <textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Comment...';}" required="">Bình luận...</textarea>
-                        <input type="submit" value="Phản hồi">
+                        <input type="text" value="Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+                        <input type="text" value="Subject " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
+                        <input type="text" value="Email (will not be published)*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
+                        <textarea id="text" placeholder="Your Comment..."></textarea>
+                        <input type="submit" value="SUBMIT" id="Post">
                     </form>
                 </div>
             </div>
             <div class="col-md-4 single-page-right">
                 <div class="category blog-ctgry">
                     <h4>Top Games</h4>
-                    <hr />
+                    <div class="list-group">
+                        <a href="single.html" class="list-group-item">Cras justo odio</a>
+                        <a href="single.html" class="list-group-item">Dapibus ac facilisis in</a>
+                        <a href="single.html" class="list-group-item">Morbi leo risus</a>
+                        <a href="single.html" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="single.html" class="list-group-item">Vestibulum at eros</a>
+                        <a href="single.html" class="list-group-item">Cras justo odio</a>
+                        <a href="single.html" class="list-group-item">Cras justo odio</a>
+                        <a href="single.html" class="list-group-item">Cras justo odio</a>
+                    </div>
                 </div>
                 <div class="recent-posts">
                     <h4>Game tương tự</h4>
-                    <hr />
                     <div class="clearfix"> </div>
                 </div>
             </div>
@@ -132,6 +104,160 @@
         </div>
     </div>
 </div>
-@section scripts{ 
-    <script src="~/js/Layout/Details.js"></script>
+@section scripts{
+    <script>
+        var CategoryId = parseInt(document.getElementById('gameid1').value);
+        var GameId = parseInt(document.getElementById('Gameid').value);
+        var UserId = document.getElementById('UserId').value;
+        debugger;
+        var GetGameByCategory = function (id) {
+            $.ajax({
+                url: `/game/getbycategory/${id}`,
+                method: 'GET',
+                dataType: 'JSON',
+                success: function (response) {
+                    var dem = 0;
+                    $.each(response.result, function (i, v) {
+                        var today = v.createDate.split("-");
+                        var tam = today[0] + "/" + today[1] + "/" + today[2].slice(0, 2);
+                        dem++;
+                        console.log(v);
+                        if (dem > response.result.length - 3) {
+                            $('.recent-posts').append(`
+                            <div class="recent-posts-info">
+                                <div class="posts-left sngl-img">
+                                    <a href="/Home/Details/${v.gameId}"> <img style="height:175px;width:155px;" src="/images/${v.pathImage}" class="img-thumbnail" alt="" /> </a>
+                                </div>
+                                <div class="posts-right">
+                                     <h5><a href="/Home/Details/${v.gameId}">Finibus Bonorum</a></h5>
+                                    <p>${v.gameName}</p>
+                                    <a href="/Home/Details/${v.gameId}" class="btn btn-primary hvr-rectangle-in">Read More</a>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                                `);
+                        }
+
+                    })
+                }
+            });
+        };
+        $("#Post").click(function () {
+            var saveObj = {};
+            saveObj.text = $('#text').val();
+            saveObj.gameId = parseInt($('#Gameid').val());
+            saveObj.userId = $('#UserId').val();
+            debugger;
+            $.ajax({
+                url: '/Post/save',
+                method: 'POST',
+                data: saveObj,
+                success: function (response) {
+                    console.log(response);
+                    bootbox.alert(response.data.message);
+                }
+            });
+        });
+        var GetComment = function (id) {
+            $.ajax({
+                url: `/Post/Gets/${id}`,
+                method: "GET",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    $.each(response.result, function (i, v) {
+                        $("#add").append(`
+                            <div class="media response-info">
+                                <div class="media-left response-text-left">
+                                        <a href="#">
+                                            <img class="media-object" src="~/template/images/icon1.png" alt="error" />
+                                        </a>
+                                        <h5><a href="#">Admin</a></h5>
+                                    </div>
+                                        <div class="media-body response-text-right">
+                                            <p>
+                                                ${v.text}
+                                            </p>
+                                            <ul>
+                                                <li>MARCH 21, 2013</li>
+                                                <li><a href="single.html">Reply</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                            </div>
+                            `);
+                    });
+                }
+            });
+        }
+        var vote = 0;
+        $(document).ready(function () {
+            GetGameByCategory(CategoryId);
+            GetComment(GameId);
+            checkRate(GameId, UserId);
+        });
+        function onmove(id) {
+            if (id >= 1) {
+                for (let i = 1; i <= id; i++) {
+                    document.getElementById(i).style.color = "orange";
+                }
+                for (let i = id + 1; i <= 5; i++) {
+                    document.getElementById(i).style.color = "black";
+                }
+            }
+            vote = id;
+        }
+        function click(id) {
+            var Obj = {};
+            Obj.userId = $('#UserId').val();
+            Obj.gameId = GameId;
+            Obj.vote = parseInt(id);
+            $.ajax({
+                url: '/Rate/saveVote',
+                method: 'POST',
+                data: Obj,
+                success: function () {
+                    alert("Success Rate! thanks");
+                    $("#addcheck").empty();
+                    $("#addcheck").append(`
+                        <button class="btn btn-success" onclick="changeRate()">Checked</button>
+                    `);
+                }
+            });
+        }
+        var checkRate = function (GameId, UserId) {
+            $.ajax({
+                url: `/Post/CheckVote/${GameId}/${UserId}`,
+                method: "GET",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response.result);
+                    $("#addcheck").empty();
+                    if (response.result.check = 0) {
+                        $("#addcheck").append(`
+                        <span id="1" onmousemove="onmove(1)" onclick="click(1)" class="fa fa-star checked"></span>
+                        <span id="2" onmousemove="onmove(2)" onclick="click(2)" class="fa fa-star checked"></span>
+                        <span id="3" onmousemove="onmove(3)" onclick="click(3)" class="fa fa-star"></span>
+                        <span id="4" onmousemove="onmove(4)" onclick="click(4)" class="fa fa-star"></span>
+                        <span id="5" onmousemove="onmove(5)" onclick="click(5)" class="fa fa-star"></span>
+                    `);
+                    }
+                    else {
+                        $("#addcheck").append(`
+                        <button class="btn btn-success" onclick="changeRate()">Checked</button>
+                    `);
+                    }
+                }
+            });
+        }
+        var changeRate = function () {
+            $("#addcheck").append(`
+                        <span id="1" onmousemove="onmove(1)" onclick="click(1)" class="fa fa-star checked"></span>
+                        <span id="2" onmousemove="onmove(2)" onclick="click(2)" class="fa fa-star checked"></span>
+                        <span id="3" onmousemove="onmove(3)" onclick="click(3)" class="fa fa-star"></span>
+                        <span id="4" onmousemove="onmove(4)" onclick="click(4)" class="fa fa-star"></span>
+                        <span id="5" onmousemove="onmove(5)" onclick="click(5)" class="fa fa-star"></span>
+                    `);
+        };
+    </script>
 }
