@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace GameHub.Domain.Request.Post
+namespace GameHub.WEB.Models.Post
 {
     public class SaveVote
     {

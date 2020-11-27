@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GameHub.Domain.Request.Post
+namespace GameHub.Domain.Response.Post
 {
-    public class SaveVote
+    public class Vote
     {
         public int VoteId { get; set; }
         public string UserId { get; set; }

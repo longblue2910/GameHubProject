@@ -33,6 +33,19 @@ namespace GameHub.WEB.Controllers
             var result = ApiHelper<CommentResult>.HttpPatchAsync($"Post/delete/{CommentId}", null);
             return Json(new { data = result });
         }
+        [HttpPost("/Rate/saveVote")]
+        public JsonResult SaveVote(SaveVote request)
+        {
+            var result = ApiHelper<VoteRes>.HttpPostAsync($"Post/Vote", "POST", request);
+            return Json(new { data = result });
+        }
+        [HttpPost]
+        [Route("/Rate/deleteVote/{id}")]
+        public IActionResult DeleteVote(int CommentId)
+        {
+            var result = ApiHelper<VoteRes>.HttpPatchAsync($"Post/deletevote/{CommentId}", null);
+            return Json(new { data = result });
+        }
         [HttpGet("/Post/CheckVote/{GameId}/{UserId}")]
         public JsonResult CheckVote(int GameId, string UserId)
         {

@@ -45,36 +45,8 @@
         </div>
         <div class="latest-top">
             <div class="col-md-4 trailer-text">
-                <div class="sub-trailer">
-                    <div class="col-md-4 sub-img">
-                        <img src="~/template/images/v2.jpg" alt="img07" />
-                    </div>
-                    <div class="col-md-8 sub-text">
-                        <a href="#">Killzone: Shadow Fall for PlayStation 4 Reviews</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipi…</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="sub-trailer">
-                    <div class="col-md-4 sub-img">
-                        <img src="~/template/images/v1.jpg" alt="img07" />
-                    </div>
-                    <div class="col-md-8 sub-text">
-                        <a href="#"> Spiderman 2 Full Version PC Game</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipi…</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="sub-trailer">
-                    <div class="col-md-4 sub-img">
-                        <img src="~/template/images/v3.jpg" alt="img07" />
-                    </div>
-                    <div class="col-md-8 sub-text">
-                        <a href="#">Sega's: Jet Set for Andriod Play Store 4 Reviews</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipi…</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
+                <div id="showgame"></div>
+                
             </div>
             <div class="col-md-4 trailer-text">
                 <div class="sub-trailer">
@@ -208,6 +180,39 @@
 </div>
 @section Scripts{
     <script type="text/javascript">
+        
+        $(document).ready(function () {
+            ShowGame();
+        });
+        var ShowGame = function () {
+            $.ajax({
+                url: "/Game/Gets",
+                method: "GET",
+                dataType: "json",
+                success: function (response) {
+                    var count = 0;
+                    console.log(response);
+                    $.each(response.result, function (i, v) {
+                        count++;
+                        if (count < response.result.length - 3) {
+                            console.log(v);
+                            $("#showgame").append(`
+                                <div class="sub-trailer">
+                                    <div class="col-md-4 sub-img">
+                                        <img src="~/images/${v.pathImage}" alt="img07" />
+                                    </div>
+                                    <div class="col-md-8 sub-text">
+                                        <a href="#">${v.gameName}</a>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipi…</p>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            `);
+                        }
+                    });
+                }
+            });
+        }
         $(window).load(function () {
             $("#flexiselDemo1").flexisel({
                 visibleItems: 4,
