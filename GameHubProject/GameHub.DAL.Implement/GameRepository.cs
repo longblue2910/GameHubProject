@@ -117,9 +117,13 @@ namespace GameHub.DAL.Implement
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<GameView>> GetBySearchWord(string SearchWord)
+        public async Task<IEnumerable<GameView>> GetBySearchWord(string SearchWord)
         {
-            throw new NotImplementedException();
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@SearchWord", SearchWord);
+            var result = await SqlMapper.QueryAsync<GameView>(cnn: connection, sql: "sp_GetsGameByCharacter",
+                                                                param: parameters, commandType: CommandType.StoredProcedure);
+            return result; 
         }
     }
 }

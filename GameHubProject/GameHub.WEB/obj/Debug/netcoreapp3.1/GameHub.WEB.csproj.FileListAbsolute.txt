@@ -44,7 +44,6 @@ C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.TagHelpers.output.cache
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.RazorCoreGenerate.cache
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -386,9 +385,6 @@ C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.Views.pdb
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.dll
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.pdb
@@ -808,8 +804,18 @@ C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.csprojAssemblyReference.cache
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Game\Save.cshtml.g.cs
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
-C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.csprojAssemblyReference.cache
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Login.cshtml.g.cs
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignUp.cshtml.g.cs
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SignUp.cshtml.g.cs
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\X.PagedList.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\X.PagedList.Web.Common.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\GameHub.WEB.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\AllGame.cshtml.g.cs
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search.cshtml.g.cs

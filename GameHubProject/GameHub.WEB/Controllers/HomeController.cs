@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using GameHub.WEB.Models;
 using GameHub.WEB.Ultilities;
 using GameHub.WEB.Models.Game;
+using X.PagedList;
 
 namespace GameHub.WEB.Controllers
 {
@@ -30,7 +31,21 @@ namespace GameHub.WEB.Controllers
             var game = ApiHelper<GameView>.HttpGetAsync($"game/get/{id}");
              return View(game);
         }
-
+        public IActionResult AllGame(int? page)
+        {
+            int pageSize = 15;
+            int pageNumber = (page ?? 1);
+            var games = ApiHelper<List<GameView>>.HttpGetAsync($"game/gets");
+            return View(games.ToPagedList(pageNumber, pageSize));
+        }
+        public IActionResult Search(string searchWord, int? page)
+        {
+            int pageSize = 15;
+            int pageNumber = (page ?? 1);
+            var games = ApiHelper<List<GameView>>.HttpGetAsync($"game/getsbysearchword/{searchWord}");
+            ViewBag.SearchWord = searchWord;
+            return View(games.ToPagedList(pageNumber, pageSize));
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

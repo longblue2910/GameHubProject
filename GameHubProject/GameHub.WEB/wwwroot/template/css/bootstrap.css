@@ -55,7 +55,8 @@ abbr[title] {
 }
 b,
 strong {
-  font-weight: bold;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 dfn {
   font-style: italic;
@@ -1101,8 +1102,8 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
-  text-decoration: none;
+    color: #212933;
+    text-decoration: none;
 }
 a:hover,
 a:focus {
@@ -4612,15 +4613,19 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 .pagination > li > a,
 .pagination > li > span {
-  position: relative;
-  float: left;
-  padding: 6px 12px;
-  margin-left: -1px;
-  line-height: 1.42857143;
-  color: #337ab7;
-  text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #ddd;
+ font-size: 1.1em;
+        display: block;
+        height: 2.25em;
+        line-height: 2em;
+        text-align: center;
+        width: auto;
+        min-width: 2.25em;
+        padding: 0 7px;
+        font-weight: bolder;
+        border-radius: 99px;
+        border: 2px solid currentColor;
+        transition: all .3s;
+        vertical-align: top;
 }
 .pagination > li:first-child > a,
 .pagination > li:first-child > span {
@@ -4648,10 +4653,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   z-index: 2;
-  color: #fff;
-  cursor: default;
-  background-color: #337ab7;
-  border-color: #337ab7;
+
 }
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
@@ -4953,9 +4955,9 @@ a.thumbnail.active {
   color: #2b542c;
 }
 .alert-info {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+    color: #ffffff;
+    background-color: #6b767be3;
+    border-color: #e00909;
 }
 .alert-info hr {
   border-top-color: #a6e1ec;
@@ -6572,3 +6574,23 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.jeg_cat_subtitle {
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-bottom: 0;
+    color: #a0a0a0;
+}
+.jeg_cat_title, .jeg_page_title {
+    font-weight: 700;
+    font-size: 37px;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -.04em;
+}
+.h3-1 {
+    font-size: 1.563em;
+    margin: 1em 0 .5em;
+    line-height: 1.4;
+    text-align: center;
+    color: #29292f;
+}
