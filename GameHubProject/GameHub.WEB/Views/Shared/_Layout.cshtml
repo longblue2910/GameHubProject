@@ -5,7 +5,8 @@
     <link href="~/template/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="~/template/js/bootstrap.js"></script>
     <link href="~/template/css/style.css" rel="stylesheet" />
-
+    <link href="~/css/homesite.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Game Box  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -37,8 +38,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="details">
                     <ul>
                         <li><a href="mailto@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>gamehub@gmail.com</a></li>
-                        <li><a href="mailto@example.com"><span  aria-hidden="true"></span>Login</a></li>
-                        <li><a href="mailto@example.com"><span class="page-link" aria-hidden="true"></span>Sign Up</a></li>
+                        <li><a asp-controller="Account" asp-action="Login"><span  aria-hidden="true"></span>Login</a></li>
+                        <li><a asp-controller="Account" asp-action="SignUp"><span class="page-link" aria-hidden="true"></span>Sign Up</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,48 +86,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="footer-grids">
                 <div class="col-md-3 ftr-info">
                     <h3>About Us</h3>
+                    <hr />
                     <p>
-                        Sed faucibus mollis laoreet. Sed vehicula faucibus tristique lectus a orci molestie finibus.
-                        Suspendisse pharetra, metus sed rutrum pretium.
+                        Game Hub mang đến cho bạn những thông tin mới nhất về thị trường Game. Cập nhật, chia sẻ, review những trò chơi HOT. Cung cấp link download game miễn phí. Cùng với đó là những hướng dẫn bài bản giúp tăng khả năng trải nghiệm trò chơi của bạn.
                     </p>
                 </div>
                 <div class="col-md-3 ftr-grid">
-                    <h3>Categories</h3>
+                    <h3>Chuyên mục</h3>
                     <ul class="ftr-list">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Racing</a></li>
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Simulation</a></li>
-                        <li><a href="#">Bike</a></li>
+                        <li><a href="#">Game Offline</a></li>
+                        <li><a href="#">Game Mobile</a></li>
+                        <li><a href="#">Giải Trí</a></li>
+                        <li><a href="#">Hướng dẫn</a></li>
+                        <li><a href="#">Review Game</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 ftr-grid">
-                    <h3>Platform</h3>
+                    <h3>Thể loại</h3>
                     <ul class="ftr-list">
-                        <li><a href="#">Pc</a></li>
-                        <li><a href="#">Ps4</a></li>
-                        <li><a href="#">XBOX 360</a></li>
-                        <li><a href="#">XBOX ONE</a></li>
-                        <li><a href="#">PSP</a></li>
+                        <li><a href="#">Game Bắn Súng</a></li>
+                        <li><a href="#">Game Chiến Thuật</a></li>
+                        <li><a href="#">Game Trí Tuệ</a></li>
+                        <li><a href="#">Game Đua Xe</a></li>
+                        <li><a href="#">Game Hành Động</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 ftr-grid">
-                    <h3>Information</h3>
+                    <h3>Liên Hệ</h3>
                     <ul class="ftr-list">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Wish Lists</a></li>
-                        <li><a href="#">Site Map</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Tool check</a></li>
+                        <li><a href="#">Tool check</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
-    <!---->
     <div class="copywrite">
         <div class="container">
-            <p> © 2015 Game Box. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+            <hr />
+            <p> © 2020 Game Hub. Phát triển bởi Long Hoàng</p>
         </div>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
