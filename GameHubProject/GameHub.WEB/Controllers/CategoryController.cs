@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GameHub.WEB.Models.Category;
 using GameHub.WEB.Ultilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameHub.WEB.Controllers
@@ -16,7 +17,7 @@ namespace GameHub.WEB.Controllers
         }
         public JsonResult Gets()
         {
-            List<CategoryView> result = ApiHelper<List<CategoryView>>.HttpGetAsync($"category/gets");
+            var result = ApiHelper<IEnumerable<CategoryView>>.HttpGetAsync($"Category/gets");
             return Json(new { result });
         }
         [HttpPost]

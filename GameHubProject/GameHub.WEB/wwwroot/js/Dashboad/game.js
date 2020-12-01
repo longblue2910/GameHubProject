@@ -79,19 +79,44 @@ game.openModal = function () {
     document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
 }
 game.get = function (id) {
+    
     $.ajax({
         url: `/game/get/${id}`,
         method: "get",
         dataType: "json",
         success: function (response) {
             console.log(response.data);
+            $('#addEditgameModal').modal('show');
             $('#GameName').val(response.data.gameName);
             $('#GameId').val(response.data.gameId);
-            $('#Categorys').val(response.data.categorys.toString());
+            $('#CategoryId').empty();
+            var list = response.data.categorys;
+            $.ajax({
+                url: `/category/gets`,
+                method: "get",
+                data: "json",
+                success: function (response) {
+                    console.log(response);
+                    $.each(response.result, function (i, v) {
+                        for (k = 0; k < list.length; k++){
+                            if (v.categoryId = list[k].categoryId) {
+                                $('#CategoryId').append(`
+                                <option selected="selected" value="${v.categoryId}">${v.categoryName}</option>`);
+                                list.splice(k, 1);
+                                break;
+                            }
+                            $('#CategoryId').append(`
+                                    <option value="${v.categoryId}">${v.categoryName}</option>`);
+                            break;
+                        }
+                    })
+                }
+            });
+
 
             $('#BrandId').val(response.data.brandId);
-            $('#Description').val(response.data.desciption);
-            $('#addEditgameModal').modal('show');
+            $('#Description').val(response.data.Description);
+            $('.note-editable').val(response.data.Description);
             document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
         }
     });
@@ -178,3 +203,18 @@ window.preview = function (input) {
 }
 function xoa(i) { $(`#p${i}`).remove(); }
 
+category = function () {
+    debugger;
+    $.ajax({
+        url: `/category/gets`,
+        method: "get",
+        data: "json",
+        success: function (response) {
+            console.log(response);
+            $.each(response.result, function (i, v) {
+                $('#CategoryId').append(`
+                <option value="${v.categoryId}">${v.categoryName}</option>`);
+            })
+        }
+    });
+}

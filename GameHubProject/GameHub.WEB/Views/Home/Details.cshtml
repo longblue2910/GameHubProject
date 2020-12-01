@@ -22,7 +22,7 @@
 <div class="container">
     <input hidden id="Gameid" value="@Model.GameId" />
     <input hidden id="UserId" value="@Model.UserId" />
-    @if (@Model.Desciption != null)
+    @if (@Model.Description != null)
     {
         <input hidden id="gameid1" value="1" />
     }
@@ -35,7 +35,7 @@
     </h1>
     <hr />
     <div class="blog-img">
-        @if (@Model.Desciption != null)
+        @if (@Model.Description != null)
         {
             <img src="~/images/@Model.Images.FirstOrDefault().PathImage" alt="" />
         }
@@ -52,7 +52,7 @@
                 <div class="blog-info">
                     <div class="blog-info-text">
                         <hr />
-                        @Html.Raw(Model.Desciption);
+                        @Html.Raw(Model.Description);
                     </div>
                     <div class="comment-icons">
                         <ul>
