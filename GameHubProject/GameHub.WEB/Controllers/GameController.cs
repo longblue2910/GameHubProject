@@ -70,15 +70,6 @@ namespace GameHub.WEB.Controllers
                 for (int i = 0; i < iamge.Count; i++)
                 {
                     string fileName = $"{Guid.NewGuid()}_{iamge[i].FileName}";
-                    var filePath = Path.Combine(uploadFolder, fileName);
-                    using (var fs = new FileStream(filePath, FileMode.Create))
-                    {
-                        iamge[i].CopyTo(fs);
-                    }
-                    if(imgs == "")
-                        imgs += fileName;
-                    else
-                        imgs += "%" + fileName;
                     if (id != 0)
                     {
                         string[] files = Directory.GetFiles(uploadFolder);
@@ -90,6 +81,15 @@ namespace GameHub.WEB.Controllers
                         }
 
                     }
+                    var filePath = Path.Combine(uploadFolder, fileName);
+                    using (var fs = new FileStream(filePath, FileMode.Create))
+                    {
+                        iamge[i].CopyTo(fs);
+                    }
+                    if(imgs == "")
+                        imgs += fileName;
+                    else
+                        imgs += "%" + fileName;
                 }
             }
             return imgs;
@@ -103,10 +103,10 @@ namespace GameHub.WEB.Controllers
         }
         [HttpGet]
         [Route("/Game/get/{id}")]
-        public JsonResult Get(int id)
+        public IActionResult Update(int id)
         {
-            var game = ApiHelper<EditGame>.HttpGetAsync($"game/get/{id}");
-            return Json(new { data = game });
+            var game = ApiHelper<UpdateGame>.HttpGetAsync($"game/get/{id}");
+            return View(game);
         }
     }
 }

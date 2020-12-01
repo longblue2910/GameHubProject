@@ -1,0 +1,71 @@
+﻿@model RegisterRequest
+@{
+    Layout = "~/Views/Shared/_Login.cshtml";
+    var message = ViewBag.Message;
+}
+<div class="form-inner-cont">
+    <h3>Create your account</h3>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div>
+        <input value="@message" hidden id="value"/>
+        @if(message == "Thanh Cong")
+        {
+            <p class="alert alert-success" id="succes" value="@message" onchange="change()">Success</p>
+        }
+        else if( message == "That bai")
+        {
+            <p id="succes" onchange="change()"></p>
+        }
+    </div>
+    <form action="#" method="post" class="signin-form">
+        <div class="form-input">
+            <span class="fa fa-user-o" aria-hidden="true"></span>
+            <input asp-for="UserName" placeholder="Username" required />
+        </div>
+        <div class="form-input">
+            <span class="fa fa-envelope-o" aria-hidden="true"></span>
+            <input asp-for="Email" placeholder="Email" required />
+        </div>
+        <div class="form-input">
+            <span class="fa fa-times-circle" aria-hidden="true"></span>
+            <input asp-for="DoB" placeholder="Dob" type="date" required />
+        </div>
+        <div class="form-input">
+            <span class="fa fa-key" aria-hidden="true"></span>
+            <input asp-for="Password" placeholder="Password" required />
+        </div>
+        <div class="form-input">
+            <span class="fa fa-key" aria-hidden="true"></span>
+            <input asp-for="ConfirmPassword" placeholder="Confirm Password" required />
+        </div>
+
+        <div class="login-remember d-grid">
+            <button class="btn theme-button">Register</button>
+        </div>
+    </form>
+    <div class="social-icons">
+        <p class="continue"><span>Or</span></p>
+        <div class="social-login">
+            <a href="#facebook">
+                <div class="facebook">
+                    <span class="fa fa-facebook" aria-hidden="true"></span>
+
+                </div>
+            </a>
+            <a href="#google">
+                <div class="google">
+                    <span class="fa fa-google-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <p class="signup">Already a member? <a asp-controller="Account" asp-action="Login" class="signuplink">Login</a></p>
+</div>
+<script>
+    if (document.getElementById('value').value != "Register Succcess") {
+        alert(document.getElementById('value').value);
+    }
+    else {
+        alert('Register is successful');
+    }
+</script>

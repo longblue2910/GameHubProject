@@ -9,7 +9,7 @@ namespace GameHub.DAL.Implement
 
         public BaseRepository()
         {
-            connection = new SqlConnection(@"Data Source=Admin\sqlexpress;Initial Catalog=GameHubDb;Integrated Security=True");
+            connection = new SqlConnection(@"Data Source=hoang\sqlexpress;Initial Catalog=GameHubDb;Integrated Security=True");
         }
     }
 }

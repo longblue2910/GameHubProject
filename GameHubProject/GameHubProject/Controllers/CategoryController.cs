@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using GameHub.BAL.Interface;
 using GameHub.DAL.Interface;
 using GameHub.Domain.Request.Category;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,6 +28,7 @@ namespace GameHub.API.Controllers
             var result = await categoryService.Save(request);
             return Ok(result);
         }
+        //[Authorize]
         [HttpGet("gets")]
         public async Task<OkObjectResult> Gets()
         {

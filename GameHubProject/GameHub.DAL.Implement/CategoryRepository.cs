@@ -47,11 +47,20 @@ namespace GameHub.DAL.Implement
 
         public async Task<IEnumerable<CategoryView>> Gets()
         {
-            DynamicParameters parameters = new DynamicParameters();
-            var result = await SqlMapper.QueryAsync<CategoryView>(cnn: connection,
-                                                                    sql: "sp_GetsCategory",
-                                                                    commandType: CommandType.StoredProcedure);
-            return result;
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                var result = await SqlMapper.QueryAsync<CategoryView>(cnn: connection,
+                                                                        sql: "sp_GetsCategory",
+                                                                        commandType: CommandType.StoredProcedure);
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         public async Task<CategoryRes> Save(SaveCategoryReq request)

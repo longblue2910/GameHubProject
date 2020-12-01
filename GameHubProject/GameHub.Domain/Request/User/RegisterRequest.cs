@@ -1,32 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace GameHub.Domain.Request.User
 {
     public class RegisterRequest
     {
-        public string FullName { get; set; }
-
-        public string Address { get; set; }
-
-        public string Gender { get; set; }
-
+        [Required]
         public DateTime DoB { get; set; }
-
-        public string Company { get; set; }
-
-        public string Facebook { get; set; }
-
-        public string ImagePath { get; set; }
-
-        public string PhoneNumber { get; set; }
-
+        [Required]
         public string UserName { get; set; }
-
+        [Required]
         public string Email { get; set; }
-
+        [DataType(DataType.Password)]
+        [Required]
         public string Password { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage ="ComfirmPassword not matched")]
         public string ConfirmPassword { get; set; }
     }
 }

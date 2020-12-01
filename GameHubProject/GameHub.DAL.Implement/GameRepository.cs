@@ -96,7 +96,7 @@ namespace GameHub.DAL.Implement
                 parameters.Add("@Category", request.Categorys);
                 parameters.Add("@Image", request.Images);
                 parameters.Add("@BrandId", request.BrandId);
-                parameters.Add("@Desciption", request.Description);
+                parameters.Add("@Description", request.Description);
                 parameters.Add("@UserId", request.UserId);
                 result = await SqlMapper.QueryFirstOrDefaultAsync<GameRes>(cnn: connection, sql: "sp_SaveGame", param: parameters, commandType: CommandType.StoredProcedure);
                 return result;

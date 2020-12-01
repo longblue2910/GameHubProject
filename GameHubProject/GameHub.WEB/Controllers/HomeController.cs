@@ -23,6 +23,7 @@ namespace GameHub.WEB.Controllers
 
         public IActionResult Index()
         {
+            var user = User.Identity.Name;
             return View();
         }
         public IActionResult Details(int id)
