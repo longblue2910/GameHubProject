@@ -48,6 +48,20 @@ using GameHub.WEB.Models.Brand;
 #line hidden
 #nullable disable
 #nullable restore
+#line 6 "C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\Views\_ViewImports.cshtml"
+using GameHub.WEB.Models.Account;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\Views\_ViewImports.cshtml"
+using GameHub.Domain.Request.User;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\Views\Home\AllGame.cshtml"
 using X.PagedList.Mvc.Core;
 
@@ -62,7 +76,7 @@ using X.PagedList;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"50912673832840eee401d5a9e489a86471c25322", @"/Views/Home/AllGame.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8910b1bd4dfab2cd2cad0b91f6eb2a0cc6352f17", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"71c54fcfba35c73dd5153328d91ea900b4a1fc7f", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_AllGame : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IPagedList<GameView>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -179,7 +193,7 @@ using X.PagedList;
 #line hidden
 #nullable disable
             WriteLiteral("                        <div class=\"col-md-3 gallery-grid\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50912673832840eee401d5a9e489a86471c253229421", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50912673832840eee401d5a9e489a86471c253229824", async() => {
                 WriteLiteral("\r\n                                <img class=\"example-image\"");
                 BeginWriteAttribute("src", " src=\"", 3287, "\"", 3316, 2);
                 WriteAttributeValue("", 3293, "/images/", 3293, 8, true);
@@ -228,7 +242,7 @@ WriteAttributeValue("", 3301, item.PathImage, 3301, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50912673832840eee401d5a9e489a86471c2532212765", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50912673832840eee401d5a9e489a86471c2532213168", async() => {
                 WriteLiteral("<label>");
 #nullable restore
 #line 71 "C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\Views\Home\AllGame.cshtml"

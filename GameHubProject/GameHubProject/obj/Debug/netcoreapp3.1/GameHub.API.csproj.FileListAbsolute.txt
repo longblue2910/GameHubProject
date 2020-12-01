@@ -283,3 +283,7 @@ C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\bin\Deb
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.csproj.CoreCompileInputs.cache
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHubProject\obj\Debug\netcoreapp3.1\GameHub.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHubProject\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHubProject\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHubProject\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHubProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
