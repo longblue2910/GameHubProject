@@ -4,6 +4,7 @@
     <title>Game Box a Games a Category Flat Bootstarp Responsive Website Template | About :: w3layouts</title>
     <link href="~/template/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="~/template/js/bootstrap.js"></script>
+    <link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="~/template/css/style.css" rel="stylesheet" />
     <link href="~/css/homesite.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -27,9 +28,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <a href="#"><i class="youtube"></i></a>
                 </div>
                 <div class="search">
-                    <form>
+                    <form asp-controller="Home" asp-action="Search" method="post">
                         <input type="submit" value="">
-                        <input type="text" value="" placeholder="Search...">
+                        <input type="text" name="searchWord" placeholder="Tìm kiếm">
                     </form>
                 </div>
                 <div class="clearfix"></div>
@@ -38,8 +39,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="details">
                     <ul>
                         <li><a href="mailto@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>gamehub@gmail.com</a></li>
-                        <li><a asp-controller="Account" asp-action="Login"><span  aria-hidden="true"></span>Login</a></li>
-                        <li><a asp-controller="Account" asp-action="Register"><span class="page-link" aria-hidden="true"></span>Sign Up</a></li>
+                        <li><a asp-controller="Account" asp-action="Login"><span aria-hidden="true"></span>Login</a></li>
+                        <li><a asp-controller="Account" asp-action="SignUp"><span class="page-link" aria-hidden="true"></span>Sign Up</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,17 +51,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="banner-info">
         <div class="container">
             <div class="logo">
-                <h1><a  href="index.html">GAME HUB</a></h1>
+                <h1><a asp-controller="Home" asp-action="Index">GAME HUB</a></h1>
             </div>
             <div class="top-menu">
                 <span class="menu"></span>
                 <ul class="nav1">
-                    <li><a  href="index.html">Home</a></li>
-                    <li class="active"><a href="about.html">About</a></li>
-                    <li><a  href="reviews.html">Reviews</a></li>
-                    <li><a  href="typo.html">News</a></li>
-                    <li><a  href="gallery.html">Gallery</a></li>
-                    <li><a  href="contact.html">Mail</a></li>
+                    <li><a asp-controller="Home" asp-action="Index" >Home</a></li>
+                    <li> <a asp-controller="Home" asp-action="AllGame">Game Offline</a></li>
+                    <li><a href="reviews.html">Thể Loại</a></li>
+                    <li><a href="typo.html">News</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Mail</a></li>
                 </ul>
             </div>
             <!-- script-for-menu -->
@@ -133,6 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="~/template/js/jquery.flexisel.js"></script>
     <script src="~/lib/font-awesome/js/all.js"></script>
     @RenderSection("Scripts", required: false)

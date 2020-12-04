@@ -17,5 +17,6 @@ namespace GameHub.BAL.Interface
         Task<GameRes> Delete(int id);
         Task<GameRes> increaseViewGame(int id);
         Task<GameRes> increaseDowloadGame(int id);
+        Task<IEnumerable<GameView>> GetBySearchWord(string SearchWord);
     }
 }

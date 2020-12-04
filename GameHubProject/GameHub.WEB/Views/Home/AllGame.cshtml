@@ -1,0 +1,85 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@model IPagedList<GameView> 
+@{
+    ViewData["Title"] = "All Game";
+}
+<style>
+    a {
+        color: #383838;
+    }
+
+    a {
+        color: #334862;
+        text-decoration: none;
+    }
+
+    a, button, input {
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    }
+</style>
+<div class="banner">
+    <div class="bnr2">
+    </div>
+</div>
+<div class="agileits_breadcrumbs">
+    <div class="container">
+        <div class="agileits_breadcrumbs_left street">
+            <ul style="font-size: smaller; margin-bottom: 24px;">
+                <li>
+                    <a style="color:black" href="#">Home </a><i class="fa fa-angle-right" style="font-size:14px"></i>
+                </li>
+                <li><a style="color:darkgrey" href="#">Game Offline</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div class="gallery">
+    <div class="container">
+        <h1 class="jeg_cat_title">Game Offline</h1>
+        <hr />
+        <p class="jeg_cat_subtitle">
+            Tải Game Offline cho PC, Laptop với đầy đủ các thể loại hành động, bắn súng, đua xe, phiêu lưu, chiến thuật...
+            Game sẽ được cập nhật liên tục đưa đến cho bạn một kho trò chơi chất lượng.
+            Và bạn sẽ không mất một khoản phí nào để có thể Download.
+        </p>
+        <h3 class="h3-1">
+            Game Offline Hay Cho PC "Chất Nhất"
+        </h3>
+        <p style="font-size:15px">Trong chuyên mục này có đầy đủ các game cho mọi dòng máy PC, laptop. Cấu hình yêu cầu của game từ thấp - nhẹ cho đến cấu hình cao tha hồ mà lựa chọn nha.</p>
+        <p class="alert alert-info">Từ khóa tìm kiếm nhiều: game offline hay cho pc cau hinh trung binh, game offline hay cho laptop.</p>
+        <p style="font-size:15px">Đã lâu rồi không cập nhật bài viết này nên vào đây viết đôi lời chia sẻ với anh em:</p>
+        <p style="font-size:15px">Cảm ơn tất cả anh em trong thời gian qua đã luôn ủng hộ cho Game Hub. 
+        Mong rằng thời gian tới tất cả anh em sẽ đồng hành cùng với ad. Quảng đường cũng hơn 2 năm rồi.
+        Mong rằng sẽ có 3 4 5 năm và lâu hơn nữa. Cảm ơn anh em rất nhiều.</p>
+        <p style="font-size:15px">Những Game Offline cho máy tính luôn là lựa chọn thích hợp cho việc giải trí. 
+        Khí Phách sẽ đưa đến cho bạn rất nhiều sự lựa chọn, hi vọng sẽ có tựa game mà bạn yêu thích. 
+        Thường xuyên quay lại chuyên mục để cập nhật và tải những trò chơi mới nhất. Theo dõi chúng tôi trên Facebook để không bỏ lỡ những tựa game HOT.</p>
+        <hr />
+        <div class="gallery-bottom">
+            <div class="gallery-1">
+                @foreach (var item in Model)
+                {
+                    @if (item.StatusName == "active")
+                    {
+                        <div class="col-md-3 gallery-grid">
+                            <a asp-controller="Home" asp-action="Details" asp-route-id="@item.GameId" class="example-image-link" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                <img class="example-image" src="/images/@item.PathImage" alt="" />
+                            </a>
+                            <a asp-controller="Home" asp-action="Details" asp-route-id="@item.GameId"><label>@item.GameName</label> </a>
+                        </div>
+                    }
+                }
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div>
+            @Html.PagedListPager(Model, page => Url.Action($"AllGame", new { page }))
+        </div>
+    </div>
+</div>
+
+
+

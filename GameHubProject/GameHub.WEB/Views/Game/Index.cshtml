@@ -21,6 +21,7 @@
             </tr>
         </thead>
         <tbody id="gameTable">
+            
         </tbody>
     </table>
 </div>
@@ -100,6 +101,29 @@
 </div>
 @section Scripts{
     <script src="~/js/Dashboad/game.js"></script>
+    <script src="~/lib/bootbox/bootbox.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#tbModule").dataTable(
+                {
+                    "columnDefs": [
+                        {
+                            "targets": 2,
+                            "orderable": false
+                        },
+                        {
+                            "targets": 3,
+                            "orderable": false
+                        },
+                        {
+                            "targets": 4,
+                            "orderable": false,
+                            "searchable": false
+                        }
+                    ]
+                }
+            );
+        });
+    </script>
 }
-
 

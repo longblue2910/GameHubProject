@@ -13,8 +13,6 @@ Author URL: http://w3layouts.com
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- //Meta tags -->
-    <link href="~/template/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <script src="~/template/js/bootstrap.js"></script>
     <link rel="stylesheet" href="~/lib/Login/css/style.css" type="text/css" media="all" /><!-- Style-CSS -->
     <link href="~/lib/Login/css/font-awesome.css" rel="stylesheet"><!-- font-awesome-icons -->
 </head>
@@ -23,7 +21,43 @@ Author URL: http://w3layouts.com
     <section class="w3l-form-36">
         <div class="form-36-mian section-gap">
             <div class="wrapper">
-                
+                <div class="form-inner-cont">
+                    <h3 class="text-center">Đăng nhập</h3>
+                    <form action="#" method="post" class="signin-form">
+                        <div class="form-input">
+                            <span class="fa fa-envelope-o" aria-hidden="true"></span> <input type="email" name="email" placeholder="Email" required />
+                        </div>
+                        <div class="form-input">
+                            <span class="fa fa-key" aria-hidden="true"></span><input type="password" name="password" placeholder="Password"
+                                                                                     required />
+                        </div>
+                        <div class="login-remember d-grid">
+                            <label class="check-remaind">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <p class="remember">Remember me</p>
+                            </label>
+                            <button class="btn theme-button">Login</button>
+                        </div>
+                    </form>
+                    <div class="social-icons">
+                        <p class="continue"><span>Or</span></p>
+                        <div class="social-login">
+                            <a href="#facebook">
+                                <div class="facebook">
+                                    <span class="fa fa-facebook" aria-hidden="true"></span>
+
+                                </div>
+                            </a>
+                            <a href="#google">
+                                <div class="google">
+                                    <span class="fa fa-google-plus" aria-hidden="true"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="signup">Not already have an account? <a href="login.html" class="signuplink">Sign Up</a></p>
+                </div>
                 <div>
                     <main role="main" class="pb-3">
                         @RenderBody()
@@ -35,7 +69,6 @@ Author URL: http://w3layouts.com
                         © 2020 Game Hub. Phát triển bởi LH
                     </p>
                 </div>
-                <!-- //copyright -->
             </div>
         </div>
     </section>
