@@ -28,6 +28,11 @@ namespace GameHub.BAL.Implement
             return await userRepository.GetUserbyId(id);
         }
 
+        public async Task<UserViewModel> GetUserbyUserName(string UserName)
+        {
+            return await userRepository.GetUserbyUserName(UserName);
+        }
+
         public async Task<PagedResult<UserViewModel>> GetUserPaging(GetUserPagingRequest request)
         {
             return await userRepository.GetUserPaging(request);

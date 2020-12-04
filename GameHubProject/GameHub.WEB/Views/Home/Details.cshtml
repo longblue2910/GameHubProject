@@ -1,4 +1,6 @@
-﻿@model GameView
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@model GameView
 @{
     ViewData["Title"] = "Details";
 }
@@ -21,7 +23,7 @@
 </div>
 <div class="container">
     <input hidden id="Gameid" value="@Model.GameId" />
-    <input hidden id="UserId" value="@Model.UserId" />
+    <input hidden id="UserId" value="@HttpContextAccessor.HttpContext.Session.GetString("Id")" />
     @if (@Model.Description != null)
     {
         <input hidden id="gameid1" value="1" />
@@ -73,9 +75,7 @@
                 <div id="formRep" class="coment-form">
                     <h4>Bình luận</h4>
                     <form>
-                        <input type="text" value="Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                        <input type="text" value="Subject " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
-                        <input type="text" value="Email (will not be published)*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
+                        <input hidden id="EditComment">
                         <textarea id="text" placeholder="Bình Luận"></textarea>
                         <input type="submit" value="Bình luận" id="Post">
                     </form>
@@ -103,6 +103,7 @@
             <div class="clearfix"> </div>
         </div>
     </div>
+
 </div>
 
 @section scripts{

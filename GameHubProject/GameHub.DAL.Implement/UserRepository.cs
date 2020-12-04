@@ -173,5 +173,29 @@ namespace GameHub.DAL.Implement
             };
             return userVm;
         }
+
+        public async Task<UserViewModel> GetUserbyUserName(string UserName)
+        {
+            var user = await userManager.FindByNameAsync(UserName.ToString());
+            if (user == null)
+            {
+                return null;
+            }
+            var roles = await userManager.GetRolesAsync(user);
+            var userVm = new UserViewModel()
+            {
+                PhoneNumber = user.PhoneNumber,
+                FullName = user.FullName,
+                DoB = user.DoB,
+                Id = user.Id,
+                Gender = user.Gender,
+                Facebook = user.Facebook,
+                ImagePath = user.ImagePath,
+                Address = user.Address,
+                Company = user.Company
+                //Roles = roles
+            };
+            return userVm;
+        }
     }
 }

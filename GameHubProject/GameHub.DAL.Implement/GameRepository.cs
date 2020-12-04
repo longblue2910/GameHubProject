@@ -107,9 +107,24 @@ namespace GameHub.DAL.Implement
             }
         }
 
-        public Task<GameRes> increaseViewGame(int id)
+        public async Task<GameRes> increaseViewGame(int id)
         {
-            throw new NotImplementedException();
+            var result = new GameRes()
+            {
+                GameId = 0,
+                Message = "Something went wrong, please contact administrator."
+            };
+            try
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@GameId", id);
+                result = await SqlMapper.QueryFirstOrDefaultAsync<GameRes>(cnn: connection, sql: "sp_increaseViewGame", param: parameters, commandType: CommandType.StoredProcedure);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return result;
+            }
         }
 
         public Task<GameRes> increaseDowloadGame(int id)

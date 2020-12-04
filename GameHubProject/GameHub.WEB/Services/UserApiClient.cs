@@ -47,6 +47,20 @@ namespace GameHub.WEB.Services
             return user;
         }
 
+        public async Task<UserViewModel> GetByUserName(string UserName)
+        {
+            var sessions = httpContextAccessor.HttpContext.Session.GetString("Token");
+            var client = httpClientFactory.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", sessions);
+
+            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            var response = await client.GetAsync($"User/get/{UserName}");
+            var body = await response.Content.ReadAsStringAsync();
+            var user = JsonConvert.DeserializeObject<UserViewModel>(body);
+
+            return user;
+        }
+
         public async Task<PagedResult<UserViewModel>> GetUserPadings(GetUserPagingRequest request)
         {
             var client = httpClientFactory.CreateClient();

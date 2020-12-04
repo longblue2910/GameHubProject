@@ -28,6 +28,12 @@ namespace GameHub.API.Controllers
             var result = await commentService.Gets(id);
             return Ok(result);
         }
+        [HttpGet("showAComment/{id}")]
+        public async Task<OkObjectResult> ShowAComment(int id)
+        {
+            var result = await commentService.Get(id);
+            return Ok(result);
+        }
         [HttpPost("PostComment")]
         public async Task<OkObjectResult> Post(SaveComment model)
         {

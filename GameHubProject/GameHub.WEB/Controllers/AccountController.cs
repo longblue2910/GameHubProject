@@ -100,7 +100,6 @@ namespace GameHub.WEB.Controllers
         {
             if (!ModelState.IsValid)
                 return View(ModelState);
-
             var token = await userApiClient.Authenticate(request);
 
             var userPrincipal = this.ValidateToken(token);
@@ -110,6 +109,8 @@ namespace GameHub.WEB.Controllers
                 IsPersistent = false
             };
             HttpContext.Session.SetString("Token", token);
+            var user = await userApiClient.GetByUserName(request.UserName); 
+            HttpContext.Session.SetString("Id", user.Id);
 
             await HttpContext.SignInAsync(
                         CookieAuthenticationDefaults.AuthenticationScheme,
@@ -165,6 +166,28 @@ namespace GameHub.WEB.Controllers
                 return View(updateRequest);
             }
             return RedirectToAction("index");
+        }
+        [HttpGet]
+        public async Task<OkObjectResult> Get(string id)
+        {
+            var users = await userApiClient.GetById(id);
+            if (users != null)
+            {
+                var updateRequest = new UserUpdateRequest()
+                {
+                    Id = id,
+                    Address = users.Address,
+                    Company = users.Company,
+                    DoB = users.DoB,
+                    Facebook = users.Facebook,
+                    FullName = users.FullName,
+                    Gender = users.Gender,
+                    ImagePath = users.ImagePath,
+                    PhoneNumber = users.PhoneNumber
+                };
+                return Ok(updateRequest);
+            }
+            return Ok("error");
         }
 
         [HttpPost]

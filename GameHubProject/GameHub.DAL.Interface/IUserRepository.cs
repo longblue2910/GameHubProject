@@ -14,5 +14,6 @@ namespace GameHub.DAL.Interface
         Task<bool> Update(string id, UserUpdateRequest request);
         Task<PagedResult<UserViewModel>> GetUserPaging(GetUserPagingRequest request);
         Task<UserViewModel> GetUserbyId(string id);
+        Task<UserViewModel> GetUserbyUserName(string UserName);
     }
 }

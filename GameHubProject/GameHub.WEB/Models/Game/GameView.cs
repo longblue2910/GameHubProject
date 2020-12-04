@@ -20,6 +20,7 @@ namespace GameHub.WEB.Models.Game
         public DateTime CreateDate { get; set; }
         public string UserModified { get; set; }
         public int Download { get; set; }
+        public int Visit { get; set; }
         public string StatusName { get; set; }
         public bool IsDeleted { get; set; }
     }

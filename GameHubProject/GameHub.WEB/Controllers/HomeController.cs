@@ -9,6 +9,7 @@ using GameHub.WEB.Models;
 using GameHub.WEB.Ultilities;
 using GameHub.WEB.Models.Game;
 using X.PagedList;
+using Microsoft.AspNetCore.Http;
 
 namespace GameHub.WEB.Controllers
 {
@@ -24,11 +25,12 @@ namespace GameHub.WEB.Controllers
         public IActionResult Index()
         {
             var user = User.Identity.Name;
+            var userid = HttpContext.Session.GetString("Id");
             return View();
         }
         public IActionResult Details(int id)
-        
         {
+            ApiHelper<GameResult>.HttpPatchAsync($"Game/increaseViewGame/{id}", null);
             var game = ApiHelper<GameView>.HttpGetAsync($"game/get/{id}");
              return View(game);
         }

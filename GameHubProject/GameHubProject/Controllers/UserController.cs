@@ -69,6 +69,12 @@ namespace GameHub.API.Controllers
             var users = await userService.GetUserbyId(id);
             return Ok(users);
         }
+        [HttpGet("get/{userName}")]
+        public async Task<IActionResult> GetByUserName(string userName)
+        {
+            var user = await userService.GetUserbyUserName(userName);
+            return Ok(user);
+        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, [FromBody] UserUpdateRequest request)

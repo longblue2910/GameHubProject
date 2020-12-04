@@ -14,5 +14,6 @@ namespace GameHub.WEB.Services
         Task<string> RegisterUser(RegisterRequest registerRequest);
         Task<bool> UpdateUser(string id, UserUpdateRequest registerRequest);
         Task<UserViewModel> GetById(string id);
+        Task<UserViewModel> GetByUserName(string UserName);
     }
 }

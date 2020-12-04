@@ -35,6 +35,17 @@ namespace GameHub.DAL.Implement
             }
         }
 
+        public async Task<CommentView> Get(int CommentId)
+        {
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@CommentId", CommentId);
+            var result = await SqlMapper.QueryFirstAsync<CommentView>(cnn: connection,
+                                                                    sql: "sp_GetsAComment",
+                                                                    param: parameters,
+                                                                    commandType: CommandType.StoredProcedure);
+            return result;
+        }
+
         public async Task<IEnumerable<CommentView>> Gets(int GameId)
         {
             DynamicParameters parameters = new DynamicParameters();

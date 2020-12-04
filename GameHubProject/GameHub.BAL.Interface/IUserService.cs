@@ -17,5 +17,6 @@ namespace GameHub.BAL.Interface
 
         Task<PagedResult<UserViewModel>> GetUserPaging(GetUserPagingRequest request);
         Task<UserViewModel> GetUserbyId(string id);
+        Task<UserViewModel> GetUserbyUserName(string UserName);
     }
 }

@@ -10,12 +10,11 @@ var GetGameByCategory = function (id) {
             var dem = 0;
             $.each(response.result, function (i, v) {
                 dem++;
-                console.log(v);
                 if (dem > response.result.length - 3) {
                     $('.recent-posts').append(`
                             <div class="recent-posts-info">
                                 <div class="posts-left sngl-img">
-                                    <a href="/Home/Details/${v.gameId}"> <img style="height:120px;width:155px;" src="/images/${v.pathImage}" class="img-responsive zoom-img" alt="" /> </a>
+                                    <a href="/Home/Details/${v.gameId}"><img style="height:120px;width:155px;" src="/images/${v.pathImage}" class="img-responsive zoom-img" alt="" /> </a>
                                 </div>
                                 <div class="posts-right">
                                      <h4><a href="/Home/Details/${v.gameId}">${v.gameName}</a></h4>
@@ -33,6 +32,7 @@ var GetGameByCategory = function (id) {
 $("#Post").click(function () {
     var saveObj = {};
     saveObj.text = $('#text').val();
+    saveObj.commentId = $('#EditComment').val();
     saveObj.gameId = parseInt($('#Gameid').val());
     saveObj.userId = $('#UserId').val();
     debugger;
@@ -43,6 +43,8 @@ $("#Post").click(function () {
         success: function (response) {
             console.log(response);
             bootbox.alert(response.data.message);
+            $('#EditComment').val(0);
+            GetComment(GameId);
         }
     });
 });
@@ -52,32 +54,63 @@ var GetComment = function (id) {
         method: "GET",
         dataType: "json",
         success: function (response) {
+            $("#add").empty();
             console.log(response);
             $.each(response.result, function (i, v) {
+                var Edited = "";
+                debugger;
+                if (v.statusName == "Edited") {
+                    Edited = 'Edited';
+                }
                 $("#add").append(`
                             <div class="media response-info">
                                 <div class="media-left response-text-left">
                                         <a href="#">
                                             <img class="media-object" src="/template/images/icon1.png" alt="error" />
                                         </a>
-                                        <h5><a href="#">Admin</a></h5>
+                                        <h5><a href="#">${v.userName}</a></h5>
                                     </div>
                                         <div class="media-body response-text-right">
                                             <p>
                                                 ${v.text}
                                             </p>
+                                            <a onclick="Edit(${v.commentId})">Edit</a>
                                             <ul>
-                                                <li>MARCH 21, 2013</li>
+                                                <li>${v.time}</li>
                                                 <li><a onclick="Reply()">Reply</a></li>
+                                                <li>${Edited}</li>
+                                                <li><a herf='#' onclick="DeleteComment(${v.commentId})">Delete</a></li>
                                             </ul>
                                         </div>
                                         <div class="coment-form" id="repCmt"></div>
                                         <div class="clearfix"> </div>
-                            </div>
-                            `);
+                            </div>`);
             });
         }
     });
+}
+function Edit(commentId) {
+    $.ajax({
+        url: `/Post/Get/${commentId}`,
+        method: 'Get',
+        data: commentId,
+        success: function (response) {
+            $('#EditComment').val(response.result.commentId);
+            $("#text").val(response.result.text);
+            GetComment(GameId);
+        }
+    })
+}
+function DeleteComment(commentId) {
+    $.ajax({
+        url: `/Post/delete/${commentId}`,
+        method: 'Post',
+        data: commentId,
+        success: function (response) {
+            alert(response.data.message);
+            GetComment(GameId);
+        }
+    })
 }
 var vote = 0;
 $(document).ready(function () {
@@ -169,6 +202,5 @@ var Reply = function () {
                         <input type="submit" value="Phản hồi" id="Post">
                         <a style="color: #838383;font-size: 14px; font-weight: 600;" onclick="Back()">Hủy</a>
                     </form>
-                `
-    )
+                `)
 }
