@@ -831,3 +831,7 @@ C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\GameHub.Domain.dll
 C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\bin\Debug\netcoreapp3.1\GameHub.Domain.pdb
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Donate.cshtml.g.cs
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\ListCategory.cshtml.g.cs
+C:\Users\Admin\Documents\GameHub\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\ListBrand.cshtml.g.cs

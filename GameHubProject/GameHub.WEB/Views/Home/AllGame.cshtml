@@ -64,7 +64,7 @@
                 {
                     @if (item.StatusName == "active")
                     {
-                        <div class="col-md-3 gallery-grid">
+                        <div class="col-md-4 gallery-grid">
                             <a asp-controller="Home" asp-action="Details" asp-route-id="@item.GameId" class="example-image-link" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
                                 <img class="example-image" src="/images/@item.PathImage" alt="" />
                             </a>
@@ -75,9 +75,7 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-        <div>
             @Html.PagedListPager(Model, page => Url.Action($"AllGame", new { page }))
-        </div>
     </div>
 </div>
 

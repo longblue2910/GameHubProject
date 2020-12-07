@@ -58,10 +58,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <ul class="nav1">
                     <li><a asp-controller="Home" asp-action="Index" >Home</a></li>
                     <li> <a asp-controller="Home" asp-action="AllGame">Game Offline</a></li>
-                    <li><a href="reviews.html">Thể Loại</a></li>
-                    <li><a href="typo.html">News</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Mail</a></li>
+                    <li class="dropdown">
+                        <a href="#">Thể loại</a>
+                        <div class="dropdown-content">
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1">Bắn súng</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1012">Nhập vai</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1013">Chiến thuật</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1014">Đối kháng</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1015">Kinh dị</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1016">Đua xe</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact">Liên hệ</a></li>
                 </ul>
             </div>
             <!-- script-for-menu -->
@@ -115,10 +124,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-3 ftr-grid">
                     <h3>Liên Hệ</h3>
                     <ul class="ftr-list">
-                        <li><a href="#">Liên Hệ</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact">Liên Hệ</a></li>
                         <li><a href="#">Giới thiệu</a></li>
-                        <li><a href="#">Tool check</a></li>
-                        <li><a href="#">Tool check</a></li>
+                        <li><a asp-controller="Home" asp-action="Donate">Donate</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>

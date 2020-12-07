@@ -11,11 +11,12 @@ var GetGameByCategory = function (id) {
             $.each(response.result, function (i, v) {
                 dem++;
                 console.log(v);
+
                 if (dem > response.result.length - 3) {
                     $('.recent-posts').append(`
                             <div class="recent-posts-info">
                                 <div class="posts-left sngl-img">
-                                    <a href="/Home/Details/${v.gameId}"> <img style="height:120px;width:155px;" src="/images/${v.pathImage}" class="img-responsive zoom-img" alt="" /> </a>
+                                    <a href="/Home/Details/${v.gameId}"> <img style="height:120px;width:155px;" src="/images/${v.pathImage}" class="img-responsive zoom-img" alt="" /></a>
                                 </div>
                                 <div class="posts-right">
                                      <h4><a href="/Home/Details/${v.gameId}">${v.gameName}</a></h4>
@@ -23,7 +24,7 @@ var GetGameByCategory = function (id) {
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
-                                `);
+                    `);
                 }
 
             })

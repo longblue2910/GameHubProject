@@ -3,13 +3,11 @@
 }
 <div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
-        <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item">
                 <img src="~/images/codt1.jpg" alt="Chicago" style="width:100%;">
@@ -35,12 +33,13 @@
 <hr />
 <div class="gallery">
     <div class="container">
-        <div class="eg_block_heading jeg_block_heading_2" style="background: antiquewhite;">
-            <h4 class="jeg_block_title"><span><i class="fas fa-edit"></i>Game Mới Update</span></h4>
-        </div>
+        
         <div class="gallery-bottom">
-            <div class="gallery-1">
-                <div class="gallery-grid"  >
+            <div class="eg_block_heading jeg_block_heading_2" style="background: #eee;">
+                <h4 class="jeg_block_title"><i class="fas fa-edit"></i>Game Mới Update</h4>
+            </div>
+            <div class="gallery">
+                <div class="gallery-grid">
                     <div id="showgame" class="row">
 
                     </div>
@@ -54,7 +53,7 @@
 <hr />
 
 
-<div class="latest">
+@*<div class="latest">
     <div class="container">
         <div class="eg_block_heading jeg_block_heading_2" style="background: antiquewhite;">
             <h4 class="jeg_block_title"><span><i class="fas fa-edit"></i>Nhiều người xem</span></h4>
@@ -72,7 +71,7 @@
             <div class="clearfix"> </div>
         </div>
     </div>
-</div>
+</div>*@
 <!-- poster -->
 @section Scripts{
     <script type="text/javascript">
@@ -80,32 +79,6 @@
             ShowGame();
             ShowGame1();
         });
-        var ShowGame1 = function () {
-            $.ajax({
-                url: "/Game/Gets",
-                method: "GET",
-                dataType: "json",
-                success: function (response) {
-                    var count = 0;
-                    console.log(response);
-                    $.each(response.result, function (i, v) {
-                        count++;
-                        if (count > response.result.length - 3) {
-                             if (v.statusName == "active") {
-                                $("#showgame1").append(` 
-                                    <div class="col-md-4 sub-img">
-                                         <img src="/images/${v.pathImage}" alt="img07" />
-                                    </div>
-                                    <div class="col-md-8 sub-text">
-                                         <a href="#">${v.gameName}</a>
-                                    </div>
-                                 `);
-                            }                       
-                        }
-                    });
-                }
-            });
-        }
         var ShowGame = function () {
             $.ajax({
                 url: "/Game/Gets",
@@ -115,14 +88,14 @@
                     var count = 0;
                     console.log(response);
                     $.each(response.result, function (i, v) {
-                        count++;
-                        if (count > response.result.length - 4) {
+                        if (count<=5) {
                             if (v.statusName == "active") {
+                            count++;
                                 $("#showgame").append(` 
-                                    <div class="col-md-3">
-                                      <a class="example-image-link" href="images/gl4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                    <div class="col-md-4">
+                                      <a class="example-image-link" href="/Home/Details/${v.gameId}" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
                                       <img class="example-image" src="images/${v.pathImage}" alt="" /></a>
-                                      <a><label>${v.gameName}</label> </a>
+                                      <a href="/Home/Details/${v.gameId}"><label>${v.gameName}</label> </a>
                                     </div>
                                 `);
                             }

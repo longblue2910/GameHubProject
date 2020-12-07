@@ -34,14 +34,14 @@ namespace GameHub.WEB.Controllers
         }
         public IActionResult AllGame(int? page)
         {
-            int pageSize = 15;
+            int pageSize = 12;
             int pageNumber = (page ?? 1);
             var games = ApiHelper<List<GameView>>.HttpGetAsync($"game/gets");
             return View(games.ToPagedList(pageNumber, pageSize));
         }
         public IActionResult Search(string searchWord, int? page)
         {
-            int pageSize = 15;
+            int pageSize = 12;
             int pageNumber = (page ?? 1);
             var games = ApiHelper<List<GameView>>.HttpGetAsync($"game/getsbysearchword/{searchWord}");
             ViewBag.SearchWord = searchWord;
@@ -51,6 +51,28 @@ namespace GameHub.WEB.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public IActionResult Donate()
+        {
+            return View();
+        }
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult ListCategory(int id, int? page)
+        {
+            int pageSize = 12;
+            int pageNumber = (page ?? 1);
+            var games = ApiHelper<List<GameView>>.HttpGetAsync($"game/getbycategory/{id}");
+            return View(games.ToPagedList(pageNumber, pageSize));
+        }
+        public IActionResult ListBrand(int id, int? page)
+        {
+            int pageSize = 12;
+            int pageNumber = (page ?? 1);
+            var games = ApiHelper<List<GameView>>.HttpGetAsync($"game/getbycategory/{id}");
+            return View(games.ToPagedList(pageNumber, pageSize));
         }
     }
 }

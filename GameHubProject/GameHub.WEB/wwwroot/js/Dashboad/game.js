@@ -41,15 +41,16 @@ game.drawTable = function () {
             console.log(data);
             $.each(data.result, function (i, v) {
                 var action = "";
-                if (v.statusName == "Active") {
+                if (v.statusName == "active") {
                     action = `<a href="javascripts:;"
                                        onclick="game.get(${v.gameId})"><i class="fas fa-edit"></i></a>
                             <a href="javascripts:;"
-                                        onclick="game.deleted(${v.gameId}, '${v.gameName}')"><i class="fas fa-trash"></i></a>`
+                                        onclick="game.deleted(${v.gameId}, '${v.gameName}')"><i class="fas fa-trash"></i></a>
+                          <a href="/Home/Details/${v.gameId}"><i class="fas fa-eye"></i></a>
+                            `
                 }
                 else {
-                    action = `<a href="javascripts:;"
-                                       onclick="game.get(${v.gameId})"><i class="fas fa-edit"></i></a>
+                    action = `
                             <a href="javascripts:;"
                                         onclick="game.deleted(${v.gameId}, '${v.gameName}')"><i class="fas fa-trash"></i></a>`
                 }
