@@ -36,7 +36,7 @@ category.drawTable = function () {
             console.log(data);
             $.each(data.result, function (i, v) {
                 var action = "";
-                if (v.statusName == "Active") {
+                if (v.statusName == "active") {
                     action = `<a href="javascripts:;"
                                        onclick="category.get(${v.categoryId})"><i class="fas fa-edit"></i></a>
                             <a href="javascripts:;"
@@ -75,8 +75,9 @@ category.get = function (id) {
         method: "get",
         dataType: "json",
         success: function (response) {
-            $('#CategoryName').val(response.result.categoryName);
-            document.getElementById('CategoryId').value = response.result.categoryId;
+            console.log(response);
+            $('#CategoryName').val(response.data.categoryName);
+            document.getElementById('CategoryId').value = response.data.categoryId;
             $('#addEditCategoryModal').modal('show');
             document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
         }

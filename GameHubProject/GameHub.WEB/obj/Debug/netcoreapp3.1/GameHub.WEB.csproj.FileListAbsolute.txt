@@ -854,3 +854,4 @@ C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search.cshtml.g.cs
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Login.cshtml.g.cs
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SignUp.cshtml.g.cs
+C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.WEB\obj\Debug\netcoreapp3.1\Razor\Views\Account\RoleAssign.cshtml.g.cs

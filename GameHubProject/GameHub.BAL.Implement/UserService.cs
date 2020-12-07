@@ -1,6 +1,7 @@
 ﻿using GameHub.BAL.Interface;
 using GameHub.DAL.Interface;
 using GameHub.Domain.Common1;
+using GameHub.Domain.Request.Role;
 using GameHub.Domain.Request.User;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,11 @@ namespace GameHub.BAL.Implement
         public async Task<string> Register(RegisterRequest request)
         {
             return await userRepository.Register(request);
+        }
+
+        public async Task<bool> RoleAssign(string id, RoleAssignRequest request)
+        {
+            return await userRepository.RoleAssign(id, request);
         }
 
         public async Task<bool> Update(string id, UserUpdateRequest request)

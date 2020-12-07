@@ -20,5 +20,6 @@ namespace GameHub.Domain.Request.User
         public string PhoneNumber { get; set; }
 
         public string ImagePath { get; set; }
+        public List<string> Roles { get; set; }
     }
 }

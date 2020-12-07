@@ -22,5 +22,6 @@ namespace GameHub.WEB.Models.Account
         public string PhoneNumber { get; set; }
 
         public IFormFile ImagePath { get; set; }
+        public List<string> Roles { get; set; }
     }
 }

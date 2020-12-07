@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameHub.Domain.Request.Role;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -26,6 +27,6 @@ namespace GameHub.Domain.Request.User
 
         public bool IsDelete { get; set; }
 
-        public string Roles { get; set; }
+        public List<string> Roles { get; set; }
     }
 }

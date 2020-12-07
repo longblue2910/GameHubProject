@@ -1,4 +1,5 @@
 ﻿using GameHub.Domain.Common1;
+using GameHub.Domain.Request.Role;
 using GameHub.Domain.Request.User;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace GameHub.BAL.Interface
         Task<string> Register(RegisterRequest request);
 
         Task<bool> Update(string id ,UserUpdateRequest request);
+        Task<bool> RoleAssign(string id , RoleAssignRequest request);
 
         Task<PagedResult<UserViewModel>> GetUserPaging(GetUserPagingRequest request);
         Task<UserViewModel> GetUserbyId(string id);
