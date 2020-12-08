@@ -65,6 +65,33 @@ var GetComment = function (id) {
                     Edit = `<a onclick="Edit(${ v.commentId })">Edit</a>`;
                     Delete = `<a herf='#' onclick="DeleteComment(${v.commentId})">Delete</a>`;
                 }
+                var Time = "";
+                var day = new Date();
+                var month = v.time.substring(5, 7) - 1;
+                var year = v.time.substring(0, 4);
+                var dayy = v.time.substring(8, 10);
+                var hours = v.time.substring(11, 13);
+                var minute = v.time.substring(14, 16);
+                var second = v.time.substring(17, 19);
+
+                var day2 = new Date(year, month, dayy, hours, minute, second);
+               
+                if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52) - 1} Năm Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7) - 1} Tuần Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24  >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24) - 1} Ngày Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60  >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60) - 1} Giờ Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60) - 1} Phút Trước`;
+                }
+
                 $("#add").append(`
                             <div class="media response-info">
                                 <div class="media-left response-text-left">
@@ -79,7 +106,7 @@ var GetComment = function (id) {
                                             </p>
                                             ${Edit}
                                             <ul>
-                                                <li>${v.time}</li>
+                                                <li>${Time}</li>
                                                 <li><a onclick="Reply(${v.commentId})">Reply</a></li>
                                                 <li>${Edited}</li>
                                                 <li>${Delete}</li>
@@ -112,7 +139,33 @@ var GetRep = function (id) {
                 var Delete = "";
                 if (v.userId == UserId) {
                     Edit = `<a onclick="Edit(${v.repId})">Edit</a>`;
-                    Delete = `<a herf='#' onclick="DeleteComment(${v.repId})">Delete</a>`;
+                    Delete = `<a herf='#' onclick="DeleteRep(${v.repId})">Delete</a>`;
+                }
+                var Time = "";
+                var day = new Date();
+                var month = v.time.substring(5, 7) - 1;
+                var year = v.time.substring(0, 4);
+                var dayy = v.time.substring(8, 10);
+                var hours = v.time.substring(11, 13);
+                var minute = v.time.substring(14, 16);
+                var second = v.time.substring(17, 19);
+
+                var day2 = new Date(year, month, dayy, hours, minute, second);
+                var tam = (day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52;
+                if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52) - 1} Năm Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7) - 1} Tuần Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24) - 1} Ngày Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60) - 1} Giờ Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60) - 1} Phút Trước`;
                 }
                 $(`#showRep${id}`).append(`
                             <div class="media response-info" style="margin-left:10%">
@@ -128,7 +181,7 @@ var GetRep = function (id) {
                                             </p>
                                             ${Edit}
                                             <ul>
-                                                <li>${v.time}</li>
+                                                <li>${Time}</li>
                                                 <li>${Edited}</li>
                                                 <li>${Delete}</li>
                                             </ul>
@@ -298,7 +351,7 @@ var PostReply = function (id) {
         data: saveObj,
         success: function (response) {
             console.log(response);
-            alert(response.data.message);
+            alert(response.result.message);
             GetComment(GameId);
             $('#RepId').val(0);
         }

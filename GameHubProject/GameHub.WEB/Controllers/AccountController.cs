@@ -127,6 +127,7 @@ namespace GameHub.WEB.Controllers
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.Session.Remove("Token");
+            HttpContext.Session.Remove("Id");
             return RedirectToAction("Login","Account");
         }
 
