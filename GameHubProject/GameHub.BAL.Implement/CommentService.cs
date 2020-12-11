@@ -22,6 +22,11 @@ namespace GameHub.BAL.Implement
             return await commentRepository.Delete(CommentId);
         }
 
+        public async Task<CommentView> Get(int CommentId)
+        {
+            return await commentRepository.Get(CommentId);
+        }
+
         public async Task<IEnumerable<CommentView>> Gets(int GameId)
         {
             return await commentRepository.Gets(GameId);

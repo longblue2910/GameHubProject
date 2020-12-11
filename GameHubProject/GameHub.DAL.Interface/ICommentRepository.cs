@@ -12,5 +12,6 @@ namespace GameHub.DAL.Interface
         Task<CommentRes> SaveComment(SaveComment request);
         Task<CommentRes> Delete(int CommentId);
         Task<IEnumerable<CommentView>> Gets(int GameId);
+        Task<CommentView> Get(int CommentId);
     }
 }

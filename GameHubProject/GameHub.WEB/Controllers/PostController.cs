@@ -20,14 +20,19 @@ namespace GameHub.WEB.Controllers
             List<CommentView> result = ApiHelper<List<CommentView>>.HttpGetAsync($"Post/showComment/{GameId}");
             return Json(new { result });
         }
+        [HttpGet("/Post/Get/{CommentId}")]
+        public JsonResult Get(int CommentId)
+        {
+            var result = ApiHelper<CommentView>.HttpGetAsync($"Post/showAComment/{CommentId}");
+            return Json(new { result });
+        }
         [HttpPost("/Post/save")]
         public JsonResult Save(SaveComment request)
         {
             var result = ApiHelper<CommentResult>.HttpPostAsync($"Post/PostComment", "POST", request);
             return Json(new { data = result });
         }
-        [HttpPost]
-        [Route("/Post/delete/{id}")]
+        [HttpPost("/Post/delete/{commentId}")]
         public IActionResult Delete(int CommentId)
         {
             var result = ApiHelper<CommentResult>.HttpPatchAsync($"Post/delete/{CommentId}", null);

@@ -19,5 +19,6 @@ namespace GameHub.Domain.User
 
         public string ImagePath { get; set; }
         public bool IsDelete { get; set; }
+        
     }
 }

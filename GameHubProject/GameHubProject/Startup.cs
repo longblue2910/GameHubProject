@@ -114,6 +114,10 @@ namespace GameHubProject
             services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<IVoteRepository, VoteRepository>();
             services.AddScoped<IVoteServices, VoteService>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
+            services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IReplyRepository, ReplyRepository>();
+            services.AddScoped<IReplyService, ReplyService>();
 
             services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();
             services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();

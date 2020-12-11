@@ -1,4 +1,5 @@
 ﻿using GameHub.Domain.Common1;
+using GameHub.Domain.Request.Role;
 using GameHub.Domain.Request.User;
 using GameHub.WEB.Ultilities;
 using Microsoft.AspNetCore.Http;
@@ -47,6 +48,20 @@ namespace GameHub.WEB.Services
             return user;
         }
 
+        public async Task<UserViewModel> GetByUserName(string UserName)
+        {
+            var sessions = httpContextAccessor.HttpContext.Session.GetString("Token");
+            var client = httpClientFactory.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", sessions);
+
+            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            var response = await client.GetAsync($"User/get/{UserName}");
+            var body = await response.Content.ReadAsStringAsync();
+            var user = JsonConvert.DeserializeObject<UserViewModel>(body);
+
+            return user;
+        }
+
         public async Task<PagedResult<UserViewModel>> GetUserPadings(GetUserPagingRequest request)
         {
             var client = httpClientFactory.CreateClient();
@@ -72,6 +87,20 @@ namespace GameHub.WEB.Services
             var response = await client.PostAsync("User/register", httpContent);
 
             return await response.Content.ReadAsStringAsync();
+        }
+
+        public async Task<bool> RoleAssign(string id, RoleAssignRequest roleRequest)
+        {
+            var client = httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            var sessions = httpContextAccessor.HttpContext.Session.GetString("Token");
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", sessions);
+
+            var json = JsonConvert.SerializeObject(roleRequest);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PutAsync($"User/{id}/roles", httpContent);
+            return response.IsSuccessStatusCode;
         }
 
         public async Task<bool> UpdateUser(string id, UserUpdateRequest registerRequest)

@@ -1,6 +1,7 @@
 ﻿using GameHub.DAL.Interface;
 using GameHub.Domain;
 using GameHub.Domain.Common1;
+using GameHub.Domain.Request.Role;
 using GameHub.Domain.Request.User;
 using GameHub.Domain.User;
 using Microsoft.AspNetCore.Identity;
@@ -46,7 +47,6 @@ namespace GameHub.DAL.Implement
             var Claims = new[]
             {
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.GivenName, user.FullName),
                 new Claim(ClaimTypes.Role, string.Join(";", roles)),
                 new Claim(ClaimTypes.Name, user.UserName)
             };
@@ -172,6 +172,59 @@ namespace GameHub.DAL.Implement
                 //Roles = roles
             };
             return userVm;
+        }
+
+        public async Task<UserViewModel> GetUserbyUserName(string UserName)
+        {
+            var user = await userManager.FindByNameAsync(UserName.ToString());
+            if (user == null)
+            {
+                return null;
+            }
+            var roles = await userManager.GetRolesAsync(user);
+            var userVm = new UserViewModel()
+            {
+                PhoneNumber = user.PhoneNumber,
+                FullName = user.FullName,
+                DoB = user.DoB,
+                Id = user.Id,
+                Gender = user.Gender,
+                Facebook = user.Facebook,
+                ImagePath = user.ImagePath,
+                Address = user.Address,
+                Company = user.Company
+                //Roles = roles
+            };
+            return userVm;
+        }
+
+        public async Task<bool> RoleAssign(string id, RoleAssignRequest request)
+        {
+            var user = await userManager.FindByIdAsync(id.ToString());
+            if (user == null)
+            {
+                return false;
+            }
+            var removedRoles = request.Roles.Where(x => x.Selected == false).Select(x => x.Name).ToList();
+            foreach (var roleName in removedRoles)
+            {
+                if (await userManager.IsInRoleAsync(user, roleName) == true)
+                {
+                    await userManager.RemoveFromRoleAsync(user, roleName);
+                }
+            }
+            await userManager.RemoveFromRolesAsync(user, removedRoles);
+
+            var addedRoles = request.Roles.Where(x => x.Selected).Select(x => x.Name).ToList();
+            foreach (var roleName in addedRoles)
+            {
+                if (await userManager.IsInRoleAsync(user, roleName) == false)
+                {
+                    await userManager.AddToRoleAsync(user, roleName);
+                }
+            }
+
+            return true;
         }
     }
 }

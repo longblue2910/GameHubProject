@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using GameHub.Domain.Request.Role;
 using GameHub.Domain.Request.User;
 using GameHub.WEB.Models.Account;
 using GameHub.WEB.Services;
@@ -26,13 +27,15 @@ namespace GameHub.WEB.Controllers
         private readonly IUserApiClient userApiClient;
         private readonly IConfiguration configuration;
         private readonly IWebHostEnvironment webHost;
+        private readonly IRoleApiClient roleApiClient;
 
         public AccountController(IUserApiClient userApiClient, IConfiguration configuration,
-                                    IWebHostEnvironment webHost)
+                                    IWebHostEnvironment webHost, IRoleApiClient roleApiClient)
         {
             this.userApiClient = userApiClient;
             this.configuration = configuration;
             this.webHost = webHost;
+            this.roleApiClient = roleApiClient;
         }
         public async Task<IActionResult> Index(string keyword, int pageIndex = 1, int pageSize = 10)
         {
@@ -100,7 +103,6 @@ namespace GameHub.WEB.Controllers
         {
             if (!ModelState.IsValid)
                 return View(ModelState);
-
             var token = await userApiClient.Authenticate(request);
 
             var userPrincipal = this.ValidateToken(token);
@@ -110,6 +112,8 @@ namespace GameHub.WEB.Controllers
                 IsPersistent = false
             };
             HttpContext.Session.SetString("Token", token);
+            var user = await userApiClient.GetByUserName(request.UserName); 
+            HttpContext.Session.SetString("Id", user.Id);
 
             await HttpContext.SignInAsync(
                         CookieAuthenticationDefaults.AuthenticationScheme,
@@ -160,11 +164,35 @@ namespace GameHub.WEB.Controllers
                     FullName = users.FullName,
                     Gender = users.Gender,
                     ImagePath = users.ImagePath,
-                    PhoneNumber = users.PhoneNumber
+                    PhoneNumber = users.PhoneNumber,
+                    Roles = users.Roles
                 };
                 return View(updateRequest);
             }
             return RedirectToAction("index");
+        }
+        [HttpGet]
+        public async Task<OkObjectResult> Get(string id)
+        {
+            var users = await userApiClient.GetById(id);
+            if (users != null)
+            {
+                var updateRequest = new UserUpdateRequest()
+                {
+                    Id = id,
+                    Address = users.Address,
+                    Company = users.Company,
+                    DoB = users.DoB,
+                    Facebook = users.Facebook,
+                    FullName = users.FullName,
+                    Gender = users.Gender,
+                    ImagePath = users.ImagePath,
+                    PhoneNumber = users.PhoneNumber,
+                    Roles = users.Roles
+                };
+                return Ok(updateRequest);
+            }
+            return Ok("error");
         }
 
         [HttpPost]
@@ -182,7 +210,8 @@ namespace GameHub.WEB.Controllers
                 Facebook = request.Facebook,
                 FullName = request.FullName,
                 Gender = request.Gender,
-                PhoneNumber = request.PhoneNumber
+                PhoneNumber = request.PhoneNumber,
+                Roles = request.Roles
             };
             string FileImage = null;
             if (request.ImagePath != null)
@@ -203,6 +232,49 @@ namespace GameHub.WEB.Controllers
             }
 
             return Ok("Update Fail");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RoleAssign(string id)
+        {
+            var roleAssignReq = await GetRoleAssignRequest(id);
+            roleAssignReq.Id = id;
+            return View(roleAssignReq);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RoleAssign(RoleAssignRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await userApiClient.RoleAssign(request.Id, request);
+            if (result)
+            {
+                return RedirectToAction("index");
+            }
+
+            ModelState.AddModelError("", "Update Role fail");
+            var roleAssignReq = await GetRoleAssignRequest(request.Id);
+
+            return View(request);
+        }
+
+        private async Task<RoleAssignRequest> GetRoleAssignRequest(string id)
+        {
+            var userObj = await userApiClient.GetById(id);
+            var roleObj = await roleApiClient.GetAll();
+            var roleAssignRequest = new RoleAssignRequest();
+            foreach (var role in roleObj)
+            {
+                roleAssignRequest.Roles.Add(new SelectItem()
+                {
+                    Id = role.Id.ToString(),
+                    Name = role.Name,
+                    Selected = true
+                });
+            }
+            return roleAssignRequest;
         }
     }
 }

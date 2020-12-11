@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GameHub.BAL.Interface;
-using GameHub.DAL.Interface;
+﻿using GameHub.BAL.Interface;
+using GameHub.Domain.Request.Role;
 using GameHub.Domain.Request.User;
 using GameHub.Domain.User;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace GameHub.API.Controllers
 {
@@ -69,6 +65,12 @@ namespace GameHub.API.Controllers
             var users = await userService.GetUserbyId(id);
             return Ok(users);
         }
+        [HttpGet("get/{userName}")]
+        public async Task<IActionResult> GetByUserName(string userName)
+        {
+            var user = await userService.GetUserbyUserName(userName);
+            return Ok(user);
+        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, [FromBody] UserUpdateRequest request)
@@ -77,6 +79,19 @@ namespace GameHub.API.Controllers
                 return BadRequest(ModelState);
 
             var result = await userService.Update(id, request);
+            if (!result)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+        [HttpPut("{id}/roles")]
+        public async Task<IActionResult> RoleAssign(string id, [FromBody] RoleAssignRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await userService.RoleAssign(id, request);
             if (!result)
             {
                 return BadRequest(result);
