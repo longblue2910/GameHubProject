@@ -7,12 +7,12 @@
     <h3>Create your account</h3>
     <div asp-validation-summary="All" class="text-danger"></div>
     <div>
-        <input value="@message" hidden id="value"/>
-        @if(message == "Thanh Cong")
+        <input value="@message" hidden id="value" />
+        @if (message == "Thanh Cong")
         {
             <p class="alert alert-success" id="succes" value="@message" onchange="change()">Success</p>
         }
-        else if( message == "That bai")
+        else if (message == "That bai")
         {
             <p id="succes" onchange="change()"></p>
         }
@@ -43,22 +43,7 @@
             <button class="btn theme-button">Register</button>
         </div>
     </form>
-    <div class="social-icons">
-        <p class="continue"><span>Or</span></p>
-        <div class="social-login">
-            <a href="#facebook">
-                <div class="facebook">
-                    <span class="fa fa-facebook" aria-hidden="true"></span>
 
-                </div>
-            </a>
-            <a href="#google">
-                <div class="google">
-                    <span class="fa fa-google-plus" aria-hidden="true"></span>
-                </div>
-            </a>
-        </div>
-    </div>
     <p class="signup">Already a member? <a asp-controller="Account" asp-action="Login" class="signuplink">Login</a></p>
 </div>
 <script>

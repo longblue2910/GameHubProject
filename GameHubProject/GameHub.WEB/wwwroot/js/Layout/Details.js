@@ -14,7 +14,7 @@ var GetGameByCategory = function (id) {
                     $('.recent-posts').append(`
                             <div class="recent-posts-info">
                                 <div class="posts-left sngl-img">
-                                    <a href="/Home/Details/${v.gameId}"><img style="height:120px;width:155px;" src="/images/${v.pathImage}" class="img-responsive zoom-img" alt="" /></a>
+                                    <a href="/Home/Details/${v.gameId}"> <img style="height:120px;width:155px;" src="/images/${v.pathImage}" class="img-responsive zoom-img" alt="" /> </a>
                                 </div>
                                 <div class="posts-right">
                                      <h4><a href="/Home/Details/${v.gameId}">${v.gameName}</a></h4>
@@ -22,7 +22,7 @@ var GetGameByCategory = function (id) {
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                                `);
+                    `);
                 }
 
             })
@@ -41,7 +41,7 @@ $("#Post").click(function () {
         method: 'POST',
         data: saveObj,
         success: function (response) {
-            bootbox.alert(response.data.message);
+            alert(response.data.message);
             $('#EditComment').val(0);
             GetComment(GameId);
         }
@@ -62,7 +62,7 @@ var GetComment = function (id) {
                 var Edit = "";
                 var Delete = "";
                 if (v.userId == UserId) {
-                    Edit = `<a onclick="Edit(${ v.commentId })">Edit</a>`;
+                    Edit = `<a onclick="Edit(${v.commentId})">Edit</a>`;
                     Delete = `<a herf='#' onclick="DeleteComment(${v.commentId})">Delete</a>`;
                 }
                 var Time = "";
@@ -75,23 +75,22 @@ var GetComment = function (id) {
                 var second = v.time.substring(17, 19);
 
                 var day2 = new Date(year, month, dayy, hours, minute, second);
-               
+
                 if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52 >= 1) {
                     Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52) - 1} Năm Trước`;
                 }
                 else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 >= 1) {
                     Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7) - 1} Tuần Trước`;
                 }
-                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24  >= 1) {
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 >= 1) {
                     Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24) - 1} Ngày Trước`;
                 }
-                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60  >= 1) {
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 >= 1) {
                     Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60) - 1} Giờ Trước`;
                 }
                 else if ((day.getTime() - day2.getTime()) / 1000 / 60 >= 1) {
                     Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60) - 1} Phút Trước`;
                 }
-
                 $("#add").append(`
                             <div class="media response-info">
                                 <div class="media-left response-text-left">
@@ -139,7 +138,7 @@ var GetRep = function (id) {
                 var Delete = "";
                 if (v.userId == UserId) {
                     Edit = `<a onclick="Edit(${v.repId})">Edit</a>`;
-                    Delete = `<a herf='#' onclick="DeleteRep(${v.repId})">Delete</a>`;
+                    Delete = `<a herf='#' onclick="DeleteComment(${v.repId})">Delete</a>`;
                 }
                 var Time = "";
                 var day = new Date();
@@ -151,7 +150,7 @@ var GetRep = function (id) {
                 var second = v.time.substring(17, 19);
 
                 var day2 = new Date(year, month, dayy, hours, minute, second);
-                var tam = (day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52;
+
                 if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52 >= 1) {
                     Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52) - 1} Năm Trước`;
                 }
@@ -251,7 +250,13 @@ var vote = 0;
 $(document).ready(function () {
     GetGameByCategory(CategoryId);
     GetComment(GameId);
-    checkRate(GameId, UserId);
+    if (UserId != "") {
+        checkRate(GameId, UserId);
+    }
+    else {
+        changeRate();
+    }
+    getRate(GameId);
 });
 function onmove(id) {
     if (id >= 1) {
@@ -273,12 +278,17 @@ function click(id) {
         url: '/Rate/saveVote',
         method: 'POST',
         data: Obj,
-        success: function () {
-            alert("Success Rate! thanks");
-            $("#addcheck").empty();
-            $("#addcheck").append(`
-                        <button class="btn btn-success" onclick="changeRate()">Checked</button>
-                    `);
+        success: function (response) {
+            if (response.data.voteId != 0) {
+                alert("Success Rate! thanks");
+                $("#addcheck").empty();
+                $("#addcheck").append(`
+                            <span onclick="changeRate()"><i class="fas fa-check"></i></span>
+                        `);
+            }
+            else {
+                alert(response.data.message);
+            }
         }
     });
 }
@@ -288,9 +298,8 @@ var checkRate = function (GameId, UserId) {
         method: "GET",
         dataType: "json",
         success: function (response) {
-            console.log(response.result);
             $("#addcheck").empty();
-            if (response.result.check = 0) {
+            if (response.result.check == 0) {
                 $("#addcheck").append(`
                         <span id="1" onmousemove="onmove(1)" onclick="click(1)" class="fa fa-star checked"></span>
                         <span id="2" onmousemove="onmove(2)" onclick="click(2)" class="fa fa-star checked"></span>
@@ -301,7 +310,7 @@ var checkRate = function (GameId, UserId) {
             }
             else {
                 $("#addcheck").append(`
-                        <button class="btn btn-success" onclick="changeRate()">Checked</button>
+                        <span onclick="changeRate()"><i class="fas fa-check"></i></span>
                     `);
             }
         }
@@ -317,6 +326,20 @@ var changeRate = function () {
                         <span id="5" onmousemove="onmove(5)" onclick="click(5)" class="fa fa-star"></span>
                     `);
 };
+var getRate = function (id) {
+    $.ajax({
+        url: `/Game/getRate/${id}`,
+        method: "GET",
+        dataType: "json",
+        success: function (response) {
+            console.log(response);
+            $("#addcheck").append(`</br>
+                        <span>${response.countRate}/5 Sao</span></br>
+                        <span>Số Lượng Vote: ${response.avgRate}</span>
+                    `);
+        }
+    });
+}
 var Back = function (id) {
     $('#formRep').show();
     $(`#repCmt${id}`).remove();
@@ -350,8 +373,7 @@ var PostReply = function (id) {
         method: 'POST',
         data: saveObj,
         success: function (response) {
-            console.log(response);
-            alert(response.result.message);
+            alert(response.data.message);
             GetComment(GameId);
             $('#RepId').val(0);
         }

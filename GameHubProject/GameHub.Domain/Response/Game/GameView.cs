@@ -21,7 +21,10 @@ namespace GameHub.Domain.Response.Game
         public string UserModified { get; set; }
         public int Download { get; set; }
         public int Visit { get; set; }
+        public int comment { get; set; }
         public string StatusName { get; set; }
         public bool IsDeleted { get; set; }
+        public int CountRate { get; set; }
+        public float AvgRate { get; set; }
     }
 }

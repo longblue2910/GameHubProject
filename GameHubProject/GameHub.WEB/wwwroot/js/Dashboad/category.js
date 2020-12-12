@@ -8,7 +8,25 @@ category.deleted = function (id, name) {
             dataType: 'JSON',
             success: function (response) {
                 console.log(response);
-                alert(name +" "+response.data.message + " !");
+                alert(name + " " + response.data.message + " !");
+                category.drawTable();
+            },
+            error: function () {
+                alert(response.data.message);
+            }
+        });
+    }
+}
+category.actived = function (id, name) {
+    var result = confirm("Do you want to active " + name + "?");
+    if (result == true) {
+        $.ajax({
+            url: `/category/delete/${id}`,
+            method: 'POST',
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+                alert(name + " " + response.data.message + " !");
                 category.drawTable();
             },
             error: function () {
@@ -26,7 +44,7 @@ category.init = function () {
 category.drawTable = function () {
     $('#categoryTable').empty();
     $.ajax({
-        beforeSend: function () {   
+        beforeSend: function () {
             $('.ajax-loader').css("visibility", "visible");
         },
         url: "/Category/Gets",
@@ -45,7 +63,7 @@ category.drawTable = function () {
                 else {
                     action = `
                             <a href="javascripts:;"
-                                        onclick="category.deleted(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-check-circle"></i></a>`
+                                        onclick="category.actived(${v.categoryId}, '${v.categoryName}')"><i class="fas fa-check-circle"></i></a>`
                 }
                 $('#categoryTable').append(
                     `<tr>
@@ -75,14 +93,12 @@ category.get = function (id) {
         method: "get",
         dataType: "json",
         success: function (response) {
-            console.log(response);
             $('#CategoryName').val(response.data.categoryName);
             document.getElementById('CategoryId').value = response.data.categoryId;
             $('#addEditCategoryModal').modal('show');
             document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
         }
     });
-    
 }
 category.save = function () {
     if ($('#frmAddEditCategory').valid()) {

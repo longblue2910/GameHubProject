@@ -22,6 +22,24 @@ game.deleted = function (id, name) {
         });
     }
 }
+game.actived = function (id, name) {
+    var result = confirm("Do you want to active " + name + "?");
+    if (result == true) {
+        $.ajax({
+            url: `/game/delete/${id}`,
+            method: 'POST',
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+                alert(name + " " + response.data.message + " !");
+                game.drawTable();
+            },
+            error: function () {
+                alert(response.data.message);
+            }
+        });
+    }
+}
 $(document).ready(function () {
     game.init();
 })
@@ -41,17 +59,18 @@ game.drawTable = function () {
             console.log(data);
             $.each(data.result, function (i, v) {
                 var action = "";
-                if (v.statusName == "Active") {
+                if (v.statusName == "active") {
                     action = `<a href="javascripts:;"
                                        onclick="game.get(${v.gameId})"><i class="fas fa-edit"></i></a>
                             <a href="javascripts:;"
-                                        onclick="game.deleted(${v.gameId}, '${v.gameName}')"><i class="fas fa-trash"></i></a>`
+                                        onclick="game.deleted(${v.gameId}, '${v.gameName}')"><i class="fas fa-trash"></i></a>
+                          <a href="/Home/Details/${v.gameId}"><i class="fas fa-eye"></i></a>
+                            `
                 }
                 else {
-                    action = `<a href="javascripts:;"
-                                       onclick="game.get(${v.gameId})"><i class="fas fa-edit"></i></a>
+                    action = `
                             <a href="javascripts:;"
-                                        onclick="game.deleted(${v.gameId}, '${v.gameName}')"><i class="fas fa-trash"></i></a>`
+                                        onclick="game.actived(${v.gameId}, '${v.gameName}')"><i class="fas fa-check"></i></a>`
                 }
                 $('#gameTable').append(
                     `<tr>
@@ -79,7 +98,7 @@ game.openModal = function () {
     document.getElementsByClassName('modal-backdrop')[0].classList.remove('modal-backdrop');
 }
 game.get = function (id) {
-    
+
     $.ajax({
         url: `/game/get/${id}`,
         method: "get",
@@ -98,7 +117,7 @@ game.get = function (id) {
                 success: function (response) {
                     console.log(response);
                     $.each(response.result, function (i, v) {
-                        for (k = 0; k < list.length; k++){
+                        for (k = 0; k < list.length; k++) {
                             if (v.categoryId = list[k].categoryId) {
                                 $('#CategoryId').append(`
                                 <option selected="selected" value="${v.categoryId}">${v.categoryName}</option>`);
@@ -131,8 +150,8 @@ game.save = function () {
         method: 'POST',
         data: tam,
         success: function (string) {
-                saveObj.images = string;
-                alert('success');
+            saveObj.images = string;
+            alert('success');
         }
     });
     if ($('#GameId').val() != undefined) {

@@ -13,9 +13,9 @@
         <div class="agileits_breadcrumbs_left street">
             <ul style="font-size: smaller; margin-bottom: 24px;">
                 <li>
-                    <a style="color:black" asp-controller="Home" asp-action="Index"> </a><i class="fa fa-angle-right" style="font-size:14px"></i>
+                    <a style="color:black" asp-controller="Home" asp-action="Index">Home</a><i class="fa fa-angle-right" style="font-size:14px"></i>
                 </li>
-                <li><a style="color:darkgrey" asp-action="AllGame" asp-controller="Home">Game Offline</a></li>
+                <li><a style="color:darkgrey" asp-controller="Home" asp-action="AllGame">Game Offline</a></li>
             </ul>
         </div>
         <div class="clearfix"> </div>
@@ -26,7 +26,7 @@
     <input hidden id="UserId" value="@HttpContextAccessor.HttpContext.Session.GetString("Id")" />
     @if (@Model.Description != null)
     {
-        <input hidden id="gameid1" value="1" />
+        <input hidden id="gameid1" value="@Model.Categorys.FirstOrDefault().CategoryId" />
     }
     else
     {
@@ -36,6 +36,10 @@
         @Model.GameName
     </h1>
     <hr />
+    <h3>
+        <img src="~/images/Avatar/@Model.PathImage" width="50" style="border-radius: 50%" alt="Alternate Text" />
+        by  <span>@Model.UserName   .</span><span>    @Model.Visit  View</span>
+    </h3>
     <div class="blog-img">
         @if (@Model.Description != null)
         {
@@ -46,6 +50,7 @@
             <img src="~/images/404.jpg" alt="" />
         }
     </div>
+
 </div>
 <div class="container">
     <div class="blog">
@@ -60,8 +65,8 @@
                         <ul>
                             <li><span class="clndr"></span>@Model.CreateDate.ToString("MMM, dd,yyyy")</li>
                             <li><span class="admin"></span> <a href="#">By @Model.UserName</a></li>
-                            <li><span class="cmnts"></span> <a href="#">5 comments</a></li>
-                            <li><a href="#" class="like">15</a></li>
+                            <li><span class="cmnts"></span> <a href="#">@Model.Comment comments</a></li>
+                            @*<li><a href="#" class="like">15</a></li>*@
                         </ul>
                     </div>
                     <div class="col-3" id="addcheck">

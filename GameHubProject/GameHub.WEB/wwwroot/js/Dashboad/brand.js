@@ -17,6 +17,24 @@ brand.deleted = function (id, name) {
         });
     }
 }
+brand.actived = function (id, name) {
+    var result = confirm("Do you want to active " + name + "?");
+    if (result == true) {
+        $.ajax({
+            url: `/brand/delete/${id}`,
+            method: 'POST',
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+                alert(name + " " + response.data.message + " !");
+                brand.drawTable();
+            },
+            error: function () {
+                alert(response.data.message);
+            }
+        });
+    }
+}
 $(document).ready(function () {
     brand.init();
 })
@@ -44,7 +62,7 @@ brand.drawTable = function () {
                 else {
                     action = `
                             <a href="javascripts:;"
-                                        onclick="brand.deleted(${v.brandId}, '${v.brandName}')"><i class="fas fa-check-circle"></i></a>`
+                                        onclick="brand.actived(${v.brandId}, '${v.brandName}')"><i class="fas fa-check-circle"></i></a>`
                 }
                 $('#brandTable').append(
                     `<tr>
