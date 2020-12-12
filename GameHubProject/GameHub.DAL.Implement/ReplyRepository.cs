@@ -71,7 +71,7 @@ namespace GameHub.DAL.Implement
                 parameters.Add("@Text", request.Text);
                 parameters.Add("@GameId", request.GameId);
                 parameters.Add("@UserId", request.UserId);
-                parameters.Add("@@RepId", request.RepId);
+                parameters.Add("@RepId", request.RepId);
                 result = await SqlMapper.QueryFirstOrDefaultAsync<ReplyRes>(cnn: connection,
                                                                         sql: "sp_SaveReply",
                                                                         param: parameters,
