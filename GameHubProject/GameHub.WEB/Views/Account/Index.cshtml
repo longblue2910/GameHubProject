@@ -11,14 +11,11 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-borderless table-striped">
     <thead>
         <tr>
             <th>
-                Id
-            </th>
-            <th>
-                FUllName
+                FullName
             </th>
             <th>
                 Address
@@ -49,9 +46,6 @@
 @foreach (var item in Model.Items) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
@@ -70,7 +64,7 @@
                 @Html.DisplayFor(modelItem => item.Facebook)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImagePath)
+                <img width="70" style="border-radius: 50%" src="~/images/Avatar/@item.ImagePath" alt="avatar" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IsDelete)

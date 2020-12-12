@@ -14,6 +14,7 @@ namespace GameHub.WEB.Models.Game
         public IEnumerable<Image> Images { get; set; }
         public string PathImage { get; set; }
         public int BrandId { get; set; }
+        public int Comment { get; set; }
         public string Description { get; set; }
         public string UserId { get; set; }
         public string UserName { get; set; }
@@ -23,5 +24,7 @@ namespace GameHub.WEB.Models.Game
         public int Visit { get; set; }
         public string StatusName { get; set; }
         public bool IsDeleted { get; set; }
+        public int CountRate { get; set; }
+        public float AVGRate { get; set; }
     }
 }

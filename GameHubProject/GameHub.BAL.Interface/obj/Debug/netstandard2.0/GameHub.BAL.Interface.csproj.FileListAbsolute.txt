@@ -46,3 +46,15 @@ C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.BAL.Interface\
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.csproj.CopyComplete
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.dll
 C:\Users\XuanHoang\Desktop\Gamehub\Longdev\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.pdb
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\bin\Debug\netstandard2.0\GameHub.BAL.Interface.deps.json
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\bin\Debug\netstandard2.0\GameHub.BAL.Interface.dll
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\bin\Debug\netstandard2.0\GameHub.BAL.Interface.pdb
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\bin\Debug\netstandard2.0\GameHub.Domain.dll
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\bin\Debug\netstandard2.0\GameHub.Domain.pdb
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.csprojAssemblyReference.cache
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.AssemblyInfoInputs.cache
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.AssemblyInfo.cs
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.csproj.CoreCompileInputs.cache
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.csproj.CopyComplete
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.dll
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.BAL.Interface\obj\Debug\netstandard2.0\GameHub.BAL.Interface.pdb

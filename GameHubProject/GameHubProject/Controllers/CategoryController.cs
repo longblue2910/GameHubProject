@@ -28,7 +28,6 @@ namespace GameHub.API.Controllers
             var result = await categoryService.Save(request);
             return Ok(result);
         }
-        //[Authorize]
         [HttpGet("gets")]
         public async Task<OkObjectResult> Gets()
         {

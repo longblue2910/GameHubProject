@@ -39,7 +39,15 @@ namespace GameHub.WEB.Controllers
             int pageSize = 12;
             int pageNumber = (page ?? 1);
             var games = ApiHelper<List<GameView>>.HttpGetAsync($"game/gets");
-            return View(games.ToPagedList(pageNumber, pageSize));
+            var listgame = new List<GameView>();
+            foreach(var item in games)
+            {
+                if(item.StatusName == "active")
+                {
+                    listgame.Add(item);
+                }
+            }
+                return View(listgame.ToPagedList(pageNumber, pageSize));
         }
         public IActionResult Search(string searchWord, int? page)
         {

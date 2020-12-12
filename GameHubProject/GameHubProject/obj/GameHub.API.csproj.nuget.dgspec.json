@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHubProject\\GameHub.API.csproj": {}
+    "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHubProject\\GameHub.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj": {
+    "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj",
+        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj",
         "projectName": "GameHub.BAL.Implement",
-        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj",
+        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj",
         "packagesPath": "C:\\Users\\XuanHoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Implement\\obj\\",
+        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Implement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\XuanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,14 +27,14 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj"
               },
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj"
               },
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj": {
+    "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj",
+        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj",
         "projectName": "GameHub.BAL.Interface",
-        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj",
+        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj",
         "packagesPath": "C:\\Users\\XuanHoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Interface\\obj\\",
+        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Interface\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\XuanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -92,8 +92,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
               }
             }
           }
@@ -128,14 +128,14 @@
         }
       }
     },
-    "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj": {
+    "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj",
+        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj",
         "projectName": "GameHub.DAL.Implement",
-        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj",
+        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj",
         "packagesPath": "C:\\Users\\XuanHoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Implement\\obj\\",
+        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Implement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\XuanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -151,11 +151,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj"
               },
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
               }
             }
           }
@@ -214,14 +214,14 @@
         }
       }
     },
-    "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj": {
+    "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
+        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
         "projectName": "GameHub.DAL.Interface",
-        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
+        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj",
         "packagesPath": "C:\\Users\\XuanHoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\obj\\",
+        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\XuanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -237,8 +237,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
               }
             }
           }
@@ -273,14 +273,14 @@
         }
       }
     },
-    "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
+    "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
         "projectName": "GameHub.Domain",
-        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
+        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj",
         "packagesPath": "C:\\Users\\XuanHoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\obj\\",
+        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\XuanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -340,14 +340,14 @@
         }
       }
     },
-    "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHubProject\\GameHub.API.csproj": {
+    "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHubProject\\GameHub.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHubProject\\GameHub.API.csproj",
+        "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHubProject\\GameHub.API.csproj",
         "projectName": "GameHub.API",
-        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHubProject\\GameHub.API.csproj",
+        "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHubProject\\GameHub.API.csproj",
         "packagesPath": "C:\\Users\\XuanHoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHubProject\\obj\\",
+        "outputPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHubProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\XuanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -363,17 +363,17 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Implement\\GameHub.BAL.Implement.csproj"
               },
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj"
               },
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Implement\\GameHub.DAL.Implement.csproj"
               },
-              "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj": {
-                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj"
+              "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj": {
+                "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.DAL.Interface\\GameHub.DAL.Interface.csproj"
               }
             }
           }

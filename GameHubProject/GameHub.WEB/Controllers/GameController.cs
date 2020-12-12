@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GameHub.WEB.Models.Game;
 using GameHub.WEB.Ultilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,7 @@ namespace GameHub.WEB.Controllers
         {
             this.webHost = webHost;
         }
-        
+        [Authorize]
         public IActionResult Index()
         {
             return View();
@@ -107,6 +108,13 @@ namespace GameHub.WEB.Controllers
         {
             var game = ApiHelper<UpdateGame>.HttpGetAsync($"game/get/{id}");
             return View(game);
+        }
+        [HttpGet]
+        [Route("/Game/getRate/{id}")]
+        public IActionResult get(int id)
+        {
+            var game = ApiHelper<GameView>.HttpGetAsync($"game/get/{id}");
+            return Ok(game);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace GameHub.Domain.Response.Game
         public IEnumerable<Image> Images { get; set; }
         public string BrandName { get; set; }
         public int BrandId { get; set; }
+        public int Comment { get; set; }
         public string PathImage { get; set; }
         public string Description { get; set; }
         public string UserId { get; set; }
@@ -23,5 +24,7 @@ namespace GameHub.Domain.Response.Game
         public int Visit { get; set; }
         public string StatusName { get; set; }
         public bool IsDeleted { get; set; }
+        public int CountRate { get; set; }
+        public float AVGRate { get; set; }
     }
 }

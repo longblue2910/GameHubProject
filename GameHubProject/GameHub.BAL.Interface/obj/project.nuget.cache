@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Bop8S7RoVqNX0j/MKaBdcRZnNDJURfCPMOnxoATgUM/mLzzBnlK5pGvae0tczliGd42NQlb522kSQRuBs5lBUg==",
+  "dgSpecHash": "/CD0AxYuM4a9TSD/k3/2hfAKLwglPcQ0lUVW4aw8e/lCJEF0/jZKeGKZIi7a0WvhIxqKWXfQWoOBWidNMaHp6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj",
+  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.BAL.Interface\\GameHub.BAL.Interface.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\XuanHoang\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
     "C:\\Users\\XuanHoang\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",

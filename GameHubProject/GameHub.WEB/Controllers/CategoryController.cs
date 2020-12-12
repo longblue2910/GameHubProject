@@ -11,6 +11,7 @@ namespace GameHub.WEB.Controllers
 {
     public class CategoryController : Controller
     {
+        [Authorize]
         public IActionResult Index()
         {
             return View();

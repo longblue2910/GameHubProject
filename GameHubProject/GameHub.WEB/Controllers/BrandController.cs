@@ -1,6 +1,7 @@
 ﻿using GameHub.WEB.Models.Brand;
 using GameHub.WEB.Models.Category;
 using GameHub.WEB.Ultilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -8,6 +9,7 @@ namespace GameHub.WEB.Controllers
 {
     public class BrandController : Controller
     {
+        [Authorize]
         public IActionResult Index()
         {
             return View();

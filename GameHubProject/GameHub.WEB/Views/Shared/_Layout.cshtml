@@ -66,19 +66,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="dropdown">
                                 <input hidden id="UserId" value="@HttpContextAccessor.HttpContext.Session.GetString("Id")" />
                                 <div id="imguser"></div>
-                                <button class="alert-success">@User.Identity.Name</button>
+                                
                                 <div class="dropdown-content" style="z-index:99999999999;">
-                                    <p>Hello World!</p>
-                                    <form asp-controller="Account" asp-action="Logout" method="post">
-                                        <button type="submit">Logout</button>
-                                    </form>
+                                    <a href="https://localhost:44397/Category">Manager</a>
+                                    <a asp-controller="Account" asp-action="Logout" >Logout
+                                    </a>
                                 </div>
                             </div>
                         }
                         else
                         {
                             <li><a asp-controller="Account" asp-action="Login"><span aria-hidden="true"></span>Login</a></li>
-                            <li><a asp-controller="Account" asp-action="SignUp"><span class="page-link" aria-hidden="true"></span>Sign Up</a></li>
+                            <li><a asp-controller="Account" asp-action="Register"><span class="page-link" aria-hidden="true"></span>Sign Up</a></li>
                         }
                     </ul>
                 </div>
@@ -194,7 +193,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 success: function (response) {
                     console.log(response);
                     $("#imguser").append(`
-                            <img src="/images/Avatar/${response.imagePath}" style="border-radius:50%" width="36px" height="36px" alt="Alternate Text" />
+                            <img src="/images/Avatar/${response.imagePath}" style="border-radius:50%" width="36px" height="36px" alt="avatar" />
+                            <span class="alert-success">${response.userName}</button>
                         `);
                 }
             });

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aJkc0VuSv8kQMVYf2qPNIxOrYEJMSeWc5ROrBv9WY6mvYTRpoJtTldI0uYfWa3V8ONjuacB34eSt5p97dtKPgw==",
+  "dgSpecHash": "wq2haIDJ88AcMkZyacPFN2tVZ0NZlpC8j9yUMvyo7KhqAIK7drmBHdqqNTksOpccXYoVdozyj3hfp9kaSudSxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHubProject\\GameHub.API.csproj",
+  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHubProject\\GameHub.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\XuanHoang\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\XuanHoang\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",

@@ -141,6 +141,7 @@ namespace GameHub.DAL.Implement
             user.PhoneNumber = request.PhoneNumber;
             user.Gender = request.Gender;
             user.ImagePath = request.ImagePath;
+            user.UserName = request.UserName;
 
             var result = await userManager.UpdateAsync(user);
             if (result.Succeeded)
@@ -168,7 +169,8 @@ namespace GameHub.DAL.Implement
                 Facebook = user.Facebook,
                 ImagePath = user.ImagePath,
                 Address = user.Address,
-                Company = user.Company
+                Company = user.Company,
+                UserName = user.UserName
                 //Roles = roles
             };
             return userVm;
@@ -192,7 +194,8 @@ namespace GameHub.DAL.Implement
                 Facebook = user.Facebook,
                 ImagePath = user.ImagePath,
                 Address = user.Address,
-                Company = user.Company
+                Company = user.Company,
+                UserName = user.UserName
                 //Roles = roles
             };
             return userVm;

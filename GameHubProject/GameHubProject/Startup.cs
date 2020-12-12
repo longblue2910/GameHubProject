@@ -125,7 +125,7 @@ namespace GameHubProject
 
 
             services.AddDbContext<AppDbContext>(options => 
-            options.UseSqlServer(Configuration.GetConnectionString("GameHubDbConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("GameHubDbConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>().
                 AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();

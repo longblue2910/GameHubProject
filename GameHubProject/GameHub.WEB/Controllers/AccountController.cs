@@ -37,6 +37,7 @@ namespace GameHub.WEB.Controllers
             this.webHost = webHost;
             this.roleApiClient = roleApiClient;
         }
+        [Authorize]
         public async Task<IActionResult> Index(string keyword, int pageIndex = 1, int pageSize = 10)
         {
             var session = HttpContext.Session.GetString("Token");
@@ -122,11 +123,11 @@ namespace GameHub.WEB.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.Session.Remove("Token");
+            HttpContext.Session.Remove("Id");
             return RedirectToAction("Login","Account");
         }
 
@@ -188,7 +189,8 @@ namespace GameHub.WEB.Controllers
                     Gender = users.Gender,
                     ImagePath = users.ImagePath,
                     PhoneNumber = users.PhoneNumber,
-                    Roles = users.Roles
+                    Roles = users.Roles,
+                    UserName = users.UserName
                 };
                 return Ok(updateRequest);
             }

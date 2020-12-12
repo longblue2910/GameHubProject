@@ -1,0 +1,12 @@
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\bin\Release\netstandard2.0\GameHub.DAL.Interface.deps.json
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\bin\Release\netstandard2.0\GameHub.DAL.Interface.dll
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\bin\Release\netstandard2.0\GameHub.DAL.Interface.pdb
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\bin\Release\netstandard2.0\GameHub.Domain.dll
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\bin\Release\netstandard2.0\GameHub.Domain.pdb
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\obj\Release\netstandard2.0\GameHub.DAL.Interface.csprojAssemblyReference.cache
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\obj\Release\netstandard2.0\GameHub.DAL.Interface.AssemblyInfoInputs.cache
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\obj\Release\netstandard2.0\GameHub.DAL.Interface.AssemblyInfo.cs
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\obj\Release\netstandard2.0\GameHub.DAL.Interface.csproj.CoreCompileInputs.cache
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\obj\Release\netstandard2.0\GameHub.DAL.Interface.csproj.CopyComplete
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\obj\Release\netstandard2.0\GameHub.DAL.Interface.dll
+C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHub.DAL.Interface\obj\Release\netstandard2.0\GameHub.DAL.Interface.pdb

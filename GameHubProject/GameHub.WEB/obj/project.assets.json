@@ -8281,11 +8281,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
+      "projectUniqueName": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
       "projectName": "GameHub.WEB",
-      "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
+      "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
       "packagesPath": "C:\\Users\\XuanHoang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.WEB\\obj\\",
+      "outputPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.WEB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\XuanHoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8301,8 +8301,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
-              "projectPath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
+            "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj": {
+              "projectPath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.Domain\\GameHub.Domain.csproj"
             }
           }
         }
