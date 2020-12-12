@@ -1,0 +1,63 @@
+﻿@model List<BrandView>
+@{
+    ViewData["Title"] = "Brand Index";
+}
+<div class=" row">
+    <a href="javascript:void(0);" class="btn btn-info" onclick="brand.openModal()">Tạo thể loại</a>
+    <div class="ajax-loader">
+        <img src="~/images/loading.gif" class="img-responsive" />
+    </div>
+    <table id="tbModule" class="table table-borderless table-striped table-earning">
+        <thead class="thead-dark">
+            <tr>
+                <th>Brand Id</th>
+                <th>Brand Name</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="brandTable">
+        </tbody>
+    </table>
+</div>
+
+<div style="margin-top:100px;" class="modal" id="addEditCategoryModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Create Brand</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="frmAddEditCategory">
+                    <input hidden name="BrandId" id="BrandId" value="0" />
+                    <div class="row form-group">
+                        <label for="BrandName" class="col-3">Tên hãng loại:</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" placeholder="Nhập tên hãng"
+                                   id="BrandName" name="BrandName"
+                                   data-rule-required="true"
+                                   data-msg-required="Brand name is required">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-success" onclick="brand.save()">Save</a>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/Dashboad/brand.js"></script>
+}
+

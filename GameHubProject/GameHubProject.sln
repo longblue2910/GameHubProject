@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHub.API", "GameHubProject\GameHub.API.csproj", "{688FB5E8-242E-4480-B418-0A719129F37C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.Domain", "GameHub.Domain\GameHub.Domain.csproj", "{57FFCFB8-6BFE-4B68-97AD-BAEE81F792DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHub.Domain", "GameHub.Domain\GameHub.Domain.csproj", "{57FFCFB8-6BFE-4B68-97AD-BAEE81F792DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.DAL.Interface", "GameHub.DAL.Interface\GameHub.DAL.Interface.csproj", "{53B82C94-4603-4419-AF37-154E45B606D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHub.DAL.Interface", "GameHub.DAL.Interface\GameHub.DAL.Interface.csproj", "{53B82C94-4603-4419-AF37-154E45B606D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.DAL.Implement", "GameHub.DAL.Implement\GameHub.DAL.Implement.csproj", "{8C9C1F39-375C-4F23-9ED7-A20D8C4F6337}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHub.DAL.Implement", "GameHub.DAL.Implement\GameHub.DAL.Implement.csproj", "{8C9C1F39-375C-4F23-9ED7-A20D8C4F6337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.BAL.Interface", "GameHub.BAL.Interface\GameHub.BAL.Interface.csproj", "{DE883C4B-91BD-448E-88E5-1EBB8DA8474F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHub.BAL.Interface", "GameHub.BAL.Interface\GameHub.BAL.Interface.csproj", "{DE883C4B-91BD-448E-88E5-1EBB8DA8474F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.BAL.Implement", "GameHub.BAL.Implement\GameHub.BAL.Implement.csproj", "{34029CD2-718F-4DFE-A7FC-9D79D7B06499}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameHub.BAL.Implement", "GameHub.BAL.Implement\GameHub.BAL.Implement.csproj", "{34029CD2-718F-4DFE-A7FC-9D79D7B06499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameHub.WEB", "GameHub.WEB\GameHub.WEB.csproj", "{9DF7AF0A-5405-4D24-8140-F541E8674A23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{34029CD2-718F-4DFE-A7FC-9D79D7B06499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34029CD2-718F-4DFE-A7FC-9D79D7B06499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34029CD2-718F-4DFE-A7FC-9D79D7B06499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DF7AF0A-5405-4D24-8140-F541E8674A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF7AF0A-5405-4D24-8140-F541E8674A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF7AF0A-5405-4D24-8140-F541E8674A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF7AF0A-5405-4D24-8140-F541E8674A23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,63 @@
+﻿@model List<CategoryView>
+@{
+    ViewData["Title"] = "Category Index";
+}
+<div class=" row">
+    <a href="javascript:void(0);" class="btn btn-info" onclick="category.openModal()">Tạo thể loại</a>
+    <div class="ajax-loader">
+        <img src="~/images/loading.gif" class="img-responsive" />
+    </div>
+    <table id="tbModule" class="table table-borderless table-striped table-earning">
+        <thead class="thead-dark">
+            <tr>
+                <th>Category Id</th>
+                <th>Category Name</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="categoryTable">
+        </tbody>
+    </table>
+</div>
+
+<div style="margin-top:100px;" class="modal" id="addEditCategoryModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Create Category</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="frmAddEditCategory">
+                    <input hidden name="CategoryId" id="CategoryId" value="0" />
+                    <div class="row form-group">
+                        <label for="CategoryName" class="col-3">Tên thể loại:</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" placeholder="Category name"
+                                   id="CategoryName" name="CategoryName"
+                                   data-rule-required="true"
+                                   data-msg-required="Categoryname name is required">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-success" onclick="category.save()">Save</a>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/Dashboad/category.js"></script>
+}
+

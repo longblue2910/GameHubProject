@@ -1,0 +1,206 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Game Box a Games a Category Flat Bootstarp Responsive Website Template | About :: w3layouts</title>
+    <link href="~/template/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <script src="~/template/js/bootstrap.js"></script>
+    <link href="~/lib/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/template/css/style.css" rel="stylesheet" />
+    <link href="~/css/homesite.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Game Box  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="~/template/js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header" style="background:black">
+        <div class="container">
+            <div class="headr-left">
+                <div class="social">
+                    <a href="#"><i class="facebook"></i></a>
+                    <a href="#"><i class="gplus"></i></a>
+                    <a href="#"><i class="youtube"></i></a>
+                </div>
+                <div class="search">
+                    <form asp-controller="Home" asp-action="Search" method="post">
+                        <input type="submit" value="">
+                        <input type="text" name="searchWord" placeholder="Tìm kiếm">
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="headr-right">
+                <div class="details">
+                    <ul>
+                        <li><a href="mailto@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>gamehub@gmail.com</a></li>
+                        @if (User.Identity.Name != null)
+                        {
+                            <div class="dropdown">
+                                <input hidden id="UserId" value="@HttpContextAccessor.HttpContext.Session.GetString("Id")" />
+                                <div id="imguser"></div>
+                                <button class="alert-success">@User.Identity.Name</button>
+                                <div class="dropdown-content" style="z-index:99999999999;">
+                                    <p>Hello World!</p>
+                                    <form asp-controller="Account" asp-action="Logout" method="post">
+                                        <button type="submit">Logout</button>
+                                    </form>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <li><a asp-controller="Account" asp-action="Login"><span aria-hidden="true"></span>Login</a></li>
+                            <li><a asp-controller="Account" asp-action="SignUp"><span class="page-link" aria-hidden="true"></span>Sign Up</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--banner-info-->
+    <div class="banner-info">
+        <div class="container">
+            <div class="logo">
+                <h1><a asp-controller="Home" asp-action="Index">GAME HUB</a></h1>
+            </div>
+            <div class="top-menu">
+                <span class="menu"></span>
+                <ul class="nav1">
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li> <a asp-controller="Home" asp-action="AllGame">Game Offline</a></li>
+                    <li class="dropdown">
+                        <a href="#">Thể loại</a>
+                        <div class="dropdown-content">
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1">Bắn súng</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1012">Nhập vai</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1013">Chiến thuật</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1014">Đối kháng</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1015">Kinh dị</a>
+                            <a asp-controller="Home" asp-action="ListCategory" asp-route-id="1016">Đua xe</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact">Liên hệ</a></li>
+                </ul>
+            </div>
+            <!-- script-for-menu -->
+            <script>
+                $("span.menu").click(function () {
+                    $("ul.nav1").slideToggle(300, function () {
+                        // Animation complete.
+                    });
+                });
+            </script>
+            <!-- /script-for-menu -->
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-grids">
+                <div class="col-md-3 ftr-info">
+                    <h3>About Us</h3>
+                    <hr />
+                    <p>
+                        Game Hub mang đến cho bạn những thông tin mới nhất về thị trường Game. Cập nhật, chia sẻ, review những trò chơi HOT. Cung cấp link download game miễn phí. Cùng với đó là những hướng dẫn bài bản giúp tăng khả năng trải nghiệm trò chơi của bạn.
+                    </p>
+                </div>
+                <div class="col-md-3 ftr-grid">
+                    <h3>Chuyên mục</h3>
+                    <ul class="ftr-list">
+                        <li><a href="#">Game Offline</a></li>
+                        <li><a href="#">Game Mobile</a></li>
+                        <li><a href="#">Giải Trí</a></li>
+                        <li><a href="#">Hướng dẫn</a></li>
+                        <li><a href="#">Review Game</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 ftr-grid">
+                    <h3>Thể loại</h3>
+                    <ul class="ftr-list">
+                        <li><a href="#">Game Bắn Súng</a></li>
+                        <li><a href="#">Game Chiến Thuật</a></li>
+                        <li><a href="#">Game Trí Tuệ</a></li>
+                        <li><a href="#">Game Đua Xe</a></li>
+                        <li><a href="#">Game Hành Động</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 ftr-grid">
+                    <h3>Liên Hệ</h3>
+                    <ul class="ftr-list">
+                        <li><a asp-controller="Home" asp-action="Contact">Liên Hệ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a asp-controller="Home" asp-action="Donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="copywrite">
+        <div class="container">
+            <hr />
+            <p> © 2020 Game Hub. Phát triển bởi Long Hoàng</p>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/template/js/jquery.flexisel.js"></script>
+    <script src="~/lib/font-awesome/js/all.js"></script>
+    <script>
+        var id = $('#UserId').val();
+        $(document).ready(function () {
+            $.ajax({
+                url: `/Account/Get/${id}`,
+                method: 'GET',
+                dataType: 'JSON',
+                success: function (response) {
+                    console.log(response);
+                    $("#imguser").append(`
+                            <img src="/images/Avatar/${response.imagePath}" style="border-radius:50%" width="36px" height="36px" alt="Alternate Text" />
+                        `);
+                }
+            });
+        });
+
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

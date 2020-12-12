@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kUt+b8EYvOtKDM7o7s1OTyP3Ei3HuQWu59GT2giF8udyNPpNwLkU00zJM6LWancScPBfVO+8rQid1pkZ+f9B/w==",
+  "dgSpecHash": "prA6uUAk0BhPl9kAkt7mVMubiGrhwRbk65dvDmxZHYf5a8ywsYL8mD19t2LEX5U6TucxhCqakiViVWRPc7Znxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\NewGamehub\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
+  "projectFilePath": "C:\\Users\\XuanHoang\\Desktop\\Gamehub\\Longdev\\GameHubProject\\GameHub.WEB\\GameHub.WEB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\XuanHoang\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
     "C:\\Users\\XuanHoang\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",

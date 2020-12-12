@@ -1,0 +1,111 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@model GameView
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="banner">
+    <div class="bnr2">
+    </div>
+</div>
+<div class="agileits_breadcrumbs">
+    <div class="container">
+        <div class="agileits_breadcrumbs_left street">
+            <ul style="font-size: smaller; margin-bottom: 24px;">
+                <li>
+                    <a style="color:black" asp-controller="Home" asp-action="Index">Home</a><i class="fa fa-angle-right" style="font-size:14px"></i>
+                </li>
+                <li><a style="color:darkgrey" asp-controller="Home" asp-action="AllGame">Game Offline</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div class="container">
+    <input hidden id="Gameid" value="@Model.GameId" />
+    <input hidden id="UserId" value="@HttpContextAccessor.HttpContext.Session.GetString("Id")" />
+    @if (@Model.Description != null)
+    {
+        <input hidden id="gameid1" value="@Model.Categorys.FirstOrDefault().CategoryId" />
+    }
+    else
+    {
+        <input hidden id="gameid1" value="1" />
+    }
+    <h1 style="font-size: 4em; line-height: 1.1; color: #29292f;">
+        @Model.GameName
+    </h1>
+    <hr />
+    <div class="blog-img">
+        @if (@Model.Description != null)
+        {
+            <img src="~/images/@Model.Images.FirstOrDefault().PathImage" alt="" />
+        }
+        else
+        {
+            <img src="~/images/404.jpg" alt="" />
+        }
+    </div>
+</div>
+<div class="container">
+    <div class="blog">
+        <div class="container">
+            <div class="col-md-8 blog-left">
+                <div class="blog-info">
+                    <div class="blog-info-text">
+                        <hr />
+                        @Html.Raw(Model.Description);
+                    </div>
+                    <div class="comment-icons">
+                        <ul>
+                            <li><span class="clndr"></span>@Model.CreateDate.ToString("MMM, dd,yyyy")</li>
+                            <li><span class="admin"></span> <a href="#">By @Model.UserName</a></li>
+                            <li><span class="cmnts"></span> <a href="#">5 comments</a></li>
+                            <li><a href="#" class="like">15</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3" id="addcheck">
+                    </div>
+                    <div class="response">
+                        <h4>Comment</h4>
+                        <div id="add">
+                        </div>
+                    </div>
+                </div>
+                <div id="formRep" class="coment-form">
+                    <h4>Bình luận</h4>
+                    <form>
+                        <input hidden id="EditComment">
+                        <textarea id="text" placeholder="Bình Luận"></textarea>
+                        <input type="submit" value="Bình luận" id="Post">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4 single-page-right">
+                <div class="category blog-ctgry">
+                    <h4>Top Games</h4>
+                    <div class="list-group">
+                        <a href="single.html" class="list-group-item">Cras justo odio</a>
+                        <a href="single.html" class="list-group-item">Dapibus ac facilisis in</a>
+                        <a href="single.html" class="list-group-item">Morbi leo risus</a>
+                        <a href="single.html" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="single.html" class="list-group-item">Vestibulum at eros</a>
+                        <a href="single.html" class="list-group-item">Cras justo odio</a>
+                        <a href="single.html" class="list-group-item">Cras justo odio</a>
+                        <a href="single.html" class="list-group-item">Cras justo odio</a>
+                    </div>
+                </div>
+                <div class="recent-posts">
+                    <h4>Game tương tự</h4>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    <script src="~/js/Layout/Details.js"></script>
+}
