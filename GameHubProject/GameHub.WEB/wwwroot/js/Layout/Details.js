@@ -54,7 +54,15 @@ var GetComment = function (id) {
         dataType: "json",
         success: function (response) {
             $("#add").empty();
+            console.log(response);
             $.each(response.result, function (i, v) {
+                var avatar = "";
+                if (v.avatar == "avatar.png") {
+                    avatar = '<img class="media-object" src="/template/images/icon1.png" alt="error" />';
+                }
+                else {
+                    avatar = `<img class="media-object" src="/images/Avatar/${v.avatar}" alt="error" style="width:67px;" />`;
+                }
                 var Edited = "";
                 if (v.statusName == "Edited") {
                     Edited = 'Edited';
@@ -95,7 +103,7 @@ var GetComment = function (id) {
                             <div class="media response-info">
                                 <div class="media-left response-text-left">
                                         <a href="#">
-                                            <img class="media-object" src="/template/images/icon1.png" alt="error" />
+                                            ${avatar}
                                         </a>
                                         <h5><a href="#">${v.userName}</a></h5>
                                     </div>
