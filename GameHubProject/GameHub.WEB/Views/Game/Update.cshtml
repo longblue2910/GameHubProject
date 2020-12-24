@@ -88,7 +88,7 @@
         var id = $('#GameId').val();
         debugger;
         $.ajax({
-            url: "https://localhost:44373/api/game/get/" + id,
+            url: "http://www.gameapi.somee.com/api/game/get/" + id,
             method: "get",
             dataType: "json",
             success: function (response) {

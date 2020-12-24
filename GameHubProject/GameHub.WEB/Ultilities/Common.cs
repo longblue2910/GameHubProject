@@ -7,6 +7,6 @@ namespace GameHub.WEB.Ultilities
 {
     public class Common
     {
-        public static string apiUrl = @"https://localhost:44373/api";
+        public static string apiUrl = @"http://www.gameapi.somee.com/api";
     }
 }

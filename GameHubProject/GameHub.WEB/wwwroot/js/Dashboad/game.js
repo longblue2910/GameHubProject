@@ -60,7 +60,7 @@ game.drawTable = function () {
             $.each(data.result, function (i, v) {
                 var action = "";
                 if (v.statusName == "active") {
-                    action = `<a href="javascripts:;"
+                    action = `<a href="Game/get/${v.gameId}"
                                        onclick="game.get(${v.gameId})"><i class="fas fa-edit"></i></a>
                             <a href="javascripts:;"
                                         onclick="game.deleted(${v.gameId}, '${v.gameName}')"><i class="fas fa-trash"></i></a>
@@ -100,7 +100,7 @@ game.openModal = function () {
 game.get = function (id) {
     
     $.ajax({
-        url: `/game/get/${id}`,
+        url: `/game/getRate/${id}`,
         method: "get",
         dataType: "json",
         success: function (response) {

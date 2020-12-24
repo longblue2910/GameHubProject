@@ -13,9 +13,9 @@
         <div class="agileits_breadcrumbs_left street">
             <ul style="font-size: smaller; margin-bottom: 24px;">
                 <li>
-                    <a style="color:black" asp-controller="Home" asp-action="Index"> </a><i class="fa fa-angle-right" style="font-size:14px"></i>
+                    <a style="color:black" asp-controller="Home" asp-action="Index">Home</a><i class="fa fa-angle-right" style="font-size:14px"></i>
                 </li>
-                <li><a style="color:darkgrey" asp-action="AllGame" asp-controller="Home">Game Offline</a></li>
+                <li><a style="color:darkgrey" asp-controller="Home" asp-action="AllGame">Game Offline</a></li>
             </ul>
         </div>
         <div class="clearfix"> </div>
@@ -26,7 +26,7 @@
     <input hidden id="UserId" value="@HttpContextAccessor.HttpContext.Session.GetString("Id")" />
     @if (@Model.Description != null)
     {
-        <input hidden id="gameid1" value="1" />
+        <input hidden id="gameid1" value="@Model.Categorys.FirstOrDefault().CategoryId" />
     }
     else
     {
@@ -36,16 +36,70 @@
         @Model.GameName
     </h1>
     <hr />
+    <h3>
+        <img src="~/images/Avatar/@Model.PathImage" width="50" style="border-radius: 50%" alt="Alternate Text" />
+        by  <span>@Model.UserName   .</span><span>    @Model.Visit  View</span>
+    </h3>
     <div class="blog-img">
         @if (@Model.Description != null)
         {
-            <img src="~/images/@Model.Images.FirstOrDefault().PathImage" alt="" />
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    @if (Model.Images.Count() > 1)
+                    {
+                        var dem = 1;
+                        @foreach (var item in Model.Images)
+                        {
+                            if (dem < 3)
+                            {
+                                <li data-target="#myCarousel" data-slide-to="@dem"></li>
+                                dem++;
+                            }
+
+                        }
+                    }
+
+                </ol>
+                <div class="carousel-inner">
+                    @if (true)
+                    {
+                        var dem = 0;
+                    @foreach (var item in Model.Images)
+                    {
+                        if (dem % 2 == 0 && dem<3)
+                        {
+                            <div class="item">
+                                <img src="~/images/@item.PathImage" alt="Chicago" style="width:100%;">
+                            </div>
+                            dem++;
+                        }
+                        else if(dem < 3)
+                        {
+                            <div class="item active">
+                                <img src="~/images/@item.PathImage" alt="Chicago" style="width:100%;">
+                            </div>
+                            dem++;
+                        }
+
+                    }}
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         }
         else
         {
             <img src="~/images/404.jpg" alt="" />
         }
     </div>
+
 </div>
 <div class="container">
     <div class="blog">
@@ -60,8 +114,8 @@
                         <ul>
                             <li><span class="clndr"></span>@Model.CreateDate.ToString("MMM, dd,yyyy")</li>
                             <li><span class="admin"></span> <a href="#">By @Model.UserName</a></li>
-                            <li><span class="cmnts"></span> <a href="#">5 comments</a></li>
-                            <li><a href="#" class="like">15</a></li>
+                            <li><span class="cmnts"></span> <a href="#">@Model.Comment comments</a></li>
+                            @*<li><a href="#" class="like">15</a></li>*@
                         </ul>
                     </div>
                     <div class="col-3" id="addcheck">

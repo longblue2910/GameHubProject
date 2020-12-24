@@ -93,5 +93,3 @@ C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHubProject\obj\Release\
 C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHubProject\obj\Release\netcoreapp3.1\GameHub.API.dll
 C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHubProject\obj\Release\netcoreapp3.1\GameHub.API.pdb
 C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHubProject\obj\Release\netcoreapp3.1\GameHub.API.genruntimeconfig.cache
-C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHubProject\bin\Release\netcoreapp3.1\Properties\serviceDependencies.json
-C:\Users\XuanHoang\Desktop\NewGamehub\GameHubProject\GameHubProject\bin\Release\netcoreapp3.1\Properties\serviceDependencies.local.json

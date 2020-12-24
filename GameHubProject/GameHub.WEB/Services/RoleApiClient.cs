@@ -29,7 +29,7 @@ namespace GameHub.WEB.Services
         {
             var sessions = _httpContextAccessor.HttpContext.Session.GetString("Token");
             var client = _httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri("https://localhost:44373");
+            client.BaseAddress = new Uri("http://www.gameapi.somee.com");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", sessions);
 
             var response = await client.GetAsync($"/api/role/gets");

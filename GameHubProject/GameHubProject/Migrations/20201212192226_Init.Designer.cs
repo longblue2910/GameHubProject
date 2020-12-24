@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameHub.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201118023327_Initial")]
-    partial class Initial
+    [Migration("20201212192226_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

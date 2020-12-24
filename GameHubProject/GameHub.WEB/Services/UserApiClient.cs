@@ -27,7 +27,7 @@ namespace GameHub.WEB.Services
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
             var client = httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            client.BaseAddress = new Uri("http://www.gameapi.somee.com/api/");
             var response = await client.PostAsync("User/authenticate", httpContent);
             var token = await response.Content.ReadAsStringAsync();
 
@@ -40,7 +40,7 @@ namespace GameHub.WEB.Services
             var client = httpClientFactory.CreateClient();
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", sessions);
 
-            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            client.BaseAddress = new Uri("http://www.gameapi.somee.com/api/");
             var response = await client.GetAsync($"User/{id}");
             var body = await response.Content.ReadAsStringAsync();
             var user = JsonConvert.DeserializeObject<UserViewModel>(body);
@@ -54,7 +54,7 @@ namespace GameHub.WEB.Services
             var client = httpClientFactory.CreateClient();
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", sessions);
 
-            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            client.BaseAddress = new Uri("http://www.gameapi.somee.com/api/");
             var response = await client.GetAsync($"User/get/{UserName}");
             var body = await response.Content.ReadAsStringAsync();
             var user = JsonConvert.DeserializeObject<UserViewModel>(body);
@@ -67,7 +67,7 @@ namespace GameHub.WEB.Services
             var client = httpClientFactory.CreateClient();
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", request.BearerToken);
 
-            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            client.BaseAddress = new Uri("http://www.gameapi.somee.com/api/");
             var response = await client.GetAsync($"User/paging?Keyword={request.Keyword}&PageIndex={request.PageIndex}" +
                 $"&PageSize={request.PageSize}&BearerToken={request.BearerToken}");
             var body = await response.Content.ReadAsStringAsync();
@@ -79,7 +79,7 @@ namespace GameHub.WEB.Services
         public async Task<string> RegisterUser(RegisterRequest registerRequest)
         {
             var client = httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            client.BaseAddress = new Uri("http://www.gameapi.somee.com/api/");
 
             var json = JsonConvert.SerializeObject(registerRequest);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
@@ -92,7 +92,7 @@ namespace GameHub.WEB.Services
         public async Task<bool> RoleAssign(string id, RoleAssignRequest roleRequest)
         {
             var client = httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            client.BaseAddress = new Uri("http://www.gameapi.somee.com/api/");
             var sessions = httpContextAccessor.HttpContext.Session.GetString("Token");
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", sessions);
 
@@ -106,7 +106,7 @@ namespace GameHub.WEB.Services
         public async Task<bool> UpdateUser(string id, UserUpdateRequest registerRequest)
         {
             var client = httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri("https://localhost:44373/api/");
+            client.BaseAddress = new Uri("http://www.gameapi.somee.com/api/");
             var sessions = httpContextAccessor.HttpContext.Session.GetString("Token");
             client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", sessions);
 
