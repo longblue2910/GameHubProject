@@ -45,27 +45,18 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
-
-        </div>
-    </div>
-</div>
-<div class="gallery">
-    <div class="container">
-
-        <div id="gameNhapvai">
         </div>
     </div>
 </div>
 
-
-@*<div class="latest">
+<div class="latest">
     <div class="container">
         <div class="eg_block_heading jeg_block_heading_2" style="background: antiquewhite;">
             <h4 class="jeg_block_title"><span><i class="fas fa-edit"></i>Nhiều người xem</span></h4>
         </div>
         <div class="latest-top">
             <div class="col-md-5 trailer-text">
-                <div class="sub-trailer" id="showgame1">
+                <div class="sub-trailer" id="topgame">
                     
                     <div class="clearfix"> </div>
                 </div>
@@ -76,8 +67,20 @@
             <div class="clearfix"> </div>
         </div>
     </div>
-</div>*@
+</div>
+
 <!-- poster -->
+<div class="poster">
+    <div class="container">
+        <div class="poster-info">
+            <h3>Game HUB - Thế giới game offline</h3>
+            <p>
+                Mang đến cho bạn những thông tin mới nhất về thị trường Game. Cập nhật, chia sẻ, review những trò chơi HOT. Cung cấp link download game miễn phí. Cùng với đó là những hướng dẫn bài bản giúp tăng khả năng trải nghiệm trò chơi của bạn.
+            </p>
+            <a class="hvr-bounce-to-bottom" asp-action="AllGame" asp-controller="Home">Xem thêm</a>
+        </div>
+    </div>
+</div>
 @section Scripts{
     <script type="text/javascript">
         $(document).ready(function () {
@@ -109,36 +112,26 @@
                 }
             });
         }
+        
         var getGame = function () {
             $.ajax({
-                url: "/Game/Gets",
+                url: "/Game/TopViewGames",
                 method: "GET",
                 dataType: "Json",
                 success: function (reponse) {
-                    var count = 0;
                     $.each(reponse.result, function (i, v) {
-
-                        if (count <= 3) {
-                            if (v.statusName == "active") {
-                                count++;
-                                $("#gameNhapvai").append(`
-                                <div class="gallery-1">                                   
-                                    <div class="col-md-5">
-                                        <a href="/Home/Details/${v.gameId}"><label>${v.gameName}</label> </a>
-                                       <div style="text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; display: -webkit-box;">
-                                         ${v.description}
-                                       </div>
-                                    </div>
-                                    <div class="col-md-3 gallery-grid">
-                                        <a href="/Home/Details/${v.gameId}" class="example-image-link" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                        <img class="example-image" src="/images/${v.pathImage}" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="clearfix"></div>
+                            $("#topgame").append(`                             
+                                <div class="col-md-4 sub-img">
+                                    <a class="example-image-link" href="/Home/Details/${v.gameId}" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                      <img style="height: 110px"; src="images/${v.pathImage}" alt="" /></a>
+						        </div>
+						        <div class="col-md-8 sub-text">
+                                      <a href="/Home/Details/${v.gameId}"><label>${v.gameName}</label> </a>
+							        <p>Game hay top lượt xem Game Hub</p>
+						        </div>
+						        <div class="clearfix"> 
                                 </div>
-                                `);
-                            }
-                        }
+                            `);
                     });
                 }
             });

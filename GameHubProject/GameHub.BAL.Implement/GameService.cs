@@ -101,5 +101,9 @@ namespace GameHub.BAL.Implement
             return await gameRepository.Save(request);
         }
 
+        public async Task<IEnumerable<GameView>> TopViewGames()
+        {
+            return await gameRepository.TopViewGames();
+        }
     }
 }

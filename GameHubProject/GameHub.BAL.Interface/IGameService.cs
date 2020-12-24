@@ -14,6 +14,8 @@ namespace GameHub.BAL.Interface
         Task<IEnumerable<GameView>> GetByCategoryId(int categoryId);
         Task<IEnumerable<GameView>> GetByBrandId(int brandId);
         Task<IEnumerable<GameView>> Gets();
+        Task<IEnumerable<GameView>> TopViewGames();
+
         Task<GameRes> Delete(int id);
         Task<GameRes> increaseViewGame(int id);
         Task<GameRes> increaseDowloadGame(int id);

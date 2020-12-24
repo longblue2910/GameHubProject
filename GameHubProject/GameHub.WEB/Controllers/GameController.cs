@@ -25,6 +25,7 @@ namespace GameHub.WEB.Controllers
         {
             return View();
         }
+
         public JsonResult Gets()
         {
             List<GameView> result = ApiHelper<List<GameView>>.HttpGetAsync($"Game/gets");
@@ -114,6 +115,11 @@ namespace GameHub.WEB.Controllers
         {
             var game = ApiHelper<UpdateGame>.HttpGetAsync($"game/get/{id}");
             return Ok(game);
+        }
+        public JsonResult TopViewGames()
+        {
+            List<GameView> result = ApiHelper<List<GameView>>.HttpGetAsync($"Game/TopViewGames");
+            return Json(new { result });
         }
     }
 }

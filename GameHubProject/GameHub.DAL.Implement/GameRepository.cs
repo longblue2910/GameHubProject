@@ -140,5 +140,10 @@ namespace GameHub.DAL.Implement
                                                                 param: parameters, commandType: CommandType.StoredProcedure);
             return result; 
         }
+
+        public async Task<IEnumerable<GameView>> TopViewGames()
+        {
+            return await SqlMapper.QueryAsync<GameView>(connection, "sp_TopView", CommandType.StoredProcedure);
+        }
     }
 }

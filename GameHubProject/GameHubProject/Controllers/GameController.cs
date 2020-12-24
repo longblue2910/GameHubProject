@@ -74,5 +74,11 @@ namespace GameHub.API.Controllers
             var result = await gameService.GetBySearchWord(SearchWord);
             return Ok(result);
         }
+        [HttpGet("TopViewGames")]
+        public async Task<OkObjectResult> TopViewGames()
+        {
+            var result = await gameService.TopViewGames();
+            return Ok(result);
+        }
     }
 }
