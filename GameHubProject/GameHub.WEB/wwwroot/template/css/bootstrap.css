@@ -5096,6 +5096,7 @@ a.thumbnail.active {
   width: 10000px;
 }
 .media-object {
+    border-radius:100%;
   display: block;
 }
 .media-right,

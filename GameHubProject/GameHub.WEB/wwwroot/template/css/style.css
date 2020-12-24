@@ -179,7 +179,7 @@ a i.youtube {
 }
 
     .logo h1 a {
-        color: lightpink;
+        color: white;
         font-family: 'Play-Bold';
         text-decoration: none;
     }
@@ -871,7 +871,6 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 .blog-info p {
     line-height: 1.7em;
-    margin-top: 1em;
     font-size: 0.9em;
     color: #777;
 }
@@ -1177,8 +1176,8 @@ a.list-group-item:hover {
 }
 
 .response-text-right p {
-    font-size: 0.9em;
-    color: #777;
+    font-size: 15px;
+    color: black;
     line-height: 1.7em;
 }
 
@@ -3239,4 +3238,8 @@ h3.ghj {
     .jeg_block_heading {
         position: relative;
         margin-bottom: 30px;
+    }
+
+    .jeg_block_heading_6 {
+        border-bottom: 2px solid #eee;
     }

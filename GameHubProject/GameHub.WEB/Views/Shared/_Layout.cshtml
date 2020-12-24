@@ -20,24 +20,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
     <style>
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            padding: 12px 16px;
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+        
     </style>
 </head>
 <body>
@@ -63,22 +46,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="mailto@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>gamehub@gmail.com</a></li>
                         @if (User.Identity.Name != null)
                         {
-                            <div class="dropdown">
-                                <input hidden id="UserId" value="@HttpContextAccessor.HttpContext.Session.GetString("Id")" />
-                                <div id="imguser"></div>
-                                <button class="alert-success">@User.Identity.Name</button>
-                                <div class="dropdown-content" style="z-index:99999999999;">
-                                    <p>Hello World!</p>
-                                    <form asp-controller="Account" asp-action="Logout" method="post">
-                                        <button type="submit">Logout</button>
-                                    </form>
+                            <li class="dropdown">
+                                <input hidden id="UserId" value="@HttpContextAccessor.HttpContext.Session.GetString("Id")" />                       
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@User.Identity.Name</a>
+                                <div>
+                                    <div class="dropdown-content">
+                                        <a asp-controller="Category" asp-action="Index" asp-route-id="1">Trang Admin</a>
+                                        <a asp-controller="Account" asp-action="Logout">Đăng xuất</a>
+                                    </div>
                                 </div>
-                            </div>
+                            </li>
                         }
                         else
                         {
                             <li><a asp-controller="Account" asp-action="Login"><span aria-hidden="true"></span>Login</a></li>
-                            <li><a asp-controller="Account" asp-action="SignUp"><span class="page-link" aria-hidden="true"></span>Sign Up</a></li>
+                            <li><a asp-controller="Account" asp-action="Register"><span class="page-link" aria-hidden="true"></span>Sign Up</a></li>
                         }
                     </ul>
                 </div>

@@ -108,5 +108,12 @@ namespace GameHub.WEB.Controllers
             var game = ApiHelper<UpdateGame>.HttpGetAsync($"game/get/{id}");
             return View(game);
         }
+        [HttpGet]
+        [Route("/Game/getAgame/{id}")]
+        public IActionResult Get(int id)
+        {
+            var game = ApiHelper<UpdateGame>.HttpGetAsync($"game/get/{id}");
+            return Ok(game);
+        }
     }
 }

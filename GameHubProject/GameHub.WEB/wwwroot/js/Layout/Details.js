@@ -10,7 +10,6 @@ var GetGameByCategory = function (id) {
             var dem = 0;
             $.each(response.result, function (i, v) {
                 dem++;
-                console.log(v);
                 if (dem > response.result.length - 3) {
                     $('.recent-posts').append(`
                             <div class="recent-posts-info">
@@ -25,7 +24,6 @@ var GetGameByCategory = function (id) {
                             </div>
                     `);
                 }
-
             })
         }
     });
@@ -58,40 +56,69 @@ var GetComment = function (id) {
             $.each(response.result, function (i, v) {
                 var Edited = "";
                 if (v.statusName == "Edited") {
-                    Edited = 'Edited';
+                    Edited = 'Đã chỉnh sửa';
                 }
                 var Edit = "";
                 var Delete = "";
                 if (v.userId == UserId) {
-                    Edit = `<a onclick="Edit(${ v.commentId })">Edit</a>`;
+                    Edit = `<a onclick="Edit(${v.commentId})" style="color: #a0a0a0; font-weight: 700; font-size:13px; text-rendering:auto;">Sửa</a>`;
                     Delete = `<a herf='#' onclick="DeleteComment(${v.commentId})">Delete</a>`;
                 }
+                var Time = "";
+                var day = new Date();
+                var month = v.time.substring(5, 7) - 1;
+                var year = v.time.substring(0, 4);
+                var dayy = v.time.substring(8, 10);
+                var hours = v.time.substring(11, 13);
+                var minute = v.time.substring(14, 16);
+                var second = v.time.substring(17, 19);
+                var day2 = new Date(year, month, dayy, hours, minute, second);
+                if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52) - 1} Năm Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7) - 1} Tuần Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24) - 1} Ngày Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60) - 1} Giờ Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60) - 1} Phút Trước`;
+                }
                 $("#add").append(`
-                            <div class="media response-info">
-                                <div class="media-left response-text-left">
+                          <div class="media response-info">
+                                    <div class="media-left response-text-left">
                                         <a href="#">
                                             <img class="media-object" src="/template/images/icon1.png" alt="error" />
                                         </a>
-                                        <h5><a href="#">${v.userName}</a></h5>
                                     </div>
-                                        <div class="media-body response-text-right">
+                                    <div class="media-body response-text-right">
+                                            <div style="display:flex">
+									          <h5><a style="color: #212121; font-size: 14px; font-style: normal; font-weight: 700;" href="#">${v.userName}</a></h5>
+									          &ensp;
+									         <h5><a style="color: #a0a0a0; font-size: 12px;">${Time}</a></h5>
+                                             &ensp;
+                                             <h5><a style="color: #a0a0a0; font-size: 12px;">${Edited}</a></h5>
+								    </div>
                                             <p>
                                                 ${v.text}
                                             </p>
-                                            ${Edit}
-                                            <ul>
-                                                <li>${v.time}</li>
-                                                <li><a onclick="Reply(${v.commentId})">Reply</a></li>
-                                                <li>${Edited}</li>
-                                                <li>${Delete}</li>
-                                            </ul>
-                                        </div>
-                                        
+							      	<div style="display:flex">
+									       <h5><a style="color: #a0a0a0; font-weight: 700; font-size: 13px; text-rendering: auto;" onclick="Reply(${v.commentId})">Trả lời</a></h5>
+									       &ensp;
+									       <h5>${Edit}</h5>
+								    </div>
+                                    </div>
                                         <div class="coment-form" id="showRep${v.commentId}"></div>
                                         <div class="coment-form" id="add${v.commentId}"></div>
                                         <div class="coment-form" id="repCmt${v.commentId}"></div>
-                                        <div class="clearfix"> </div>
-                            </div>`);
+                                        <div class="clearfix">
+                                    </div>
+                           </div>`
+                );
                 GetRep(v.commentId);
             });
         }
@@ -107,13 +134,37 @@ var GetRep = function (id) {
             $.each(response.result, function (i, v) {
                 var Edited = "";
                 if (v.statusName == "Edited") {
-                    Edited = 'Edited';
+                    Edited = 'Đã chỉnh sửa';
                 }
                 var Edit = "";
                 var Delete = "";
                 if (v.userId == UserId) {
-                    Edit = `<a onclick="Edit(${v.repId})">Edit</a>`;
+                    Edit = `<a onclick="Edit(${v.repId})" style="color: #a0a0a0; font-weight: 700; font-size:13px; text-rendering:auto;">Sửa</a>`;
                     Delete = `<a herf='#' onclick="DeleteComment(${v.repId})">Delete</a>`;
+                }
+                var Time = "";
+                var day = new Date();
+                var month = v.time.substring(5, 7) - 1;
+                var year = v.time.substring(0, 4);
+                var dayy = v.time.substring(8, 10);
+                var hours = v.time.substring(11, 13);
+                var minute = v.time.substring(14, 16);
+                var second = v.time.substring(17, 19);
+                var day2 = new Date(year, month, dayy, hours, minute, second);
+                if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 / 52) - 1} Năm Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 / 7) - 1} Tuần Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60 / 24) - 1} Ngày Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 / 60 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60 / 60) - 1} Giờ Trước`;
+                }
+                else if ((day.getTime() - day2.getTime()) / 1000 / 60 >= 1) {
+                    Time = `${Math.ceil((day.getTime() - day2.getTime()) / 1000 / 60) - 1} Phút Trước`;
                 }
                 $(`#showRep${id}`).append(`
                             <div class="media response-info" style="margin-left:10%">
@@ -121,20 +172,22 @@ var GetRep = function (id) {
                                         <a href="#">
                                             <img class="media-object" src="/template/images/icon1.png" alt="error" />
                                         </a>
-                                        <h5><a href="#">${v.userName}</a></h5>
                                     </div>
                                         <div class="media-body response-text-right">
+                                            <div style="display:flex">
+									          <h5><a style="color: #212121; font-size: 14px; font-style: normal; font-weight: 700;" href="#">${v.userName}</a></h5>
+									          &ensp;
+									         <h5><a style="color: #a0a0a0; font-size: 12px;">${Time}</a></h5>
+									          &ensp;
+                                          
+								    </div>
                                             <p>
                                                 ${v.text}
                                             </p>
-                                            ${Edit}
-                                            <ul>
-                                                <li>${v.time}</li>
-                                                <li>${Edited}</li>
-                                                <li>${Delete}</li>
-                                            </ul>
-                                        </div>
-                                        
+							      	<div style="display:flex">
+									       &ensp;
+									       <h5>${Edit}</h5>
+								    </div>
                                         <div class="coment-form" id="showRep1${v.repId}"></div>
                                         <div class="coment-form" id="addRep${v.repId}"></div>
                                         <div class="coment-form" id="rep1Cmt${v.repId}"></div>
@@ -144,7 +197,6 @@ var GetRep = function (id) {
         }
     })
 }
-
 function Edit(commentId) {
     $.ajax({
         url: `/Post/Get/${commentId}`,
@@ -172,7 +224,6 @@ function EditRep(RepId) {
         }
     });
 }
-
 function DeleteComment(commentId) {
     $.ajax({
         url: `/Post/delete/${commentId}`,
@@ -225,18 +276,41 @@ function click(id) {
             alert("Success Rate! thanks");
             $("#addcheck").empty();
             $("#addcheck").append(`
-                        <button class="btn btn-success" onclick="changeRate()">Checked</button>
+                        <span onclick="changeRate()"><i class="fas fa-check"></i></span>
+                    `);
+        }
+    });
+    $.ajax({
+        url: `/Game/getAgame/${GameId}`,
+        method: "GET",
+        dataType: "json",
+        success: function (response) {
+            console.log(response);
+            $("#addcheck").append(`
+                        <strong>${response.avgRate} / 5</strong>
+                        <span>( <strong>${response.countRate}</strong> bình chọn )<span>
                     `);
         }
     });
 }
 var checkRate = function (GameId, UserId) {
     $.ajax({
+        url: `/Game/getAgame/${GameId}`,
+        method: "GET",
+        dataType: "json",
+        success: function (response) {
+            console.log(response);
+                $("#addcheck").append(`
+                        <strong>${response.avgRate} / 5</strong>
+                        <span>( <strong>${response.countRate}</strong> bình chọn )<span>
+                    `);
+        }
+    });
+    $.ajax({
         url: `/Post/CheckVote/${GameId}/${UserId}`,
         method: "GET",
         dataType: "json",
         success: function (response) {
-            console.log(response.result);
             $("#addcheck").empty();
             if (response.result.check = 0) {
                 $("#addcheck").append(`
@@ -249,7 +323,7 @@ var checkRate = function (GameId, UserId) {
             }
             else {
                 $("#addcheck").append(`
-                        <button class="btn btn-success" onclick="changeRate()">Checked</button>
+                        <span onclick="changeRate()"><i class="fas fa-check"></i></span>
                     `);
             }
         }
@@ -271,7 +345,6 @@ var Back = function (id) {
     $(`#add${id}`).append(`<div class="coment-form" id="repCmt${id}"></div>`);
 }
 var Reply = function (id) {
-
     $(`#repCmt${id}`).empty();
     $('#formRep').hide();
     $(`#repCmt${id}`).append(
@@ -283,7 +356,7 @@ var Reply = function (id) {
                         <input type="submit" value="Phản hồi" onclick="PostReply(${id})">
                         <a style="color: #838383;font-size: 14px; font-weight: 600;" onclick="Back(${id})">Hủy</a>
                     </form>
-                `)
+        `)
 }
 var PostReply = function (id) {
     var saveObj = {};
@@ -298,7 +371,6 @@ var PostReply = function (id) {
         method: 'POST',
         data: saveObj,
         success: function (response) {
-            console.log(response);
             alert(response.data.message);
             GetComment(GameId);
             $('#RepId').val(0);

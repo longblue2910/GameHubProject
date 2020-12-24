@@ -32,8 +32,7 @@
 
 <hr />
 <div class="gallery">
-    <div class="container">
-        
+    <div class="container">      
         <div class="gallery-bottom">
             <div class="eg_block_heading jeg_block_heading_2" style="background: #eee;">
                 <h4 class="jeg_block_title"><i class="fas fa-edit"></i>Game Mới Update</h4>
@@ -50,7 +49,13 @@
         </div>
     </div>
 </div>
-<hr />
+<div class="gallery">
+    <div class="container">
+
+        <div id="gameNhapvai">
+        </div>
+    </div>
+</div>
 
 
 @*<div class="latest">
@@ -77,7 +82,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             ShowGame();
-            ShowGame1();
+            getGame();
         });
         var ShowGame = function () {
             $.ajax({
@@ -91,12 +96,46 @@
                         if (count<=5) {
                             if (v.statusName == "active") {
                             count++;
-                                $("#showgame").append(` 
+                                $("#showgame").append(`
                                     <div class="col-md-4">
                                       <a class="example-image-link" href="/Home/Details/${v.gameId}" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
                                       <img class="example-image" src="images/${v.pathImage}" alt="" /></a>
                                       <a href="/Home/Details/${v.gameId}"><label>${v.gameName}</label> </a>
                                     </div>
+                                `);
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        var getGame = function () {
+            $.ajax({
+                url: "/Game/Gets",
+                method: "GET",
+                dataType: "Json",
+                success: function (reponse) {
+                    var count = 0;
+                    $.each(reponse.result, function (i, v) {
+
+                        if (count <= 3) {
+                            if (v.statusName == "active") {
+                                count++;
+                                $("#gameNhapvai").append(`
+                                <div class="gallery-1">                                   
+                                    <div class="col-md-5">
+                                        <a href="/Home/Details/${v.gameId}"><label>${v.gameName}</label> </a>
+                                       <div style="text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; display: -webkit-box;">
+                                         ${v.description}
+                                       </div>
+                                    </div>
+                                    <div class="col-md-3 gallery-grid">
+                                        <a href="/Home/Details/${v.gameId}" class="example-image-link" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                        <img class="example-image" src="/images/${v.pathImage}" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
                                 `);
                             }
                         }

@@ -42,7 +42,6 @@
         @foreach (var item in Model)
         {
             <div class="gallery-1">
-
                 <div class="col-md-3 gallery-grid">
                     <a asp-controller="Home" asp-action="Details" asp-route-id="@item.GameId" class="example-image-link" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
                         <img class="example-image" src="/images/@item.PathImage" alt="" />
